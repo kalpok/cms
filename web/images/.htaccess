@@ -1,0 +1,16 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    # set following address based on your host's address
+    # RewriteBase /
+
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+
+    # If the requested file exists; then skip the following rewrite rule.
+    RewriteRule .* - [S=1]
+
+    # Rewrite rule for missing images.
+    # RewriteRule ^(.*)$ /file/image?url=/$1 [L,R=302,QSA]
+    # images/folderName/presetName/year/filename.extension
+    RewriteRule ([^/]+)/([^/]+)/([^/]+)/([^/]+)$ /file/serve-image?preset=$2&name=$4 [L,R=302,QSA]
+</IfModule>

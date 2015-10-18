@@ -1,0 +1,40 @@
+{
+    "name": "ahb/cms",
+    "description": "ahb cms",
+    "homepage": "http://basiriam.ir/",
+    "type": "project",
+    "license": "WTFPL",
+    "require": {
+        "php": ">=5.4.0",
+        "yiisoft/yii2": "2.0.*",
+        "yiisoft/yii2-bootstrap": "*",
+        "yiisoft/yii2-imagine": "^2.0",
+        "yiisoft/yii2-swiftmailer": "*",
+        "2amigos/yii2-ckeditor-widget": "*",
+        "2amigos/yii2-selectize-widget" : "*",
+        "creocoder/yii2-nested-sets": "0.9.*",
+        "ahb360/kalpok":"dev-master"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/ahb360/kalpok"
+        }
+    ],
+
+    "require-dev": {
+        "yiisoft/yii2-codeception": "*",
+        "yiisoft/yii2-debug": "*",
+        "yiisoft/yii2-gii": "*",
+        "yiisoft/yii2-faker": "*"
+    },
+    "config": {
+        "process-timeout": 1800
+    },
+    "extra": {
+        "asset-installer-paths": {
+            "npm-asset-library": "vendor/npm",
+            "bower-asset-library": "vendor/bower"
+        }
+    }
+}

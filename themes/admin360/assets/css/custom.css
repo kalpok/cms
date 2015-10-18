@@ -1,0 +1,38 @@
+.breadcrumb {
+  text-align: left;
+  margin-bottom: 0;
+}
+#alerts-area .alert {
+  margin-bottom: 3px;
+}
+.btn-app {
+  margin-top: 0;
+  float: right;
+}
+.file-input input {
+  font-size: 0 !important;
+}
+.input-small{
+  width: 30%;
+}
+.input-medium{
+  width: 50%;
+}
+.input-large{
+  width: 70%;
+}
+.input-xlarge{
+  width: 90%;
+}
+.form-control-feedback {
+    right: 0;
+    left: auto;
+}
+.has-feedback .form-control {
+    padding-right: 42.5px;
+    padding-left: 12px;
+    direction: ltr;
+}
+.single-file-upload {
+  position: relative;
+}
