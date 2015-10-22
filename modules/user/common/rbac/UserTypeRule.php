@@ -1,11 +1,11 @@
 <?php
-namespace kalpok\rbac;
+
+namespace modules\user\common\rbac;
 
 use Yii;
-use yii\rbac\Rule;
-use kalpok\modules\user\common\models\User;
+use modules\user\common\models\User;
 
-class UserTypeRule extends Rule
+class UserTypeRule extends \yii\rbac\Rule
 {
     public $name = 'userType';
 

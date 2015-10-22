@@ -2,7 +2,7 @@
 use core\widgets\Panel;
 use yii\widgets\DetailView;
 use core\widgets\ActionButtons;
-use core\modules\user\backend\models\User;
+use modules\user\backend\models\User;
 
 $this->title = $model->email;
 ?>

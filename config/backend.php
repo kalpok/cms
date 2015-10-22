@@ -30,9 +30,9 @@ return [
         ],
     ],
     'modules' => [
-        'page' => 'app\modules\page\backend\Module',
-        'user' => 'app\modules\user\backend\Module',
-        'setting' => 'app\modules\setting\Module'
+        'page' => 'modules\page\backend\Module',
+        'user' => 'modules\user\backend\Module',
+        'setting' => 'modules\setting\Module'
     ],
     'params' => [
         'app' => 'backend',

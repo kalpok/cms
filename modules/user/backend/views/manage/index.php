@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 use core\widgets\Panel;
 use core\widgets\ActionButtons;
-use core\modules\user\backend\models\User;
+use modules\user\backend\models\User;
 
 $this->title = 'مدیریت کاربران';
 $this->params['breadcrumbs'][] = $this->title;

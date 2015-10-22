@@ -4,7 +4,7 @@ return [
     'bootstrap' => ['log'],
     'basePath' => dirname(__DIR__),
     'controllerMap' => [
-        'rbac' => 'kalpok\console\RbacController',
+        'rbac' => 'modules\user\install\console\RbacController',
     ],
     'components' => [
         'log' => [

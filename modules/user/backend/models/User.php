@@ -1,9 +1,9 @@
 <?php
 
-namespace core\modules\user\backend\models;
+namespace modules\user\backend\models;
 
 use Yii;
-use core\modules\user\common\models\User as BaseUser;
+use modules\user\common\models\User as BaseUser;
 
 class User extends BaseUser
 {

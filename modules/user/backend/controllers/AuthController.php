@@ -1,10 +1,10 @@
 <?php
-namespace core\modules\user\backend\controllers;
+namespace modules\user\backend\controllers;
 
 use Yii;
 use yii\filters\AccessControl;
-use core\modules\user\backend\models\User;
-use core\modules\user\common\models\LoginForm;
+use modules\user\backend\models\User;
+use modules\user\common\models\LoginForm;
 
 class AuthController extends \yii\web\Controller
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace core\modules\user\frontend;
+namespace modules\user\frontend;
 
 class Module extends \yii\base\Module
 {
-    public $controllerNamespace = 'core\modules\user\frontend\controllers';
+    public $controllerNamespace = 'modules\user\frontend\controllers';
     public $defaultRoute = 'front/index';
 
     public function init()

@@ -1,6 +1,6 @@
 <?php
 // TODO
-namespace core\modules\user\backend\models;
+namespace modules\user\backend\models;
 
 use Yii;
 use yii\helpers\Json;

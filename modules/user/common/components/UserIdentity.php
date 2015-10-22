@@ -1,12 +1,12 @@
 <?php
 
-namespace core\modules\user\common\components;
+namespace modules\user\common\components;
 
 use Yii;
 use yii\helpers\ArrayHelper;
 use yii\web\IdentityInterface;
 use yii\base\NotSupportedException;
-use core\modules\user\common\models\User;
+use modules\user\common\models\User;
 
 class UserIdentity extends User implements IdentityInterface
 {

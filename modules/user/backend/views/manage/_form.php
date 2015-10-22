@@ -3,8 +3,8 @@ use yii\helpers\Html;
 use core\widgets\Panel;
 use core\widgets\Button;
 use yii\bootstrap\ActiveForm;
-use core\modules\user\backend\models\User;
-use core\modules\user\common\widgets\ShowPassword;
+use modules\user\backend\models\User;
+use modules\user\common\widgets\ShowPassword;
 
 $backLink = $model->isNewRecord ? ['index'] : ['view', 'id' => $model->id];
 ?>

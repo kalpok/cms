@@ -1,12 +1,12 @@
 <?php
-namespace core\modules\user\backend\controllers;
+namespace modules\user\backend\controllers;
 
 use Yii;
 use core\web\AdminController;
 use yii\filters\AccessControl;
-use core\modules\user\backend\models\User;
-use core\modules\user\backend\models\UserSearch;
-use core\modules\user\backend\models\AuthAssignment;
+use modules\user\backend\models\User;
+use modules\user\backend\models\UserSearch;
+use modules\user\backend\models\AuthAssignment;
 
 class ManageController extends AdminController
 {

@@ -1,5 +1,5 @@
 <?php
-namespace core\modules\user\common\widgets;
+namespace modules\user\common\widgets;
 
 use Yii;
 use yii\web\View;
