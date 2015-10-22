@@ -1,7 +1,7 @@
 <?php
 ini_set('display_errors', 1);
 error_reporting(E_ALL | E_STRICT);
-// require(dirname(__FILE__).'/../../core/helpers/globals.php');
+require(dirname(__FILE__).'/../../helpers/globals.php');
 
 // comment out the following two lines when deployed to production
 defined('YII_DEBUG') or define('YII_DEBUG', true);
