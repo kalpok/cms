@@ -1,7 +1,7 @@
 <?php
 return [
     'controllerMap' => [
-        'site' => 'kalpok\controllers\FrontendController',
+        'site' => 'app\controllers\FrontendController',
     ],
     'aliases' => [
         '@webroot' => '@app/web',

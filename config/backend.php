@@ -1,7 +1,7 @@
 <?php
 return [
     'controllerMap' => [
-        'site' => 'kalpok\controllers\BackendController',
+        'site' => 'app\controllers\BackendController',
     ],
     'aliases' => [
         '@webroot' => '@app/web/admin',
@@ -24,12 +24,12 @@ return [
             ]
         ],
         'frontendUrlManager' => [
-            'class' => 'kalpok\web\UrlManager',
+            'class' => 'yii\web\UrlManager',
             'showScriptName' => false,
             'baseUrl' => '/'
         ],
         'user' => [
-            'class' => 'kalpok\web\User'
+            'class' => 'modules\user\common\components\User'
         ],
     ],
     'modules' => [
