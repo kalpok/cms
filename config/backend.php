@@ -1,8 +1,5 @@
 <?php
 return [
-    'controllerMap' => [
-        'site' => 'app\controllers\BackendController',
-    ],
     'aliases' => [
         '@webroot' => '@app/web/admin',
     ],
@@ -38,6 +35,6 @@ return [
         'setting' => 'app\modules\setting\Module'
     ],
     'params' => [
-        'application' => 'backend',
+        'app' => 'backend',
     ]
 ];

@@ -1,8 +1,5 @@
 <?php
 return [
-    'controllerMap' => [
-        'site' => 'app\controllers\FrontendController',
-    ],
     'aliases' => [
         '@webroot' => '@app/web',
     ],
@@ -24,6 +21,6 @@ return [
     'modules' => [
     ],
     'params' => [
-        'application' => 'frontend',
+        'app' => 'frontend',
     ]
 ];
