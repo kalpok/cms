@@ -53,7 +53,7 @@ $config = [
         'user' => [
             'enableAutoLogin' => true,
             'loginUrl' => ['/user/auth/login'],
-            'identityClass' => 'app\modules\user\common\components\UserIdentity'
+            'identityClass' => 'modules\user\common\components\UserIdentity'
         ],
         'db' => require(__DIR__ . '/local/db.php')
     ],

@@ -1,7 +1,7 @@
 <?php
-use core\widgets\Panel;
+use themes\admin360\widgets\Panel;
 use yii\widgets\DetailView;
-use core\widgets\ActionButtons;
+use themes\admin360\widgets\ActionButtons;
 use modules\user\backend\models\User;
 
 $this->title = $model->email;

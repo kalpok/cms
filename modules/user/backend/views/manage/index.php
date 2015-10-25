@@ -2,8 +2,8 @@
 use yii\widgets\Pjax;
 use yii\helpers\Html;
 use yii\grid\GridView;
-use core\widgets\Panel;
-use core\widgets\ActionButtons;
+use themes\admin360\widgets\Panel;
+use themes\admin360\widgets\ActionButtons;
 use modules\user\backend\models\User;
 
 $this->title = 'مدیریت کاربران';
@@ -27,7 +27,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'dataProvider' => $dataProvider,
             'filterModel' => $searchModel,
             'columns' => [
-                ['class' => 'core\grid\IDColumn'],
+                ['class' => 'kalpok\grid\IDColumn'],
                 'email',
                 [
                     'attribute' => 'type',
@@ -45,7 +45,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     },
                 ],
                 [
-                    'class' => 'core\grid\ActionColumn',
+                    'class' => 'kalpok\grid\ActionColumn',
                     'template' => '{view} {update} {delete} {assign}
                         {change-password}',
                     'buttons' => [

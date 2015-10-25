@@ -1,6 +1,6 @@
 <?php
 use yii\helpers\Html;
-use core\widgets\ActionButtons;
+use themes\admin360\widgets\ActionButtons;
 
 $this->title = 'کاربر جدید';
 $this->params['breadcrumbs'][] = ['label' => 'کاربران', 'url' => ['index']];

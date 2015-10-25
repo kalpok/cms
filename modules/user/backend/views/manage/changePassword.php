@@ -1,9 +1,9 @@
 <?php
 use yii\helpers\Html;
-use core\widgets\Panel;
-use core\widgets\Button;
+use themes\admin360\widgets\Panel;
+use themes\admin360\widgets\Button;
 use yii\bootstrap\ActiveForm;
-use core\widgets\ActionButtons;
+use themes\admin360\widgets\ActionButtons;
 use modules\user\backend\models\User;
 use modules\user\common\widgets\ShowPassword;
 ?>

@@ -2,7 +2,7 @@
 namespace modules\user\backend\controllers;
 
 use Yii;
-use core\web\AdminController;
+use kalpok\controllers\AdminController;
 use yii\filters\AccessControl;
 use modules\user\backend\models\User;
 use modules\user\backend\models\UserSearch;

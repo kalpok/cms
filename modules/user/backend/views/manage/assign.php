@@ -1,8 +1,8 @@
 <?php
 use yii\helpers\Html;
 use yii\bootstrap\Collapse;
-use aca\backend\widgets\box\Box;
-use aca\backend\widgets\button\Button;
+use themes\admin360\widgets\Panel;
+use themes\admin360\widgets\Button;
 
 $this->title = 'اعطای دسترسی به کاربر';
 $this->params['breadcrumbs'][] = $this->title;
