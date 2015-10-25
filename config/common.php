@@ -34,7 +34,7 @@ $config = [
             'errorAction' => 'site/error',
         ],
         'setting' => [
-            'class' => 'kalpok\components\Setting',
+            'class' => 'modules\setting\components\Setting',
         ],
         'authManager' => [
             'class' => 'yii\rbac\DbManager',

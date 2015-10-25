@@ -1,11 +1,11 @@
 <?php
 
-namespace core\modules\setting\controllers;
+namespace modules\setting\controllers;
 
 use Yii;
 use yii\base\Model;
 use yii\filters\AccessControl;
-use core\modules\setting\models\Setting;
+use modules\setting\models\Setting;
 
 class ManageController extends \yii\web\Controller
 {

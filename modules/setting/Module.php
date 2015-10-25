@@ -1,5 +1,5 @@
 <?php
-namespace core\modules\setting;
+namespace modules\setting;
 
 class Module extends \yii\base\Module
 {
