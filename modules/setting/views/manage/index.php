@@ -1,8 +1,8 @@
 <?php
 use yii\helpers\Html;
-use core\widgets\Panel;
-use core\widgets\Button;
-use core\helpers\Utility;
+use themes\admin360\widgets\Panel;
+use themes\admin360\widgets\Button;
+use kalpok\helpers\Utility;
 use yii\bootstrap\ActiveForm;
 
 $this->title = 'تنظیمات';

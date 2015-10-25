@@ -6,7 +6,7 @@ class Module extends \yii\base\Module
     public $title;
     public $menu;
     public $defaultRoute = 'manage/index';
-    public $controllerNamespace = 'core\modules\setting\controllers';
+    public $controllerNamespace = 'modules\setting\controllers';
 
     public function init()
     {
