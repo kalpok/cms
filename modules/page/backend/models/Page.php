@@ -1,11 +1,11 @@
 <?php
-namespace core\modules\page\backend\models;
+namespace modules\page\backend\models;
 
 use Yii;
-use core\behaviors\TimestampBehavior;
-use core\modules\page\common\models\Page as basePage;
-use core\validators\FarsiCharactersValidator;
-use core\file\behaviors\FileBehavior;
+use kalpok\behaviors\TimestampBehavior;
+use modules\page\common\models\Page as basePage;
+use kalpok\validators\FarsiCharactersValidator;
+use kalpok\file\behaviors\FileBehavior;
 
 class Page extends basePage
 {

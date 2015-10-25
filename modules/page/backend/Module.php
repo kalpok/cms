@@ -1,14 +1,14 @@
 <?php
-namespace core\modules\page\backend;
+namespace modules\page\backend;
 
-use core\modules\page\backend\models\Page;
+use modules\page\backend\models\Page;
 
 class Module extends \yii\base\Module
 {
     public $title;
     public $menu;
     public $defaultRoute = 'manage/index';
-    public $controllerNamespace = 'core\modules\page\backend\controllers';
+    public $controllerNamespace = 'modules\page\backend\controllers';
 
     public function init()
     {

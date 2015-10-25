@@ -1,9 +1,9 @@
 <?php
 
-namespace aca\page\frontend\controllers;
+namespace modules\page\frontend\controllers;
 
 use yii\web\Controller;
-use aca\page\frontend\models\Page;
+use modules\page\frontend\models\Page;
 use yii\web\NotFoundHttpException;
 
 class FrontController extends Controller

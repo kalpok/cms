@@ -1,11 +1,11 @@
 <?php
 
-namespace aca\page\frontend;
+namespace modules\page\frontend;
 
 class Module extends \yii\base\Module
 {
     public $urlRules;
-    public $controllerNamespace = 'aca\page\frontend\controllers';
+    public $controllerNamespace = 'modules\page\frontend\controllers';
 
     public function init()
     {

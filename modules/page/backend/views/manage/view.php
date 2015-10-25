@@ -1,9 +1,9 @@
 <?php
 use yii\helpers\Html;
-use core\widgets\Panel;
+use themes\admin360\widgets\Panel;
 use yii\bootstrap\Alert;
 use yii\widgets\DetailView;
-use core\widgets\ActionButtons;
+use themes\admin360\widgets\ActionButtons;
 
 $this->title = $model->title;
 $this->params['breadcrumbs'][] = ['label' => 'صفحات استاتیک', 'url' => ['index']];

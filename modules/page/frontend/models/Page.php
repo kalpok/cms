@@ -1,10 +1,10 @@
 <?php
-namespace aca\page\frontend\models;
+namespace modules\page\frontend\models;
 
 use Yii;
-use aca\page\common\models\Page as basePage;
+use modules\page\common\models\Page as basePage;
 use yii\db\ActiveQuery;
-use aca\fileManager\frontend\behaviors\FileBehavior;
+use kalpok\file\behaviors\FileBehavior;
 
 class Page extends basePage
 {

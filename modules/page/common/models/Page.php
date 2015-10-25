@@ -1,5 +1,5 @@
 <?php
-namespace core\modules\page\common\models;
+namespace modules\page\common\models;
 
 use creocoder\nestedsets\NestedSetsBehavior;
 

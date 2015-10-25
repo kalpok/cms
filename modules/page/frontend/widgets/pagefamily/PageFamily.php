@@ -1,5 +1,5 @@
 <?php
-namespace aca\page\frontend\widgets\pagefamily;
+namespace modules\page\frontend\widgets\pagefamily;
 
 use Yii;
 use yii\base\Widget;

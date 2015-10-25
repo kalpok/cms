@@ -1,13 +1,13 @@
 <?php
 
 use yii\helpers\Html;
-use core\widgets\Panel;
-use core\widgets\Button;
+use themes\admin360\widgets\Panel;
+use themes\admin360\widgets\Button;
 use yii\widgets\ActiveForm;
-use core\widgets\editor\Editor;
-use core\widgets\SelectizeDropDownList;
-use core\modules\page\backend\models\Page;
-use core\file\widgets\singleupload\SingleImageUpload;
+use themes\admin360\widgets\editor\Editor;
+use themes\admin360\widgets\SelectizeDropDownList;
+use modules\page\backend\models\Page;
+use kalpok\file\widgets\singleupload\SingleImageUpload;
 
 $backLink = $model->isNewRecord ? ['index'] : ['view', 'id' => $model->id];
 ?>

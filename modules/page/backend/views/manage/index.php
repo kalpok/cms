@@ -1,8 +1,8 @@
 <?php
 use yii\widgets\Pjax;
 use yii\grid\GridView;
-use core\widgets\Panel;
-use core\widgets\ActionButtons;
+use themes\admin360\widgets\Panel;
+use themes\admin360\widgets\ActionButtons;
 
 $this->title = 'صفحات استاتیک';
 $this->params['breadcrumbs'][] = $this->title;

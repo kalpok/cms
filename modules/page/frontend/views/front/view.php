@@ -1,7 +1,7 @@
 <?php
 
 use yii\helpers\Html;
-use aca\page\frontend\widgets\pagefamily\PageFamily;
+use modules\page\frontend\widgets\pagefamily\PageFamily;
 
 $this->params['title'] = $page->title;
 $this->params['breadcrumbs'] = [

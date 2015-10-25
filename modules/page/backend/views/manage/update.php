@@ -1,6 +1,6 @@
 <?php
 use yii\helpers\Html;
-use core\widgets\ActionButtons;
+use themes\admin360\widgets\ActionButtons;
 
 $this->title = 'ویرایش صفحه : ' . ' ' . $model->title;
 $this->params['breadcrumbs'][] = ['label' => 'صفحات استاتیک', 'url' => ['index']];

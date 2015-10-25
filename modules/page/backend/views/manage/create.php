@@ -1,7 +1,7 @@
 <?php
 
 use yii\helpers\Html;
-use core\widgets\ActionButtons;
+use themes\admin360\widgets\ActionButtons;
 
 $this->title = 'ساخت صفحه جدید';
 $this->params['breadcrumbs'][] = ['label' => 'صفحات استاتیک', 'url' => ['index']];

@@ -1,11 +1,11 @@
 <?php
-namespace core\modules\page\backend\controllers;
+namespace modules\page\backend\controllers;
 
 use Yii;
-use core\web\AdminController;
+use kalpok\controllers\AdminController;
 use yii\filters\AccessControl;
-use core\modules\page\backend\models\Page;
-use core\modules\page\backend\models\PageSearch;
+use modules\page\backend\models\Page;
+use modules\page\backend\models\PageSearch;
 
 class ManageController extends AdminController
 {
