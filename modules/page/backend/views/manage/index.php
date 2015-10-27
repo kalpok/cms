@@ -24,9 +24,9 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'core\grid\IDColumn'],
+            ['class' => 'kalpok\grid\IDColumn'],
             [
-                'class' => 'core\grid\ThumbnailColumn',
+                'class' => 'kalpok\grid\ThumbnailColumn',
                 'group' => 'image',
                 'label' => 'تصویر شاخص'
             ],
@@ -41,7 +41,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'format' =>'date',
                 'filter' =>false
             ],
-            ['class' => 'core\grid\ActiveColumn'],
+            ['class' => 'kalpok\grid\ActiveColumn'],
             [
              'class' => 'yii\grid\ActionColumn',
              'template' => '{view} {update}'
