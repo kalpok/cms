@@ -10,7 +10,8 @@ $config = [
     'aliases' => [
         '@config' => '@app/config',
         '@themes' => '@app/themes',
-        '@modules' => '@app/modules'
+        '@modules' => '@app/modules',
+        '@kalpok' => '@vendor/ahb360/kalpok'
     ],
     'controllerMap' => [
         'file' => 'kalpok\file\controllers\FileController'
