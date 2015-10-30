@@ -23,7 +23,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             echo $form->field(
                                 $settings['website.maintenanceMode'],
                                 "[website.maintenanceMode]value"
-                            )->dropDownList(['فعال', 'غیر فعال'])
+                            )->dropDownList(['در دسترس', 'غیر فعال'])
                             ->label($settings['website.maintenanceMode']->getLabel())
                             ->hint('سایت در حالت غیر فعال از دسترس کاربران خارج می شود.');
                         ?>
@@ -207,7 +207,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     ]
                 ); ?>
                 <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-8">
                             <?php echo $field = $form->field(
                                     $settings['website.googleAnalytics'],
                                     "[website.googleAnalytics]value"
@@ -219,9 +219,6 @@ $this->params['breadcrumbs'][] = $this->title;
                                     ]
                                 )->label($settings['website.googleAnalytics']->getLabel());
                             ?>
-                        </div>
-                        <div class="col-md-5">
-                            <?php echo Html::img(['/../files/images/google_analytics.jpg'], ['class'=>"google-image", 'alt'=>"User Image",'style'=>'width:90%']); ?>
                         </div>
                     </div>
                 <?php Panel::end();?>

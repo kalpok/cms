@@ -28,7 +28,7 @@ class Setting extends \yii\db\ActiveRecord
             'website.deactiveUser' => 'غیر فعال کردن کاربر در صورت اشتباه وارد نمودن اطلاعات کاربری',
             'website.failedLoginAttempts' => 'تعداد دفعات مجاز اشتباه زدن اطلاعات کاربری',
             'website.googleAnalytics' => 'کد گوگل آنالیتیکز',
-            'website.maintenanceMode' => 'وضعیت سیستم',
+            'website.maintenanceMode' => 'وضعیت سایت',
             'email.senderEmail' => 'آدرس ایمیل فرستنده',
             'email.senderName' => 'نام فرستنده',
             'email.protocol' => 'نوع ایمیل',

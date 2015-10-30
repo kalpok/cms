@@ -37,7 +37,7 @@ class ManageController extends \yii\web\Controller
             }
             Yii::$app->session->addFlash(
                 'success',
-                'داده مورد نظر با موفقیت در سیستم درج شد.'
+                'تنظیمات با موفقیت ذخیره شد.'
             );
             return $this->redirect('index');
         }
