@@ -6,9 +6,9 @@ use Yii;
 use yii\helpers\ArrayHelper;
 use yii\web\IdentityInterface;
 use yii\base\NotSupportedException;
-use modules\user\common\models\User;
+use modules\user\common\models\User as UserModel;
 
-class UserIdentity extends User implements IdentityInterface
+class UserIdentity extends UserModel implements IdentityInterface
 {
     public static function findIdentity($id)
     {
