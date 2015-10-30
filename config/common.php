@@ -35,7 +35,7 @@ $config = [
             'errorAction' => 'site/error',
         ],
         'setting' => [
-            'class' => 'modules\setting\components\Setting',
+            'class' => 'modules\setting\components\Settings',
         ],
         'authManager' => [
             'class' => 'yii\rbac\DbManager',

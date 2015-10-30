@@ -4,16 +4,15 @@ namespace modules\setting\components;
 use Yii;
 use modules\setting\models\Setting as SettingModel;
 
-class Setting
+class Settings
 {
     private $items;
 
     public function get($key)
     {
-        if (!isset($this->items[$key])) {
+        if (!isset($this->items))
             $this->initializeItems();
-        }
-        return $this->items[$key]->value;
+        return isset($this->items[$key]) ? $this->items[$key]->value : null;
     }
 
     public function set($key, $value)
