@@ -31,7 +31,7 @@ $config = [
             'datetimeFormat' => 'php:d F Y | H:i',
         ],
         'date' => [
-            'class' => 'kalpok\components\Date',
+            'class' => 'kalpok\i18n\DateTime',
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
