@@ -2,10 +2,8 @@
 $config = [
     'id' => 'kalpok',
     'language' => 'fa',
-    'bootstrap' => ['log'],
     'name' => 'kalpol cms',
     'sourceLanguage' => 'en',
-    'timeZone' => 'Asia/Tehran',
     'basePath' => dirname(__DIR__),
     'aliases' => [
         '@config' => '@app/config',
@@ -15,6 +13,10 @@ $config = [
     ],
     'controllerMap' => [
         'file' => 'kalpok\file\controllers\FileController'
+    ],
+    'bootstrap' => [
+        'log',
+        'modules\setting\components\SettingApplier'
     ],
     'components' => [
         'cache' => [
