@@ -4,7 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ee05651c251f77127b0307abb6f6aff4",
+    "hash": "f812a5df7152297fd2eb146645895d3e",
+    "content-hash": "ed3072a61765877e9c470f4a5c971f67",
     "packages": [
         {
             "name": "2amigos/yii2-ckeditor-widget",
@@ -137,12 +138,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ahb360/kalpok.git",
-                "reference": "ce565be46b2ba845d825265c408f978cab1a7cd0"
+                "reference": "7dbaece80bf83940bf7b79213d3c00f1df595afb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ahb360/kalpok/zipball/ce565be46b2ba845d825265c408f978cab1a7cd0",
-                "reference": "ce565be46b2ba845d825265c408f978cab1a7cd0",
+                "url": "https://api.github.com/repos/ahb360/kalpok/zipball/7535b535cb06b474852d151b539c120200191b57",
+                "reference": "7dbaece80bf83940bf7b79213d3c00f1df595afb",
                 "shasum": ""
             },
             "require": {
@@ -151,7 +152,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "ahb360\\kalpok\\": ""
+                    "kalpok\\": ""
                 }
             },
             "license": [
@@ -167,7 +168,7 @@
                 "source": "https://github.com/ahb360/kalpok/tree/master",
                 "issues": "https://github.com/ahb360/kalpok/issues"
             },
-            "time": "2015-10-18 07:38:53"
+            "time": "2015-10-27 14:37:20"
         },
         {
             "name": "bower-asset/bootstrap",
@@ -442,16 +443,16 @@
         },
         {
             "name": "bower-asset/sifter",
-            "version": "v0.4.4",
+            "version": "v0.4.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/brianreavis/sifter.js.git",
-                "reference": "ef7d170a617715cbedd8c70f9fdc5f3b5a0c1e98"
+                "reference": "facff802f388feba9bc4c649fe5acd3ad53d84e9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/brianreavis/sifter.js/zipball/ef7d170a617715cbedd8c70f9fdc5f3b5a0c1e98",
-                "reference": "ef7d170a617715cbedd8c70f9fdc5f3b5a0c1e98",
+                "url": "https://api.github.com/repos/brianreavis/sifter.js/zipball/facff802f388feba9bc4c649fe5acd3ad53d84e9",
+                "reference": "facff802f388feba9bc4c649fe5acd3ad53d84e9",
                 "shasum": ""
             },
             "type": "bower-asset-library",
@@ -712,6 +713,57 @@
                 "image processing"
             ],
             "time": "2013-07-10 17:25:36"
+        },
+        {
+            "name": "sallar/jdatetime",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sallar/jDateTime.git",
+                "reference": "e6bef94defe0f1ac07bd807f54ca673b676ef8a9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sallar/jDateTime/zipball/e6bef94defe0f1ac07bd807f54ca673b676ef8a9",
+                "reference": "e6bef94defe0f1ac07bd807f54ca673b676ef8a9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "jdatetime.class.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sallar Kaboli",
+                    "email": "sallar.kaboli@gmail.com",
+                    "homepage": "http://sallar.me",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Jalali (Shamsi) DateTime class written in PHP, Supports year higher than 2038",
+            "homepage": "http://sallar.me/projects/jdatetime/",
+            "keywords": [
+                "Jalali",
+                "date",
+                "datetime",
+                "farsi",
+                "iran",
+                "jalalidate",
+                "jdatetime",
+                "persian",
+                "shamsi",
+                "time"
+            ],
+            "time": "2015-03-13 22:36:28"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -1360,7 +1412,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "ahb360/kalpok": 20
+        "ahb360/kalpok": 20,
+        "sallar/jdatetime": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

@@ -21,7 +21,6 @@
             "url": "https://github.com/ahb360/kalpok"
         }
     ],
-
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
         "yiisoft/yii2-debug": "*",
