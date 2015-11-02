@@ -16,7 +16,8 @@ $config = [
     ],
     'bootstrap' => [
         'log',
-        'modules\setting\components\SettingApplier'
+        'kalpok\di\RegisterDependencies',
+        'modules\setting\components\SettingApplier',
     ],
     'components' => [
         'cache' => [
@@ -29,9 +30,6 @@ $config = [
             'class' => 'kalpok\i18n\Formatter',
             'dateFormat' => 'php:d F Y',
             'datetimeFormat' => 'php:d F Y | H:i',
-        ],
-        'date' => [
-            'class' => 'kalpok\i18n\DateTime',
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
