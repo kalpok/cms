@@ -29,8 +29,7 @@ class Page extends basePage
     {
         $query = new ActiveQuery(get_called_class());
         $query->andWhere(
-            'websiteId = :id AND isActive = 1',
-            [':id' => Yii::$app->website->id]
+            'isActive = 1'
         );
         return $query;
     }
