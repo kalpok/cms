@@ -9,6 +9,7 @@ class m150510_064910_create_page_module extends Migration
     {
         $this->createTable('page', array(
             'id' => Schema::TYPE_PK,
+            'language' => 'string',
             'title' => Schema::TYPE_STRING . ' COLLATE utf8_unicode_ci NOT NULL',
             'content' => 'text COLLATE utf8_unicode_ci NOT NULL',
             'createdAt' => Schema::TYPE_INTEGER . ' NOT NULL',

@@ -25,6 +25,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'kalpok\grid\IDColumn'],
+            ['class' => 'kalpok\grid\LanguageColumn'],
             [
                 'class' => 'kalpok\grid\ThumbnailColumn',
                 'group' => 'image',

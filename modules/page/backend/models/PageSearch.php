@@ -10,7 +10,7 @@ class PageSearch extends Page
     {
         return [
             [['id', 'isActive'], 'integer'],
-            [['title'], 'safe'],
+            [['title', 'language'], 'safe'],
         ];
     }
 
@@ -42,6 +42,7 @@ class PageSearch extends Page
             'isActive' => $this->isActive
         ]);
         $query->andFilterWhere(['like', 'title', $this->title]);
+        $query->andFilterWhere(['like', 'language', $this->language]);
         return $dataProvider;
     }
 }

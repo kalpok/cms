@@ -41,6 +41,7 @@ class Page extends basePage
             ['title', 'trim'],
             ['content', 'string'],
             ['isActive', 'integer'],
+            ['language', 'default', 'value' => null],
             ['title', 'string', 'max' => 255],
             [['title', 'content'], FarsiCharactersValidator::className()]
         ];
@@ -52,6 +53,7 @@ class Page extends basePage
             'id' => 'شناسه',
             'title' => 'عنوان',
             'isActive' => 'نمایش در سایت',
+            'language' => 'زبان',
             'content' => 'محتوای صفحه',
             'parentId' => 'صفحه پدر',
             'createdAt' => 'تاریخ ساخت صفحه',

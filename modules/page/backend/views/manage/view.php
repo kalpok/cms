@@ -64,6 +64,11 @@ $this->params['breadcrumbs'][] = $this->title;
                 'model' => $model,
                 'attributes' => [
                     'id:farsiNumber',
+                    [
+                        'attribute' => 'language',
+                        'visible' => Yii::$app->i18n->isMultiLanguage(),
+                        'format' => 'language'
+                    ],
                     'title',
                     'createdAt:date',
                     'updatedAt:date',
