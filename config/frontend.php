@@ -1,5 +1,8 @@
 <?php
 return [
+    'on beforeAction' => function ($event) {
+        kalpok\i18n\LanguageAndCalendarSetter::set();
+    },
     'aliases' => [
         '@webroot' => '@app/web',
     ],

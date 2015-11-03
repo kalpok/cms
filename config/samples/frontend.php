@@ -1,13 +1,5 @@
 <?php
 return [
-    // uncomment if multilanguage:
-    // 'on beforeAction' => function ($event) {
-    //     kalpok\i18n\LanguageAndCalendarSetter::set();
-    // },
-    // uncomment if UNI language:
-    // 'bootstrap' => [
-    //     'kalpok\i18n\LanguageAndCalendarSetter'
-    // ],
     'components' => [
         'view' => [
             'theme' => [
