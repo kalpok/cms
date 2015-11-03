@@ -1,5 +1,8 @@
 <?php
 return [
+    'bootstrap' => [
+        'kalpok\i18n\LanguageAndCalendarSetter'
+    ],
     'aliases' => [
         '@webroot' => '@app/web/admin',
     ],
