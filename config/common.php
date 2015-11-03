@@ -16,13 +16,9 @@ $config = [
     ],
     'bootstrap' => [
         'log',
-        'kalpok\di\RegisterDependencies',
         'modules\setting\components\SettingApplier',
     ],
     'components' => [
-        'cache' => [
-            'class' => 'yii\caching\FileCache',
-        ],
         'i18n' => [
             'class' => 'kalpok\i18n\I18N'
         ],
