@@ -6,10 +6,14 @@ return [
     'components' => [
         'urlManager' => [
             'enablePrettyUrl' => true,
-            'showScriptName' => false
+            'showScriptName' => false,
+            'rules' => [
+                'page/<id:\d+>' => 'page/front/view'
+            ]
         ]
     ],
     'modules' => [
+        'page' => 'modules\page\frontend\Module',
     ],
     'params' => [
         'app' => 'frontend',
