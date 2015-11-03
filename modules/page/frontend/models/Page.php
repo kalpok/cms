@@ -2,9 +2,9 @@
 namespace modules\page\frontend\models;
 
 use Yii;
-use modules\page\common\models\Page as basePage;
 use yii\db\ActiveQuery;
 use kalpok\file\behaviors\FileBehavior;
+use modules\page\common\models\Page as basePage;
 
 class Page extends basePage
 {
@@ -31,6 +31,11 @@ class Page extends basePage
         $query->andWhere(
             'isActive = 1'
         );
+        if (Yii::$app->i18n->isMultiLanguage()) {
+            $query->andWhere(
+                ['like', 'language', Yii::$app->language]
+            );
+        }
         return $query;
     }
 }

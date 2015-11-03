@@ -9,6 +9,7 @@ use yii\web\NotFoundHttpException;
 class FrontController extends Controller
 {
     public $layout = '//two-column';
+
     public function actionView($id)
     {
         $page = $this->findModel($id);
