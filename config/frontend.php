@@ -7,6 +7,9 @@ return [
         '@webroot' => '@app/web',
     ],
     'components' => [
+        'view' => [
+            'class' => 'kalpok\i18n\View'
+        ],
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
