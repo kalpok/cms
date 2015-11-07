@@ -70,6 +70,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         'format' => 'language'
                     ],
                     'title',
+                    'slug',
                     'createdAt:date',
                     'updatedAt:date',
                     'isActive:boolean',
