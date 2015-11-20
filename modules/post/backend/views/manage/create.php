@@ -1,21 +1,22 @@
 <?php
 
 use yii\helpers\Html;
-
+use themes\admin360\widgets\ActionButtons;
 
 /* @var $this yii\web\View */
 /* @var $model modules\post\backend\models\Post */
 
-$this->title = 'Create Post';
-$this->params['breadcrumbs'][] = ['label' => 'Posts', 'url' => ['index']];
+$this->title = 'افزودن نوشته';
+$this->params['breadcrumbs'][] = ['label' => 'همه نوشته‌ها', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="post-create">
-
-    <h1><?= Html::encode($this->title) ?></h1>
-
+<div class="post-manage-create">
+	<?= ActionButtons::widget([
+        'buttons' => [
+            'index' => ['label' => 'همه نوشته‌ها'],
+        ],
+    ]); ?>
     <?= $this->render('_form', [
         'model' => $model,
     ]) ?>
-
 </div>
