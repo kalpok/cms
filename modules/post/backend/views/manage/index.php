@@ -9,7 +9,7 @@ use themes\admin360\widgets\ActionButtons;
 $this->title = 'همه نوشته‌ها';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="post-index">
+<div class="post-manage-index">
     <?= ActionButtons::widget([
         'buttons' => [
             'create' => ['label' => 'افزودن نوشته'],
