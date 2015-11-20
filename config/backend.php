@@ -25,6 +25,7 @@ return [
     ],
     'modules' => [
         'page' => 'modules\page\backend\Module',
+        'post' => 'modules\post\backend\Module',
         'user' => 'modules\user\backend\Module',
         'setting' => 'modules\setting\Module'
     ],
