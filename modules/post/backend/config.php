@@ -15,6 +15,11 @@ return [
                 'url' => ['/post/manage/create'],
                 'visible' => Yii::$app->user->canAccessAny(['post.create'])
             ],
+            [
+                'label' => 'دسته‌ها',
+                'url' => ['/post/category/index'],
+                'visible' => Yii::$app->user->canAccessAny(['post.categories'])
+            ],
         ]
     ]
 ];

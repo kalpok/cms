@@ -33,10 +33,10 @@ class Category extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['title', 'slug', 'createdAt', 'updatedAt'], 'required'],
+            [['title'], 'required'],
             [['description'], 'string'],
-            [['createdAt', 'updatedAt', 'isActive'], 'integer'],
-            [['title', 'language', 'slug'], 'string', 'max' => 255]
+            [['isActive'], 'integer'],
+            [['title', 'language'], 'string', 'max' => 255]
         ];
     }
 
@@ -46,14 +46,14 @@ class Category extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'title' => 'Title',
-            'description' => 'Description',
-            'language' => 'Language',
+            'id' => 'شناسه',
+            'title' => 'عنوان',
+            'description' => 'توضیحات',
+            'language' => 'زبان',
             'slug' => 'Slug',
-            'createdAt' => 'Created At',
-            'updatedAt' => 'Updated At',
-            'isActive' => 'Is Active',
+            'createdAt' => 'تاریخ ایجاد نوشته',
+            'updatedAt' => 'آخرین بروزرسانی',
+            'isActive' => 'نمایش در سایت',
         ];
     }
 
