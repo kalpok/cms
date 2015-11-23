@@ -4,22 +4,8 @@ namespace modules\post\backend\models;
 
 use Yii;
 use kalpok\behaviors\TimestampBehavior;
+use kalpok\behaviors\SluggableBehavior;
 
-/**
- * This is the model class for table "post_category".
- *
- * @property integer $id
- * @property string $title
- * @property string $description
- * @property string $language
- * @property string $slug
- * @property integer $createdAt
- * @property integer $updatedAt
- * @property integer $isActive
- *
- * @property PostCategoryRelation[] $postCategoryRelations
- * @property Post[] $posts
- */
 class Category extends \yii\db\ActiveRecord
 {
     /**

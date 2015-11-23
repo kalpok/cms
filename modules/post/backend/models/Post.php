@@ -8,28 +8,8 @@ use kalpok\behaviors\TimestampBehavior;
 use kalpok\file\behaviors\FileBehavior;
 use kalpok\behaviors\CategoriesBehavior;
 
-/**
- * This is the model class for table "post".
- *
- * @property integer $id
- * @property string $title
- * @property string $summary
- * @property string $content
- * @property string $language
- * @property string $slug
- * @property integer $createdAt
- * @property integer $updatedAt
- * @property integer $isActive
- * @property integer $priority
- *
- * @property PostCategoryRelation[] $postCategoryRelations
- * @property PostCategory[] $categories
- */
 class Post extends \yii\db\ActiveRecord
 {
-    /**
-     * @inheritdoc
-     */
     public static function tableName()
     {
         return 'post';
@@ -91,26 +71,11 @@ class Post extends \yii\db\ActiveRecord
         ];
     }
 
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getPostCategoryRelations()
-    {
-        return $this->hasMany(PostCategoryRelation::className(), ['postId' => 'id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getCategories()
+    public function getCats()
     {
         return $this->hasMany(Category::className(), ['id' => 'categoryId'])->viaTable('post_category_relation', ['postId' => 'id']);
     }
 
-    /**
-     * @inheritdoc
-     * @return PostQuery the active query used by this AR class.
-     */
     public static function find()
     {
         return new PostQuery(get_called_class());
