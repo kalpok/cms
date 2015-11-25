@@ -34,13 +34,23 @@ class ManageController extends AdminController
                         ],
                         [
                             'allow' => true,
-                            'actions' => ['index', 'view'],
+                            'actions' => ['index', 'view', 'gallery'],
                             'roles' => ['page.create', 'page.update', 'page.delete'],
                         ],
                     ],
                 ],
             ]
         );
+    }
+
+    public function actions()
+    {
+        return [
+            'gallery' => [
+                'class' => 'kalpok\gallery\actions\GalleryAction',
+                'ownerModelClassName' => Page::className()
+            ]
+        ];
     }
 
     public function init()

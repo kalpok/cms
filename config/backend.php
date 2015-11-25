@@ -6,6 +6,9 @@ return [
     'aliases' => [
         '@webroot' => '@app/web/admin',
     ],
+    'controllerMap' => [
+        'gallery' => 'kalpok\gallery\controllers\GalleryController'
+    ],
     'components' => [
         'urlManager' => [
             'enablePrettyUrl' => true,
