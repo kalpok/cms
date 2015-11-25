@@ -19,7 +19,7 @@ class PostSearch extends Post
     {
         return [
             [['id', 'createdAt', 'updatedAt', 'isActive', 'priority'], 'integer'],
-            [['title', 'summary', 'content', 'language', 'slug'], 'safe'],
+            [['title', 'summary', 'content', 'language', 'slug', 'categories'], 'safe'],
         ];
     }
 
@@ -45,22 +45,23 @@ class PostSearch extends Post
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            'sort' => [
+                'defaultOrder' => [
+                    'createdAt' => SORT_DESC,
+                ],
+            ],
         ]);
 
         $this->load($params);
 
         if (!$this->validate()) {
-            // uncomment the following line if you do not want to return any records when validation fails
-            // $query->where('0=1');
+            $query->where('0=1');
             return $dataProvider;
         }
 
         $query->andFilterWhere([
             'id' => $this->id,
-            'createdAt' => $this->createdAt,
-            'updatedAt' => $this->updatedAt,
             'isActive' => $this->isActive,
-            'priority' => $this->priority,
         ]);
 
         $query->andFilterWhere(['like', 'title', $this->title])
@@ -68,7 +69,9 @@ class PostSearch extends Post
             ->andFilterWhere(['like', 'content', $this->content])
             ->andFilterWhere(['like', 'language', $this->language])
             ->andFilterWhere(['like', 'slug', $this->slug]);
-
+        if (!empty($this->categories)) {
+            $query->hasAnyCategory($this->categories);
+        }
         return $dataProvider;
     }
 }

@@ -7,6 +7,7 @@ use kalpok\behaviors\SluggableBehavior;
 use kalpok\behaviors\TimestampBehavior;
 use kalpok\file\behaviors\FileBehavior;
 use kalpok\behaviors\CategoriesBehavior;
+use modules\post\backend\models\PostQuery;
 
 class Post extends \yii\db\ActiveRecord
 {
@@ -70,6 +71,12 @@ class Post extends \yii\db\ActiveRecord
             'isActive' => 'نمایش در سایت',
             'priority' => 'اولویت',
         ];
+    }
+
+    public static function find()
+    {
+        $query = new PostQuery(get_called_class());
+        return $query;
     }
 
     public function getCats()

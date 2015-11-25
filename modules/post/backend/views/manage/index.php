@@ -3,8 +3,10 @@
 use yii\helpers\Html;
 use yii\widgets\Pjax;
 use yii\grid\GridView;
+use yii\helpers\ArrayHelper;
 use themes\admin360\widgets\Panel;
 use themes\admin360\widgets\ActionButtons;
+use modules\post\backend\models\Category;
 
 $this->title = 'همه نوشته‌ها';
 $this->params['breadcrumbs'][] = $this->title;
@@ -31,6 +33,17 @@ $this->params['breadcrumbs'][] = $this->title;
                     ['class' => 'kalpok\grid\IDColumn'],
                     ['class' => 'kalpok\grid\LanguageColumn'],
                     'title',
+                    [
+                        'attribute' => 'categories',
+                        'filter' => ArrayHelper::map(
+                            Category::findAll(['isActive' => Category::STATUS_ACTIVE]),
+                            'title',
+                            'title'
+                        ),
+                        'value' => function ($model) {
+                            return $model->categories;
+                        },
+                    ],
                     [
                         'attribute' => 'createdAt',
                         'format' =>'date',
