@@ -64,6 +64,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     'title',
                     'summary',
                     'slug',
+                    'categories',
                     'createdAt:date',
                     'updatedAt:date',
                     'isActive:boolean',

@@ -45,7 +45,7 @@ class Post extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['title', 'content'], 'required'],
+            [['title', 'content', 'categories'], 'required'],
             [['summary', 'content'], 'string'],
             [['isActive', 'priority'], 'integer'],
             [['title', 'language'], 'string', 'max' => 255]
@@ -64,6 +64,7 @@ class Post extends \yii\db\ActiveRecord
             'content' => 'محتوا',
             'language' => 'زبان',
             'slug' => 'Slug',
+            'categories' => 'دسته ها',
             'createdAt' => 'تاریخ ایجاد نوشته',
             'updatedAt' => 'آخرین بروزرسانی',
             'isActive' => 'نمایش در سایت',
