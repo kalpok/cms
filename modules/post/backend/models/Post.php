@@ -75,9 +75,4 @@ class Post extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Category::className(), ['id' => 'categoryId'])->viaTable('post_category_relation', ['postId' => 'id']);
     }
-
-    public static function find()
-    {
-        return new PostQuery(get_called_class());
-    }
 }
