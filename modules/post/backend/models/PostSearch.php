@@ -18,8 +18,8 @@ class PostSearch extends Post
     public function rules()
     {
         return [
-            [['id', 'createdAt', 'updatedAt', 'isActive', 'priority'], 'integer'],
-            [['title', 'summary', 'content', 'language', 'slug', 'categories'], 'safe'],
+            [['id', 'isActive'], 'integer'],
+            [['title', 'language', 'categories'], 'safe'],
         ];
     }
 
@@ -65,10 +65,7 @@ class PostSearch extends Post
         ]);
 
         $query->andFilterWhere(['like', 'title', $this->title])
-            ->andFilterWhere(['like', 'summary', $this->summary])
-            ->andFilterWhere(['like', 'content', $this->content])
-            ->andFilterWhere(['like', 'language', $this->language])
-            ->andFilterWhere(['like', 'slug', $this->slug]);
+            ->andFilterWhere(['like', 'language', $this->language]);
         if (!empty($this->categories)) {
             $query->hasAnyCategory($this->categories);
         }
