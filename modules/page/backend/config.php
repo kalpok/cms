@@ -1,17 +1,17 @@
 <?php
 return [
-    'title' => 'ماژول صفحات استاتیک',
+    'title' => 'ماژول برگه ها',
     'menu' => [
-        'label' => 'صفحات استاتیک',
+        'label' => 'برگه ها',
         'icon' => 'file',
         'items' => [
             [
-                'label' => 'صفحه جدید',
+                'label' => 'برگه جدید',
                 'url' => ['/page/manage/create'],
                 'visible' => Yii::$app->user->canAccessAny(['page.create'])
             ],
             [
-                'label' => 'لیست صفحات',
+                'label' => 'لیست برگه ها',
                 'url' => ['/page/manage/index'],
                 'visible' =>  Yii::$app->user->canAccessAny(['page.create','page.update','page.delete'])
             ]

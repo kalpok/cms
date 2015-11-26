@@ -16,7 +16,15 @@ $this->params['breadcrumbs'][] = $this->title;
             'index' => ['label' => 'مدیریت صفحات'],
             'create' => ['label' => 'صفحه جدید'],
             'update' => ['label' => 'ویرایش صفحه'],
-            'delete' => ['label' => 'حذف صفحه']
+            'delete' => ['label' => 'حذف صفحه'],
+            'gallery' => [
+                'label'=> $model->hasGallery() ? 'مدیریت گالری' : 'ساخت گالری',
+                'visibleFor' => [
+                    'page.create',
+                    'page.update',
+                    'page.delete'
+                ]
+            ]
         ],
     ]); ?>
     <p>
