@@ -14,6 +14,7 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                '' => 'site/index',
                 'page/<id:\d+>' => 'page/front/view'
             ]
         ]

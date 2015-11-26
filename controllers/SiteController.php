@@ -22,6 +22,6 @@ class SiteController extends Controller
         if (Yii::$app->params['app'] == 'backend' && Yii::$app->user->isGuest) {
             Yii::$app->user->loginRequired();
         }
-        return $this->render('index');
+        return $this->render('index-'.Yii::$app->language);
     }
 }
