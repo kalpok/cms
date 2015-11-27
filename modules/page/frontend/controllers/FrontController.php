@@ -10,20 +10,16 @@ class FrontController extends Controller
 {
     public $layout = '//two-column';
 
-    public function actionView($id)
+    public function actionView($slug)
     {
-        $page = $this->findModel($id);
+        $page = Page::find()
+            ->where(['slug'=>$slug])
+            ->one();
+        if ($page == null) {
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
         return $this->render('view', [
             'page' => $page,
         ]);
-    }
-
-    protected function findModel($id)
-    {
-        if (($model = Page::findOne($id)) !== null) {
-            return $model;
-        } else {
-            throw new NotFoundHttpException('The requested page does not exist.');
-        }
     }
 }
