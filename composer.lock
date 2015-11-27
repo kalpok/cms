@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6f7fed0c4397b3ab7830640ab9005552",
-    "content-hash": "1f51c092e2abfad291a94e5f1d43d1e0",
+    "hash": "4a8d408960c330387079bf9ffebea87b",
+    "content-hash": "a5205d47ad834496abb716357a44811f",
     "packages": [
         {
             "name": "2amigos/yii2-ckeditor-widget",
@@ -138,15 +138,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ahb360/kalpok.git",
-                "reference": "2178fe8aac3338c65ce41ff06da0f6e02292bf03"
+                "reference": "ed402bc0e2753dcee606d14244c85fd878b0c50c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ahb360/kalpok/zipball/2178fe8aac3338c65ce41ff06da0f6e02292bf03",
-                "reference": "2178fe8aac3338c65ce41ff06da0f6e02292bf03",
+                "url": "https://api.github.com/repos/ahb360/kalpok/zipball/ed402bc0e2753dcee606d14244c85fd878b0c50c",
+                "reference": "ed402bc0e2753dcee606d14244c85fd878b0c50c",
                 "shasum": ""
             },
             "require": {
+                "creocoder/yii2-taggable": "~2.0",
                 "yiisoft/yii2": ">=2.0.4"
             },
             "type": "library",
@@ -165,10 +166,10 @@
                 "yii2"
             ],
             "support": {
-                "source": "https://github.com/ahb360/kalpok/tree/master",
+                "source": "https://github.com/ahb360/kalpok/tree/develop",
                 "issues": "https://github.com/ahb360/kalpok/issues"
             },
-            "time": "2015-11-02 21:29:08"
+            "time": "2015-11-23 10:40:30"
         },
         {
             "name": "bower-asset/bootstrap",

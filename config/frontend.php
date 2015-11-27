@@ -14,12 +14,14 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                '' => 'site/index',
                 'page/<id:\d+>' => 'page/front/view'
             ]
         ]
     ],
     'modules' => [
         'page' => 'modules\page\frontend\Module',
+        'post' => 'modules\post\frontend\Module',
     ],
     'params' => [
         'app' => 'frontend',
