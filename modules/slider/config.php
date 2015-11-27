@@ -13,7 +13,7 @@ return [
             [
                 'label' => 'سایت انگلیسی',
                 'url' => ['/slider/manage/home-en'],
-                'visible' =>  Yii::$app->user->can('slider.manager')
+                'visible' => Yii::$app->i18n->isMultiLanguage() && Yii::$app->user->can('slider.manager')
             ]
         ]
     ]

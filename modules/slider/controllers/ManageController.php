@@ -28,15 +28,18 @@ class ManageController extends Controller
 
     public function actions()
     {
-        return [
+        $actions = [
             'home-fa' => [
                 'class' => 'kalpok\gallery\actions\GalleryAction',
                 'handle' => 'home-fa'
-            ],
-            'home-en' => [
+            ]
+        ];
+        if (\Yii::$app->i18n->isMultiLanguage()) {
+            $actions['home-en'] = [
                 'class' => 'kalpok\gallery\actions\GalleryAction',
                 'handle' => 'home-en'
-            ],
-        ];
+            ];
+        }
+        return $actions;
     }
 }
