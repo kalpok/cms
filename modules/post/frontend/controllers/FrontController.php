@@ -20,7 +20,9 @@ class FrontController extends Controller
     public function actionIndex()
     {
         $post = Post::find()
-            ->andWhere('isActive = 1');
+            ->andWhere('isActive = 1')
+            ->addOrderBy('priority DESC')
+            ->addOrderBy('createdAt DESC');
         $dataProvider = new ActiveDataProvider([
             'query' => $post,
         ]);
@@ -52,7 +54,9 @@ class FrontController extends Controller
         }
         $post = Post::find()
             ->joinWith('categories')
-            ->andWhere('categoryId = '.$category->id);
+            ->andWhere('categoryId = '.$category->id)
+            ->addOrderBy('priority DESC')
+            ->addOrderBy('createdAt DESC');
         $dataProvider = new ActiveDataProvider([
             'query' => $post,
         ]);
