@@ -48,6 +48,7 @@ $config = [
             ],
         ],
         'user' => [
+            'class' => 'modules\user\common\components\User',
             'enableAutoLogin' => true,
             'loginUrl' => ['/user/auth/login'],
             'identityClass' => 'modules\user\common\components\UserIdentity'

@@ -21,10 +21,7 @@ return [
             'class' => 'yii\web\UrlManager',
             'showScriptName' => false,
             'baseUrl' => '/'
-        ],
-        'user' => [
-            'class' => 'modules\user\common\components\User'
-        ],
+        ]
     ],
     'modules' => [
         'page' => 'modules\page\backend\Module',

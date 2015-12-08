@@ -1,9 +1,8 @@
 <?php
-namespace modules\user\backend\controllers;
+namespace modules\user\common\controllers;
 
 use Yii;
 use yii\filters\AccessControl;
-use modules\user\backend\models\User;
 use modules\user\common\models\LoginForm;
 
 class AuthController extends \yii\web\Controller
@@ -24,7 +23,6 @@ class AuthController extends \yii\web\Controller
 
     public function actionLogin()
     {
-        $this->layout = '//login';
         if (!\Yii::$app->user->isGuest) {
             return $this->goHome();
         }
