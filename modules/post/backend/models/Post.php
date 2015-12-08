@@ -8,6 +8,7 @@ use kalpok\behaviors\TimestampBehavior;
 use kalpok\file\behaviors\FileBehavior;
 use kalpok\behaviors\CategoriesBehavior;
 use modules\post\backend\models\PostQuery;
+use kalpok\validators\FarsiCharactersValidator;
 
 class Post extends \yii\db\ActiveRecord
 {
@@ -49,7 +50,8 @@ class Post extends \yii\db\ActiveRecord
             [['title', 'content', 'categories'], 'required'],
             [['summary', 'content'], 'string'],
             [['isActive', 'priority'], 'integer'],
-            [['title', 'language'], 'string', 'max' => 255]
+            [['title', 'language'], 'string', 'max' => 255],
+            [['title', 'content', 'summary'], FarsiCharactersValidator::className()]
         ];
     }
 

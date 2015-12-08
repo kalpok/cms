@@ -5,6 +5,7 @@ namespace modules\post\backend\models;
 use Yii;
 use kalpok\behaviors\TimestampBehavior;
 use kalpok\behaviors\SluggableBehavior;
+use kalpok\validators\FarsiCharactersValidator;
 
 class Category extends \yii\db\ActiveRecord
 {
@@ -38,7 +39,8 @@ class Category extends \yii\db\ActiveRecord
             [['title'], 'required'],
             [['description'], 'string'],
             [['isActive'], 'integer'],
-            [['title', 'language'], 'string', 'max' => 255]
+            [['title', 'language'], 'string', 'max' => 255],
+            [['title', 'description'], FarsiCharactersValidator::className()]
         ];
     }
 
