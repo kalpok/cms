@@ -6,17 +6,17 @@ use yii\widgets\DetailView;
 use themes\admin360\widgets\ActionButtons;
 
 $this->title = $model->title;
-$this->params['breadcrumbs'][] = ['label' => 'صفحات استاتیک', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'لیست برگه‌ها', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="page-view">
     <?= ActionButtons::widget([
         'modelID' => $model->id,
         'buttons' => [
-            'index' => ['label' => 'مدیریت صفحات'],
-            'create' => ['label' => 'صفحه جدید'],
-            'update' => ['label' => 'ویرایش صفحه'],
-            'delete' => ['label' => 'حذف صفحه'],
+            'index' => ['label' => 'مدیریت برگه‌ها'],
+            'create' => ['label' => 'برگه جدید'],
+            'update' => ['label' => 'ویرایش برگه'],
+            'delete' => ['label' => 'حذف برگه'],
             'gallery' => [
                 'label'=> $model->hasGallery() ? 'مدیریت گالری' : 'ساخت گالری',
                 'visibleFor' => [
@@ -31,7 +31,8 @@ $this->params['breadcrumbs'][] = $this->title;
         <?php if (count($children) > 0): ?>
             <?php Alert::begin(['options' => ['class' => 'alert-warning'], 'closeButton' => false]); ?>
                 <p>
-                    <b>احتیاط کنید!</b> با حذف کردن این صفحه تمامی صفحاتی که زیرمجموعه آن هستند نیز از سیستم حذف می شوند. در حال حاضر این صفحه
+                    <b>احتیاط کنید!</b> با حذف کردن این برگه تمامی برگه‌هایی که زیرمجموعه آن هستند نیز از سیستم حذف می شوند. در حال حاضر این 
+                    برگه
                     <strong>* <?php echo Yii::$app->i18n->translateNumber(count($children)) ?> *</strong>
                     زیر مجموعه دارد.
                 </p>
@@ -41,7 +42,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="row">
         <div class="col-md-7">
             <?php Panel::begin([
-                'title' => 'محتوای صفحه',
+                'title' => 'محتوای برگه',
             ]) ?>
                 <div class="well">
                     <?= $model->content ?>
@@ -83,7 +84,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     'updatedAt:date',
                     'isActive:boolean',
                     [
-                        'label' => "صفحه پدر",
+                        'label' => "برگه پدر",
                         'visible' => !$model->isRoot(),
                         'value' => ($model->isRoot()) ?: Html::a(
                             $model->getParent()->title,
@@ -104,7 +105,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         <?php endforeach ?>
                     </ul>
                 <?php else: ?>
-                    این صفحه زیر مجموعه ای ندارد.
+                    این برگه زیر مجموعه ای ندارد.
                 <?php endif ?>
             <?php Panel::end() ?>
         </div>
