@@ -49,7 +49,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     'template' => '{view} {update} {delete} {assign}
                         {change-password}',
                     'buttons' => [
-                        'assign' => function ($url, $model, $key) {
+                        /*'assign' => function ($url, $model, $key) {
                             if ($model->type != User::TYPE_SUPERUSER) {
                                 return Html::a(
                                     '<span class="fa fa-lock"></span>',
@@ -57,7 +57,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                     ['title' => 'اعطای دسترسی', 'data-pjax' => 0]
                                 );
                             }
-                        },
+                        },*/
                         'change-password' => function ($url, $model, $key) {
                                 return Html::a(
                                     '<span class="fa fa-key"></span>',
