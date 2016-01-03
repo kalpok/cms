@@ -33,7 +33,9 @@ $backLink = $model->isNewRecord ? ['index'] : ['view', 'id' => $model->id];
                     )
                 ?>
             <?php endif ?>
-            <?= $form->field($model, 'type')
+            <?= 
+                $form->field($model, 'type', ['template' => "{input}"])->hiddenInput(['value'=>User::TYPE_SUPERUSER]);
+                /*$form->field($model, 'type')
                 ->dropDownList(
                     [
                         User::TYPE_OPERATOR => 'اپراتور',
@@ -41,7 +43,7 @@ $backLink = $model->isNewRecord ? ['index'] : ['view', 'id' => $model->id];
                         User::TYPE_SUPERUSER => 'مدیر سیستم'
                     ],
                     ['class' => 'form-control input-small']
-                )
+                )*/
             ?>
             <?= $form->field($model, 'status')
                 ->dropDownList(
