@@ -15,7 +15,9 @@ return [
             'showScriptName' => false,
             'rules' => [
                 '' => 'site/index',
-                'page/<slug>' => 'page/front/view'
+                'page/<slug>' => 'page/front/view',
+                'post/<slug>' => 'post/front/view',
+                'category/<slug>' => 'post/front/category'
             ]
         ]
     ],
