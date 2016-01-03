@@ -3,7 +3,7 @@ return [
     'title' => 'نوشته‌ها',
     'menu' => [
         'label' => 'نوشته‌ها',
-        'icon' => 'file',
+        'icon' => 'pencil',
         'items' => [
             [
                 'label' => 'همه نوشته‌ها',
