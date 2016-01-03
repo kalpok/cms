@@ -18,7 +18,7 @@ $backLink = $model->isNewRecord ? ['index'] : ['view', 'id' => $model->id];
     <div class="row">
         <div class="col-md-8">
             <?php Panel::begin([
-                'title' => 'اطلاعات صفحه'
+                'title' => 'اطلاعات برگه'
             ]) ?>
                 <?=
                     $form->field($model, 'title')
@@ -42,7 +42,7 @@ $backLink = $model->isNewRecord ? ['index'] : ['view', 'id' => $model->id];
                                 'additionalItems' => [
                                     [
                                         'id' => 0,
-                                        'prefixedTitle' => 'صفحه سطح نخست است'
+                                        'prefixedTitle' => 'برگه سطح نخست است'
                                     ]
                                 ],
                                 'options' => [
@@ -110,7 +110,7 @@ $backLink = $model->isNewRecord ? ['index'] : ['view', 'id' => $model->id];
                 ?>
             <?php Panel::end() ?>
             <?php Panel::begin([
-                'title' => 'ویژگی های صفحه'
+                'title' => 'ویژگی های برگه'
             ]) ?>
                 <?= $form->field($model, 'isActive')->checkbox(); ?>
             <?php Panel::end() ?>

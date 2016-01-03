@@ -59,9 +59,9 @@ class Page extends basePage
             'title' => 'عنوان',
             'isActive' => 'نمایش در سایت',
             'language' => 'زبان',
-            'content' => 'محتوای صفحه',
-            'parentId' => 'صفحه پدر',
-            'createdAt' => 'تاریخ ساخت صفحه',
+            'content' => 'محتوای برگه',
+            'parentId' => 'برگه پدر',
+            'createdAt' => 'تاریخ ساخت برگه',
             'updatedAt' => 'آخرین بروزرسانی',
         ];
     }
