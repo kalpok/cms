@@ -13,7 +13,7 @@ class FrontController extends Controller
     public function actionView($slug)
     {
         $page = Page::find()
-            ->where(['slug'=>$slug])
+            ->andWhere(['slug'=>$slug])
             ->one();
         if ($page == null) {
             throw new NotFoundHttpException('The requested page does not exist.');
