@@ -14,6 +14,14 @@ $this->params['breadcrumbs'][] = $this->title;
         'modelID' => $model->id,
         'buttons' => [
             'update' => ['label' => 'ویرایش'],
+            'gallery' => [
+                'label'=> $model->hasGallery() ? 'گالری' : 'ساخت گالری',
+                'visibleFor' => [
+                    'post.create',
+                    'post.update',
+                    'post.delete'
+                ]
+            ],
             'delete' => ['label' => 'حذف'],
             'create' => ['label' => 'نوشته‌ جدید'],
             'index' => ['label' => 'نوشته ها'],
