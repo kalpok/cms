@@ -2,29 +2,20 @@
 
 namespace modules\post\frontend\controllers;
 
-use Yii;
-use yii\web\Controller; 
+use yii\web\Controller;
+use yii\data\ActiveDataProvider;
 use yii\web\NotFoundHttpException;
 use modules\post\frontend\models\Post;
-use modules\post\frontend\models\PostSearch;
 use modules\post\frontend\models\Category;
-use yii\data\ActiveDataProvider;
 
-/**
- * FrontController implements the CRUD actions for Post model.
- */
 class FrontController extends Controller
 {
     public $layout = '//two-column';
 
     public function actionIndex()
     {
-        $post = Post::find()
-            ->andWhere('isActive = 1')
-            ->addOrderBy('priority DESC')
-            ->addOrderBy('createdAt DESC');
         $dataProvider = new ActiveDataProvider([
-            'query' => $post,
+            'query' => Post::find()->addOrderBy('createdAt DESC'),
         ]);
         return $this->render('index', [
             'dataProvider' => $dataProvider,
@@ -34,7 +25,8 @@ class FrontController extends Controller
     public function actionView($slug)
     {
         $post = Post::find()
-            ->where(['slug'=>$slug])
+            ->AndWhere(['slug'=>$slug])
+            ->with('categories')
             ->one();
         if ($post == null) {
             throw new NotFoundHttpException('The requested page does not exist.');
@@ -52,14 +44,12 @@ class FrontController extends Controller
         if ($category == null) {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
-        $post = Post::find()
-            ->joinWith('categories')
-            ->andWhere('categoryId = '.$category->id)
-            ->addOrderBy('priority DESC')
-            ->addOrderBy('createdAt DESC');
-        $dataProvider = new ActiveDataProvider([
-            'query' => $post,
-        ]);
+        $dataProvider = new ActiveDataProvider(
+            [
+                'query' => $category->getPosts(),
+                'sort' => ['defaultOrder' => ['createdAt' => SORT_DESC]],
+            ]
+        );
         return $this->render('index', [
             'dataProvider' => $dataProvider,
         ]);
