@@ -7,8 +7,8 @@ use themes\admin360\widgets\ActionButtons;
 /* @var $model modules\post\backend\models\Category */
 
 $this->title = 'ویرایش دسته';
-$this->params['breadcrumbs'][] = ['label' => 'نوشته‌ها', 'url' => ['/post/manage/index']];
-$this->params['breadcrumbs'][] = ['label' => 'دسته‌ها', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'نوشته ها', 'url' => ['/post/manage/index']];
+$this->params['breadcrumbs'][] = ['label' => 'دسته ها', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->title, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'ویرایش';
 ?>
@@ -16,9 +16,9 @@ $this->params['breadcrumbs'][] = 'ویرایش';
 	<?= ActionButtons::widget([
         'modelID' => $model->id,
         'buttons' => [
-            'create' => ['label' => 'افزودن دسته'],
+            'create' => ['label' => 'دسته جدید'],
             'delete' => ['label' => 'حذف'],
-            'index' => ['label' => 'دسته‌ها'],
+            'index' => ['label' => 'دسته ها'],
         ],
     ]); ?>
     <?= $this->render('_form', [

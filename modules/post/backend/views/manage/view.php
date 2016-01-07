@@ -5,21 +5,18 @@ use yii\widgets\DetailView;
 use themes\admin360\widgets\Panel;
 use themes\admin360\widgets\ActionButtons;
 
-/* @var $this yii\web\View */
-/* @var $model modules\post\backend\models\Post */
-
 $this->title = $model->title;
-$this->params['breadcrumbs'][] = ['label' => 'همه نوشته‌ها', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'نوشته ها', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="post-manage-view">
     <?= ActionButtons::widget([
         'modelID' => $model->id,
         'buttons' => [
-            'create' => ['label' => 'افزودن نوشته‌'],
+            'create' => ['label' => 'نوشته‌ جدید'],
             'update' => ['label' => 'ویرایش'],
             'delete' => ['label' => 'حذف'],
-            'index' => ['label' => 'همه نوشته‌ها'],
+            'index' => ['label' => 'نوشته ها'],
         ],
     ]); ?>
     <div class="row">

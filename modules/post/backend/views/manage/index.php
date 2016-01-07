@@ -5,22 +5,22 @@ use yii\widgets\Pjax;
 use yii\grid\GridView;
 use yii\helpers\ArrayHelper;
 use themes\admin360\widgets\Panel;
-use themes\admin360\widgets\ActionButtons;
 use modules\post\backend\models\Category;
+use themes\admin360\widgets\ActionButtons;
 
-$this->title = 'همه نوشته‌ها';
+$this->title = 'لیست نوشته ها';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="post-manage-index">
     <?= ActionButtons::widget([
         'buttons' => [
-            'create' => ['label' => 'افزودن نوشته'],
+            'create' => ['label' => 'نوشته جدید'],
+            'categoriesIndex' => ['label' => 'دسته ها'],
         ],
     ]); ?>
     <?php Panel::begin([
         'title' => Html::encode($this->title)
     ]) ?>
-
         <?php Pjax::begin([
             'id' => 'post-gridviewpjax',
             'enablePushState' => false,

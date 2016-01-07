@@ -4,7 +4,7 @@ $this->params['breadcrumbs'][] = [
     'label' => $model->title,
     'url' => ['view', 'id' => $model->id]
 ];
-$this->params['breadcrumbs'][] = 'مدیریت گالری';
+$this->params['breadcrumbs'][] = 'گالری';
 $this->title = 'مدیریت گالری برگه';
 
 echo $this->render(

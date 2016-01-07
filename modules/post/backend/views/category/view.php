@@ -5,22 +5,19 @@ use yii\widgets\DetailView;
 use themes\admin360\widgets\Panel;
 use themes\admin360\widgets\ActionButtons;
 
-/* @var $this yii\web\View */
-/* @var $model modules\post\backend\models\Category */
-
 $this->title = $model->title;
-$this->params['breadcrumbs'][] = ['label' => 'نوشته‌ها', 'url' => ['/post/manage/index']];
-$this->params['breadcrumbs'][] = ['label' => 'دسته‌ها', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'نوشته ها', 'url' => ['/post/manage/index']];
+$this->params['breadcrumbs'][] = ['label' => 'دسته ها', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="post-category-view">
     <?= ActionButtons::widget([
         'modelID' => $model->id,
         'buttons' => [
-            'create' => ['label' => 'افزودن دسته'],
+            'create' => ['label' => 'دسته جدید'],
             'update' => ['label' => 'ویرایش'],
             'delete' => ['label' => 'حذف'],
-            'index' => ['label' => 'دسته‌ها'],
+            'index' => ['label' => 'دسته ها'],
         ],
     ]); ?>
     <div class="row">

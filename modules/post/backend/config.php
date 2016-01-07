@@ -1,22 +1,22 @@
 <?php
 return [
-    'title' => 'نوشته‌ها',
+    'title' => 'نوشته ها',
     'menu' => [
-        'label' => 'نوشته‌ها',
+        'label' => 'نوشته ها',
         'icon' => 'pencil',
         'items' => [
             [
-                'label' => 'همه نوشته‌ها',
-                'url' => ['/post/manage/index'],
-                'visible' =>  Yii::$app->user->canAccessAny(['post.create','post.update','post.delete'])
-            ],
-            [
-                'label' => 'افزودن نوشته',
+                'label' => 'نوشته جدید',
                 'url' => ['/post/manage/create'],
                 'visible' => Yii::$app->user->canAccessAny(['post.create'])
             ],
             [
-                'label' => 'دسته‌ها',
+                'label' => 'لیست نوشته ها',
+                'url' => ['/post/manage/index'],
+                'visible' =>  Yii::$app->user->canAccessAny(['post.create','post.update','post.delete'])
+            ],
+            [
+                'label' => 'دسته ها',
                 'url' => ['/post/category/index'],
                 'visible' => Yii::$app->user->canAccessAny(['post.categories'])
             ],

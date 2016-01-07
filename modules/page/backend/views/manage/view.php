@@ -6,32 +6,32 @@ use yii\widgets\DetailView;
 use themes\admin360\widgets\ActionButtons;
 
 $this->title = $model->title;
-$this->params['breadcrumbs'][] = ['label' => 'لیست برگه‌ها', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'برگه ها', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="page-view">
     <?= ActionButtons::widget([
         'modelID' => $model->id,
         'buttons' => [
-            'index' => ['label' => 'مدیریت برگه‌ها'],
-            'create' => ['label' => 'برگه جدید'],
-            'update' => ['label' => 'ویرایش برگه'],
-            'delete' => ['label' => 'حذف برگه'],
             'gallery' => [
-                'label'=> $model->hasGallery() ? 'مدیریت گالری' : 'ساخت گالری',
+                'label'=> $model->hasGallery() ? 'گالری' : 'ساخت گالری',
                 'visibleFor' => [
                     'page.create',
                     'page.update',
                     'page.delete'
                 ]
-            ]
+            ],
+            'create' => ['label' => 'برگه جدید'],
+            'update' => ['label' => 'ویرایش'],
+            'delete' => ['label' => 'حذف'],
+            'index' => ['label' => 'برگه ها']
         ],
     ]); ?>
     <p>
         <?php if (count($children) > 0): ?>
             <?php Alert::begin(['options' => ['class' => 'alert-warning'], 'closeButton' => false]); ?>
                 <p>
-                    <b>احتیاط کنید!</b> با حذف کردن این برگه تمامی برگه‌هایی که زیرمجموعه آن هستند نیز از سیستم حذف می شوند. در حال حاضر این 
+                    <b>احتیاط کنید!</b> با حذف کردن این برگه تمامی برگه‌هایی که زیرمجموعه آن هستند نیز از سیستم حذف می شوند. در حال حاضر این
                     برگه
                     <strong>* <?php echo Yii::$app->i18n->translateNumber(count($children)) ?> *</strong>
                     زیر مجموعه دارد.

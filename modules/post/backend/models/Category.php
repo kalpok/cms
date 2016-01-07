@@ -55,7 +55,7 @@ class Category extends \yii\db\ActiveRecord
             'description' => 'توضیحات',
             'language' => 'زبان',
             'slug' => 'Slug',
-            'createdAt' => 'تاریخ ایجاد نوشته',
+            'createdAt' => 'تاریخ ایجاد',
             'updatedAt' => 'آخرین بروزرسانی',
             'isActive' => 'نمایش در سایت',
         ];

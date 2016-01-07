@@ -3,11 +3,8 @@
 use yii\helpers\Html;
 use themes\admin360\widgets\ActionButtons;
 
-/* @var $this yii\web\View */
-/* @var $model modules\post\backend\models\Post */
-
 $this->title = 'ویرایش نوشته';
-$this->params['breadcrumbs'][] = ['label' => 'همه نوشته‌ها', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'نوشته ها', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->title, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'ویرایش';
 ?>
@@ -15,9 +12,9 @@ $this->params['breadcrumbs'][] = 'ویرایش';
 	<?= ActionButtons::widget([
         'modelID' => $model->id,
         'buttons' => [
-            'create' => ['label' => 'افزودن نوشته‌'],
+            'create' => ['label' => 'نوشته‌ جدید'],
             'delete' => ['label' => 'حذف'],
-            'index' => ['label' => 'همه نوشته‌ها'],
+            'index' => ['label' => 'نوشته ها'],
         ],
     ]); ?>
     <?= $this->render('_form', [

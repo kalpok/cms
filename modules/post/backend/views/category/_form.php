@@ -7,9 +7,6 @@ use themes\admin360\widgets\Button;
 use kalpok\i18n\widgets\LanguageSelect;
 use themes\admin360\widgets\editor\Editor;
 
-/* @var $this yii\web\View */
-/* @var $model modules\post\backend\models\Category */
-/* @var $form yii\widgets\ActiveForm */
 $backLink = $model->isNewRecord ? ['index'] : ['view', 'id' => $model->id];
 ?>
 
@@ -81,9 +78,7 @@ $backLink = $model->isNewRecord ? ['index'] : ['view', 'id' => $model->id];
             <?php Panel::begin([
                 'title' => 'ویژگی ها'
             ]) ?>
-                
                 <?= $form->field($model, 'isActive')->checkbox(); ?>
-                    
             <?php Panel::end() ?>
         </div>
     </div>

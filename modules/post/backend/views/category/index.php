@@ -6,18 +6,20 @@ use yii\grid\GridView;
 use themes\admin360\widgets\Panel;
 use themes\admin360\widgets\ActionButtons;
 
-/* @var $this yii\web\View */
-/* @var $searchModel modules\post\backend\models\CategorySearch */
-/* @var $dataProvider yii\data\ActiveDataProvider */
-
-$this->title = 'دسته‌های نوشته';
-$this->params['breadcrumbs'][] = ['label' => 'نوشته‌ها', 'url' => ['/post/manage/index']];
+$this->title = 'دسته های نوشته';
+$this->params['breadcrumbs'][] = ['label' => 'نوشته ها', 'url' => ['/post/manage/index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="post-category-index">
     <?= ActionButtons::widget([
         'buttons' => [
-            'create' => ['label' => 'افزودن دسته'],
+            'create' => ['label' => 'دسته جدید'],
+            'pages' => [
+                'label' => 'نوشته ها',
+                'url' => ['manage/index'],
+                'type' => 'warning',
+                'icon' => 'list'
+            ],
         ],
     ]); ?>
     <?php Panel::begin([
@@ -32,7 +34,6 @@ $this->params['breadcrumbs'][] = $this->title;
                 'filterModel' => $searchModel,
                 'columns' => [
                     ['class' => 'yii\grid\SerialColumn'],
-                    ['class' => 'kalpok\grid\IDColumn'],
                     ['class' => 'kalpok\grid\LanguageColumn'],
                     'title',
                     [
