@@ -13,6 +13,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= ActionButtons::widget([
         'modelID' => $model->id,
         'buttons' => [
+            'update' => ['label' => 'ویرایش'],
             'gallery' => [
                 'label'=> $model->hasGallery() ? 'گالری' : 'ساخت گالری',
                 'visibleFor' => [
@@ -21,9 +22,8 @@ $this->params['breadcrumbs'][] = $this->title;
                     'page.delete'
                 ]
             ],
-            'create' => ['label' => 'برگه جدید'],
-            'update' => ['label' => 'ویرایش'],
             'delete' => ['label' => 'حذف'],
+            'create' => ['label' => 'برگه جدید'],
             'index' => ['label' => 'برگه ها']
         ],
     ]); ?>

@@ -1,22 +1,21 @@
 <?php
 use yii\helpers\Html;
+use yii\bootstrap\ActiveForm;
 use themes\admin360\widgets\Panel;
 use themes\admin360\widgets\Button;
-use yii\bootstrap\ActiveForm;
-use themes\admin360\widgets\ActionButtons;
 use modules\user\backend\models\User;
+use themes\admin360\widgets\ActionButtons;
 use modules\user\common\widgets\ShowPassword;
+
+$this->title = 'تغییر رمز عبور';
+$this->params['breadcrumbs'][] = ['label' => 'کاربران', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => $model->email, 'url' => ['view', 'id' => $model->id]];
+$this->params['breadcrumbs'][] = 'تغییر رمز عبور';
 ?>
 <?= ActionButtons::widget([
     'modelID' => $model->id,
     'buttons' => [
-        'index' => ['label' => 'مدیریت کاربران'],
-        'view' => [
-            'url' => ['view', 'id' => $model->id],
-            'type' => 'success',
-            'icon' => 'eye',
-            'label' => 'مشاهده اطلاعات کاربر'
-        ],
+        'index' => ['label' => 'کاربران']
     ],
 ]); ?>
 <?php Panel::begin(

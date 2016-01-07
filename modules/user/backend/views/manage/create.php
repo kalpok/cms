@@ -10,7 +10,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= ActionButtons::widget([
         'modelID' => $model->id,
         'buttons' => [
-            'index' => ['label' => 'مدیریت کاربران']
+            'index' => ['label' => 'کاربران']
         ],
     ]); ?>
     <?= $this->render('_form', [

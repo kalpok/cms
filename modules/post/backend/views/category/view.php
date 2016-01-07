@@ -14,9 +14,9 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= ActionButtons::widget([
         'modelID' => $model->id,
         'buttons' => [
-            'create' => ['label' => 'دسته جدید'],
             'update' => ['label' => 'ویرایش'],
             'delete' => ['label' => 'حذف'],
+            'create' => ['label' => 'دسته جدید'],
             'index' => ['label' => 'دسته ها'],
         ],
     ]); ?>
