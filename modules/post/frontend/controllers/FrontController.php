@@ -52,6 +52,7 @@ class FrontController extends Controller
         );
         return $this->render('index', [
             'dataProvider' => $dataProvider,
+            'category' => $category,
         ]);
     }
 }
