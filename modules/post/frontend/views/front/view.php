@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use kalpok\gallery\widgets\gallery\Gallery;
 
 /* @var $this yii\web\View */
 /* @var $model modules\post\frontend\models\Post */
@@ -72,7 +73,14 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
 
     <?php echo $model->content ?>
-
+    <div style="clear:both;"></div>
+            <?= Gallery::widget(
+            [
+                'view' => 'lightboxgallery',
+                'images'=>$page->getGalleryImages(),
+                'id' => 'hasan',
+            ]
+            ) ?>
     <div style="clear: both;"></div>
     <div class="divider divider-dotted"><!-- divider --></div>
 
