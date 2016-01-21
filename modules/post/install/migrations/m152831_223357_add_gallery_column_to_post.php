@@ -3,7 +3,7 @@
 use yii\db\Schema;
 use yii\db\Migration;
 
-class m150831_223357_add_gallery_column_to_post extends Migration
+class m152831_223357_add_gallery_column_to_post extends Migration
 {
     public function up()
     {
