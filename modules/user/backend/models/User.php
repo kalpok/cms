@@ -73,6 +73,7 @@ class User extends BaseUser
     public static function typeLabels()
     {
         return [
+            self::TYPE_REGULAR => 'کاربر عادی',
             self::TYPE_OPERATOR => 'اپراتور',
             self::TYPE_EDITOR => 'سردبیر',
             self::TYPE_SUPERUSER => 'مدیر اصلی',
