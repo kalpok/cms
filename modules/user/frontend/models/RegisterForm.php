@@ -31,4 +31,15 @@ class RegisterForm extends User
             'password' => 'کلمه عبور',
         ];
     }
+
+    public function beforeSave($insert)
+    {
+        if (parent::beforeSave($insert)) {
+            if ($insert) {
+                $this->status = self::STATUS_ACTIVE;
+            }
+            return true;
+        }
+        return false;
+    }
 }

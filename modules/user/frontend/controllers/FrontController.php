@@ -9,8 +9,12 @@ use modules\user\common\components\UserIdentity;
 
 class FrontController extends Controller
 {
+    public $layout = '//blank';
     public function actionRegister()
     {
+        if (!Yii::$app->user->isGuest) {
+            return $this->redirect(['/']);
+        }
         $model = new RegisterForm;
         $model->loadDefaultValues();
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -20,10 +24,9 @@ class FrontController extends Controller
             );
             $user = UserIdentity::findByEmail($model->email);
             if(Yii::$app->user->login($user, 3600 * 24 * 14)){
-                dd('logged in');
+                return $this->redirect(['/advertise/profile/create']);
             }
             
-            return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('register', [
                 'model' => $model,
