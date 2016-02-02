@@ -13,7 +13,7 @@ use modules\user\common\widgets\ShowPassword;
     );
     ?>
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <?= $form->field($model, 'email')
                 ->textInput(['class' => 'form-control input-medium', 'style' => 'direction:ltr']) ?>
             <?= $form->field($model, 'password')
