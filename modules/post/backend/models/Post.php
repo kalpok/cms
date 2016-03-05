@@ -20,13 +20,14 @@ class Post extends \yii\db\ActiveRecord
 
     public function behaviors()
     {
+        $module = \modules\post\backend\Module::getInstance();
         return [
             GalleryBehavior::className(),
             TimestampBehavior::className(),
             CategoriesBehavior::className(),
             [
                 'class' => SluggableBehavior::className(),
-                'attribute' => 'title',
+                'attribute' => ($module && $module->editableSlug) ? 'slug' : 'title',
             ],
             [
                 'class' => FileBehavior::className(),
@@ -49,7 +50,7 @@ class Post extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['title', 'content', 'categories'], 'required'],
+            [['title', 'content', 'categories', 'slug'], 'required'],
             [['summary', 'content'], 'string'],
             [['isActive', 'priority'], 'integer'],
             [['title', 'language'], 'string', 'max' => 255],

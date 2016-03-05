@@ -32,6 +32,18 @@ $backLink = $model->isNewRecord ? ['index'] : ['view', 'id' => $model->id];
                         )
                 ?>
 
+                <?php if (\Yii::$app->controller->module->editableSlug): ?>
+                    <?=
+                        $form->field($model, 'slug')
+                            ->textInput(
+                                [
+                                    'maxlength' => 255,
+                                    'class' => 'form-control input-large'
+                                ]
+                            )->hint('مقدار این فیلد پس از پردازش و حذف کاراکتر های غیرمجاز در url این نوشته قرار می گیرد.')
+                    ?>
+                <?php endif ?>
+
                 <?= $form->field($model, 'summary')->textarea(['rows' => 6]) ?>
 
                 <?=
@@ -122,7 +134,7 @@ $backLink = $model->isNewRecord ? ['index'] : ['view', 'id' => $model->id];
                 'title' => 'ویژگی های نوشته'
             ]) ?>
                 <?= $form->field($model, 'isActive')->checkbox(); ?>
-                    
+
                 <?= $form->field($model, 'priority')
                     ->dropDownList(
                         Utility::listNumbers(10, 1),

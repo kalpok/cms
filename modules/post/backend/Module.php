@@ -8,6 +8,7 @@ class Module extends \yii\base\Module
     public $menu;
 	public $defaultRoute = 'manage/index';
     public $controllerNamespace = 'modules\post\backend\controllers';
+    public $editableSlug = false;
 
     public function init()
     {
