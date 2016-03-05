@@ -38,6 +38,10 @@ $config = [
             'defaultRoles' => ['superuser', 'editor', 'operator'],
             // 'cache' => 'cache'
         ],
+        'mailer' => [
+            'class' => 'kalpok\mailer\Mailer',
+            'useFileTransport' => false
+        ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
