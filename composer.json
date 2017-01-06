@@ -1,6 +1,6 @@
 {
-    "name": "ahb/cms",
-    "description": "ahb cms",
+    "name": "kalpok/cms",
+    "description": "kalpok cms",
     "homepage": "http://basiriam.ir/",
     "type": "project",
     "license": "WTFPL",
@@ -10,6 +10,7 @@
         "yiisoft/yii2-bootstrap": "*",
         "yiisoft/yii2-imagine": "^2.0",
         "yiisoft/yii2-swiftmailer": "*",
+        "creocoder/yii2-taggable": "~2.0",
         "2amigos/yii2-ckeditor-widget": "*",
         "2amigos/yii2-selectize-widget" : "*",
         "creocoder/yii2-nested-sets": "0.9.*",
@@ -22,7 +23,6 @@
         }
     ],
     "require-dev": {
-        "yiisoft/yii2-codeception": "*",
         "yiisoft/yii2-debug": "*",
         "yiisoft/yii2-gii": "*",
         "yiisoft/yii2-faker": "*"

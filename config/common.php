@@ -16,13 +16,9 @@ $config = [
     ],
     'bootstrap' => [
         'log',
-        'kalpok\di\RegisterDependencies',
         'modules\setting\components\SettingApplier',
     ],
     'components' => [
-        'cache' => [
-            'class' => 'yii\caching\FileCache',
-        ],
         'i18n' => [
             'class' => 'kalpok\i18n\I18N'
         ],
@@ -42,6 +38,10 @@ $config = [
             'defaultRoles' => ['superuser', 'editor', 'operator'],
             // 'cache' => 'cache'
         ],
+        'mailer' => [
+            'class' => 'kalpok\mailer\Mailer',
+            'useFileTransport' => false
+        ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
@@ -52,6 +52,7 @@ $config = [
             ],
         ],
         'user' => [
+            'class' => 'modules\user\common\components\User',
             'enableAutoLogin' => true,
             'loginUrl' => ['/user/auth/login'],
             'identityClass' => 'modules\user\common\components\UserIdentity'

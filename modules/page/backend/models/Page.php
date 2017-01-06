@@ -2,10 +2,11 @@
 namespace modules\page\backend\models;
 
 use Yii;
+use kalpok\behaviors\SluggableBehavior;
 use kalpok\behaviors\TimestampBehavior;
+use kalpok\file\behaviors\FileBehavior;
 use modules\page\common\models\Page as basePage;
 use kalpok\validators\FarsiCharactersValidator;
-use kalpok\file\behaviors\FileBehavior;
 
 class Page extends basePage
 {
@@ -18,6 +19,10 @@ class Page extends basePage
             parent::behaviors(),
             [
                 TimestampBehavior::className(),
+                [
+                    'class' => SluggableBehavior::className(),
+                    'attribute' => 'title',
+                ],
                 [
                     'class' => FileBehavior::className(),
                     'groups' => [
@@ -54,9 +59,9 @@ class Page extends basePage
             'title' => 'عنوان',
             'isActive' => 'نمایش در سایت',
             'language' => 'زبان',
-            'content' => 'محتوای صفحه',
-            'parentId' => 'صفحه پدر',
-            'createdAt' => 'تاریخ ساخت صفحه',
+            'content' => 'محتوای برگه',
+            'parentId' => 'برگه پدر',
+            'createdAt' => 'تاریخ ساخت برگه',
             'updatedAt' => 'آخرین بروزرسانی',
         ];
     }

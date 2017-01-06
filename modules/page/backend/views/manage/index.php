@@ -4,17 +4,17 @@ use yii\grid\GridView;
 use themes\admin360\widgets\Panel;
 use themes\admin360\widgets\ActionButtons;
 
-$this->title = 'صفحات استاتیک';
+$this->title = 'لیست برگه‌ها';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="Pages-index">
 <?= ActionButtons::widget([
     'buttons' => [
-        'create' => ['label' => 'صفحه جدید'],
+        'create' => ['label' => 'برگه جدید'],
     ],
 ]); ?>
 <?php Panel::begin([
-    'title' => 'لیست صفحات استاتیک'
+    'title' => 'لیست برگه‌ها'
 ]) ?>
 <?php Pjax::begin([
     'id' => 'page-gridviewpjax',

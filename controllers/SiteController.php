@@ -20,7 +20,7 @@ class SiteController extends Controller
     public function actionIndex()
     {
         if (Yii::$app->params['app'] == 'backend' && Yii::$app->user->isGuest) {
-            Yii::$app->user->loginRequired();
+            return Yii::$app->user->loginRequired();
         }
         return $this->render('index');
     }

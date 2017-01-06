@@ -5,20 +5,22 @@ use themes\admin360\widgets\ActionButtons;
 use modules\user\backend\models\User;
 
 $this->title = $model->email;
+$this->params['breadcrumbs'][] = ['label' => 'کاربران', 'url' => ['index']];
+$this->params['breadcrumbs'][] = $this->title;
 ?>
 <?= ActionButtons::widget([
     'modelID' => $model->id,
     'buttons' => [
-        'index' => ['label' => 'مدیریت کاربران'],
-        'create' => ['label' => 'کاربر جدید'],
-        'update' => ['label' => 'ویرایش کاربر'],
+        'update' => ['label' => 'ویرایش'],
         'change-password' => [
             'icon' => 'key',
             'type' => 'warning',
             'label' => 'تغییر رمز عبور',
             'url' => ['change-password', 'id' => $model->id]
         ],
-        'delete' => ['label' => 'حذف کاربر']
+        'delete' => ['label' => 'حذف'],
+        'create' => ['label' => 'کاربر جدید'],
+        'index' => ['label' => 'کاربران'],
     ],
 ]); ?>
 <?php Panel::begin([

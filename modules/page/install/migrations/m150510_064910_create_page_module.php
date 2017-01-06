@@ -11,6 +11,7 @@ class m150510_064910_create_page_module extends Migration
             'id' => Schema::TYPE_PK,
             'language' => 'string',
             'title' => Schema::TYPE_STRING . ' COLLATE utf8_unicode_ci NOT NULL',
+            'slug' => 'string NOT NULL',
             'content' => 'text COLLATE utf8_unicode_ci NOT NULL',
             'createdAt' => Schema::TYPE_INTEGER . ' NOT NULL',
             'updatedAt' => Schema::TYPE_INTEGER .  ' NOT NULL',

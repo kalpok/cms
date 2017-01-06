@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use modules\page\frontend\widgets\pagefamily\PageFamily;
+use kalpok\gallery\widgets\gallery\Gallery;
 
 $this->params['title'] = $page->title;
 $this->params['breadcrumbs'] = [
@@ -20,6 +21,14 @@ $this->title = $page->title;
         </figure>
         <div class="content">
             <?= $page->content ?>
+            <div style="clear:both;"></div>
+            <?= Gallery::widget(
+            [
+                'view' => 'lightboxgallery',
+                'images'=>$page->getGalleryImages(),
+                'id' => 'hasan',
+            ]
+            ) ?>
         </div>
     </article>
 </div>

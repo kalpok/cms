@@ -1,7 +1,13 @@
 <?php
 return [
+    'bootstrap' => [
+        'kalpok\i18n\LanguageAndCalendarSetter'
+    ],
     'aliases' => [
         '@webroot' => '@app/web/admin',
+    ],
+    'controllerMap' => [
+        'gallery' => 'kalpok\gallery\controllers\GalleryController'
     ],
     'components' => [
         'urlManager' => [
@@ -15,13 +21,12 @@ return [
             'class' => 'yii\web\UrlManager',
             'showScriptName' => false,
             'baseUrl' => '/'
-        ],
-        'user' => [
-            'class' => 'modules\user\common\components\User'
-        ],
+        ]
     ],
     'modules' => [
         'page' => 'modules\page\backend\Module',
+        'post' => 'modules\post\backend\Module',
+        'slider' => 'modules\slider\Module',
         'user' => 'modules\user\backend\Module',
         'setting' => 'modules\setting\Module'
     ],

@@ -8,6 +8,12 @@ class Module extends \yii\base\Module
     public $menu;
     public $defaultRoute = 'manage/index';
     public $controllerNamespace = 'modules\user\backend\controllers';
+    public $controllerMap = [
+        'auth' => [
+           'class' => 'modules\user\common\controllers\AuthController',
+           'layout' => '//login',
+        ],
+    ];
 
     public function init()
     {

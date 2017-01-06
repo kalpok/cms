@@ -9,6 +9,10 @@ return [
                     '@modules' => '@themes/kalpok/views/modules',
                 ],
             ],
+        ],
+        'urlManager' => [
+            // uncomment if multilanguage:
+            // 'class' => '\kalpok\i18n\MultiLanguageUrlManager',
         ]
     ],
     'modules' => [

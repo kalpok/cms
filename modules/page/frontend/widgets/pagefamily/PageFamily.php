@@ -9,7 +9,7 @@ class PageFamily extends Widget
 {
     public $page;
     public $view = 'pageFamily';
-    public $title = 'صفحات مرتبط';
+    public $title = 'برگه‌های مرتبط';
     public $icon;
     public $containerClass;
     public $titleClass;

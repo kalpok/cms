@@ -34,13 +34,23 @@ class ManageController extends AdminController
                         ],
                         [
                             'allow' => true,
-                            'actions' => ['index', 'view'],
+                            'actions' => ['index', 'view', 'gallery'],
                             'roles' => ['page.create', 'page.update', 'page.delete'],
                         ],
                     ],
                 ],
             ]
         );
+    }
+
+    public function actions()
+    {
+        return [
+            'gallery' => [
+                'class' => 'kalpok\gallery\actions\GalleryAction',
+                'ownerModelClassName' => Page::className()
+            ]
+        ];
     }
 
     public function init()
@@ -64,7 +74,7 @@ class ManageController extends AdminController
             if ($success) {
                 Yii::$app->session->addFlash(
                     'success',
-                    'صفحه جدید با موفقیت در سیستم درج شد.'
+                    'برگه جدید با موفقیت در سیستم درج شد.'
                 );
                 return $this->redirect(['view', 'id' => $model->id]);
             }
@@ -104,7 +114,7 @@ class ManageController extends AdminController
             if ($success) {
                 Yii::$app->session->addFlash(
                     'success',
-                    'صفحه ویرایش شده با موفقیت در سیستم به روز رسانی شد.'
+                    'برگه ویرایش شده با موفقیت در سیستم به روز رسانی شد.'
                 );
                 return $this->redirect(['view', 'id' => $model->id]);
             }
@@ -119,7 +129,7 @@ class ManageController extends AdminController
         $this->findModel($id)->deleteWithChildren();
         Yii::$app->session->addFlash(
             'success',
-            'صفحه مورد نظر با موفقیت از سیستم حذف شد.'
+            'برگه مورد نظر با موفقیت از سیستم حذف شد.'
         );
         return $this->redirect(['index']);
     }

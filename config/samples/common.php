@@ -5,7 +5,11 @@ return [
             'cookieValidationKey' => '',
         ],
         'i18n' => [
-            'languages' => ['fa', 'en']
-        ]
+            // uncomment if multilanguage:
+            // 'languages' => ['fa', 'en']
+        ],
+        'cache' => [
+            'class' => 'yii\caching\DummyCache',
+        ],
     ]
 ];
