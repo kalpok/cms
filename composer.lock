@@ -6,6 +6,8 @@
     ],
     "hash": "dfe1c6848cfaab86d3db1f1693ba6e42",
     "content-hash": "6663da06959e440c4a9922a2431bcec9",
+    "hash": "4a8d408960c330387079bf9ffebea87b",
+    "content-hash": "a5205d47ad834496abb716357a44811f",
     "packages": [
         {
             "name": "2amigos/yii2-ckeditor-widget",
@@ -784,6 +786,7 @@
                 "image processing"
             ],
             "time": "2015-09-19 16:54:05"
+            "time": "2013-07-10 17:25:36"
         },
         {
             "name": "swiftmailer/swiftmailer",
