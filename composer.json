@@ -1,6 +1,6 @@
 {
-    "name": "ahb/cms",
-    "description": "ahb cms",
+    "name": "kalpok/cms",
+    "description": "kalpok cms",
     "homepage": "http://basiriam.ir/",
     "type": "project",
     "license": "WTFPL",
@@ -23,7 +23,6 @@
         }
     ],
     "require-dev": {
-        "yiisoft/yii2-codeception": "*",
         "yiisoft/yii2-debug": "*",
         "yiisoft/yii2-gii": "*",
         "yiisoft/yii2-faker": "*"
