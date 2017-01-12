@@ -18,20 +18,7 @@ class HomeSlider extends \yii\base\Widget
 
     private function setHandle()
     {
-        switch ($this->language->code) {
-            case 'fa':
-                $this->handle = 'home-fa';
-                break;
-            case 'en':
-                $this->handle = 'home-en';
-                break;
-            case 'ar':
-                $this->handle = 'home-ar';
-                break;
-            default:
-                $this->handle = 'home-fa';
-                break;
-        }
+        $this->handle = 'home-' . $this->language->code;
     }
 
     public function run()
