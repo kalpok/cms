@@ -7,7 +7,6 @@ $config = [
     'basePath' => dirname(__DIR__),
     'aliases' => [
         '@config' => '@app/config',
-        '@themes' => '@app/themes',
         '@modules' => '@app/modules',
         '@kalpok' => '@vendor/ahb360/kalpok'
     ],
@@ -20,7 +19,13 @@ $config = [
     ],
     'components' => [
         'i18n' => [
-            'class' => 'kalpok\i18n\I18N'
+            'class' => 'kalpok\i18n\I18N',
+            'translations' => [
+                'cms' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@theme/messages',
+                ]
+            ],
         ],
         'formatter' => [
             'class' => 'kalpok\i18n\Formatter',
@@ -56,8 +61,7 @@ $config = [
             'enableAutoLogin' => true,
             'loginUrl' => ['/user/auth/login'],
             'identityClass' => 'modules\user\common\components\UserIdentity'
-        ],
-        'db' => require(__DIR__ . '/local/db.php')
+        ]
     ],
     'params' => [
         'adminEmail' => 'admin@example.com',
