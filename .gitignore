@@ -4,8 +4,6 @@
 # runtime and cache directories
 /runtime
 /uploads
-/web/assets
-/web/admin/assets
 
 # cache directories
 Thumbs.db
