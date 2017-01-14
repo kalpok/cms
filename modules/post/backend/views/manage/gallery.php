@@ -8,7 +8,7 @@ $this->params['breadcrumbs'][] = 'گالری';
 $this->title = 'مدیریت گالری نوشته';
 
 echo $this->render(
-    '@kalpok/gallery/views/index.php',
+    '@extensions/gallery/views/index.php',
     [
         'gallery' => $gallery,
         'ownerId' => $model->id

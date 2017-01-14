@@ -47,7 +47,7 @@ class ManageController extends AdminController
     {
         return [
             'gallery' => [
-                'class' => 'kalpok\gallery\actions\GalleryAction',
+                'class' => 'extensions\gallery\actions\GalleryAction',
                 'ownerModelClassName' => Page::className()
             ]
         ];

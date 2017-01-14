@@ -8,7 +8,6 @@ use kalpok\behaviors\TimestampBehavior;
 use kalpok\file\behaviors\FileBehavior;
 use kalpok\behaviors\CategoriesBehavior;
 use modules\post\backend\models\PostQuery;
-use kalpok\gallery\behaviors\GalleryBehavior;
 use kalpok\validators\FarsiCharactersValidator;
 
 class Post extends \yii\db\ActiveRecord
@@ -22,7 +21,7 @@ class Post extends \yii\db\ActiveRecord
     {
         $module = \modules\post\backend\Module::getInstance();
         return [
-            GalleryBehavior::className(),
+            'gallery' => '\extensions\gallery\behaviors\GalleryBehavior',
             TimestampBehavior::className(),
             CategoriesBehavior::className(),
             [

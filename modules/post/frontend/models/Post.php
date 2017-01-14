@@ -4,7 +4,6 @@ namespace modules\post\frontend\models;
 
 use Yii;
 use kalpok\file\behaviors\FileBehavior;
-use kalpok\gallery\behaviors\GalleryBehavior;
 
 class Post extends \yii\db\ActiveRecord
 {
@@ -16,7 +15,7 @@ class Post extends \yii\db\ActiveRecord
     public function behaviors()
     {
         return [
-            GalleryBehavior::className(),
+            'gallery' => '\extensions\gallery\behaviors\GalleryBehavior',
             [
                 'class' => FileBehavior::className(),
                 'groups' => [
