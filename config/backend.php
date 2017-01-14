@@ -8,7 +8,7 @@ return [
         '@theme' => '@themes/admin360',
     ],
     'controllerMap' => [
-        'gallery' => 'kalpok\gallery\controllers\GalleryController'
+        'gallery' => 'extensions\gallery\controllers\GalleryController'
     ],
     'components' => [
         'view' => [

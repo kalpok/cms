@@ -8,6 +8,7 @@ $config = [
     'aliases' => [
         '@config' => '@app/config',
         '@modules' => '@app/modules',
+        '@extensions' => '@app/extensions',
         '@kalpok' => '@vendor/ahb360/kalpok'
     ],
     'controllerMap' => [
