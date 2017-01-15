@@ -4,8 +4,8 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use themes\admin360\widgets\Panel;
 use themes\admin360\widgets\Button;
-use kalpok\i18n\widgets\LanguageSelect;
 use themes\admin360\widgets\editor\Editor;
+use extensions\i18n\widgets\LanguageSelect;
 use themes\admin360\widgets\SelectizeDropDownList;
 use kalpok\file\widgets\singleupload\SingleImageUpload;
 

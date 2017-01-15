@@ -20,7 +20,7 @@ $config = [
     ],
     'components' => [
         'i18n' => [
-            'class' => 'kalpok\i18n\I18N',
+            'class' => 'extensions\i18n\I18N',
             'translations' => [
                 'cms' => [
                     'class' => 'yii\i18n\PhpMessageSource',
@@ -29,7 +29,7 @@ $config = [
             ],
         ],
         'formatter' => [
-            'class' => 'kalpok\i18n\Formatter',
+            'class' => 'extensions\i18n\Formatter',
             'dateFormat' => 'php:d F Y',
             'datetimeFormat' => 'php:d F Y | H:i',
         ],

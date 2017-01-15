@@ -1,7 +1,7 @@
 <?php
 return [
     'bootstrap' => [
-        'kalpok\i18n\LanguageAndCalendarSetter'
+        'extensions\i18n\LanguageAndCalendarSetter'
     ],
     'aliases' => [
         '@themes' => '@app/themes',
