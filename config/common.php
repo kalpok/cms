@@ -13,6 +13,7 @@ $config = [
         '@kalpok' => '@vendor/ahb360/kalpok'
     ],
     'controllerMap' => [
+        'site' => 'core\controllers\SiteController',
         'file' => 'kalpok\file\controllers\FileController'
     ],
     'bootstrap' => [

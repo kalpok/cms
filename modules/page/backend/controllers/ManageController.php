@@ -2,8 +2,8 @@
 namespace modules\page\backend\controllers;
 
 use Yii;
-use kalpok\controllers\AdminController;
 use yii\filters\AccessControl;
+use core\controllers\AdminController;
 use modules\page\backend\models\Page;
 use modules\page\backend\models\PageSearch;
 
