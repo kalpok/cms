@@ -1,7 +1,7 @@
 <?php
 namespace modules\page\backend\models;
 
-use kalpok\file\behaviors\FileBehavior;
+use extensions\file\behaviors\FileBehavior;
 use extensions\i18n\validators\FarsiCharactersValidator;
 
 class Page extends \modules\page\common\models\Page

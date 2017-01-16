@@ -9,7 +9,7 @@ use modules\post\backend\models\Category;
 use themes\admin360\widgets\editor\Editor;
 use extensions\i18n\widgets\LanguageSelect;
 use dosamigos\selectize\SelectizeTextInput;
-use kalpok\file\widgets\singleupload\SingleImageUpload;
+use extensions\file\widgets\singleupload\SingleImageUpload;
 
 $backLink = $model->isNewRecord ? ['index'] : ['view', 'id' => $model->id];
 ?>

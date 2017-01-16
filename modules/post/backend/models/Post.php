@@ -2,8 +2,8 @@
 
 namespace modules\post\backend\models;
 
-use kalpok\file\behaviors\FileBehavior;
 use modules\post\backend\models\PostQuery;
+use extensions\file\behaviors\FileBehavior;
 use extensions\i18n\validators\FarsiCharactersValidator;
 
 class Post extends \yii\db\ActiveRecord

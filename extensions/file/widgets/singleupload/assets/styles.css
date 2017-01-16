@@ -1,0 +1,53 @@
+.single-file-upload .btn-file {
+  position: relative;
+  overflow: hidden;
+}
+img.image-preview{
+  width: 100%;
+}
+.single-file-upload .btn-file, .single-file-upload .btn-image {
+  font-size: 1.4rem;
+  padding: 6px 11px;
+}
+.single-file-upload .btn-file input[type=file],
+.single-file-upload .btn-image input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  background: red;
+  cursor: inherit;
+  display: block;
+}
+.single-file-upload input[readonly] {
+  background-color: white !important;
+  cursor: text !important;
+}
+.uploaded-files{
+  direction: ltr;
+}
+.uploaded-files .filename{
+  font-size: 0.7em;
+  font-weight: normal;
+  padding: 0 10px;
+  display: inline-block;
+}
+.uploaded-files i.file-delete, .uploaded-images i.file-delete{
+  cursor: pointer;
+}
+.uploaded-images .image-thumb {
+  display: block;
+  width: 100%;
+  position: relative;
+  text-align: center;
+}
+.uploaded-images i.file-delete {
+  position: absolute;
+  top: 0;
+  right: 0;
+}

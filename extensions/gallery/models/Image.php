@@ -2,7 +2,7 @@
 namespace extensions\gallery\models;
 
 use Yii;
-use kalpok\file\behaviors\FileBehavior;
+use extensions\file\behaviors\FileBehavior;
 
 class Image extends \yii\db\ActiveRecord
 {

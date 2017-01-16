@@ -3,7 +3,7 @@ use yii\helpers\Html;
 use core\helpers\Utility;
 use yii\bootstrap\ActiveForm;
 use themes\admin360\widgets\Panel;
-use kalpok\file\widgets\singleupload\SingleImageUpload;
+use extensions\file\widgets\singleupload\SingleImageUpload;
 ?>
 <?php Panel::begin([
     'title' => ($model->isNewRecord) ? 'افزودن عکس جدید' : 'ویرایش عکس',

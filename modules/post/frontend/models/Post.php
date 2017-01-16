@@ -3,7 +3,7 @@
 namespace modules\post\frontend\models;
 
 use Yii;
-use kalpok\file\behaviors\FileBehavior;
+use extensions\file\behaviors\FileBehavior;
 
 class Post extends \yii\db\ActiveRecord
 {

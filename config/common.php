@@ -9,12 +9,11 @@ $config = [
         '@core' => '@app/core',
         '@config' => '@app/config',
         '@modules' => '@app/modules',
-        '@extensions' => '@app/extensions',
-        '@kalpok' => '@vendor/ahb360/kalpok'
+        '@extensions' => '@app/extensions'
     ],
     'controllerMap' => [
         'site' => 'core\controllers\SiteController',
-        'file' => 'kalpok\file\controllers\FileController'
+        'file' => 'extensions\file\controllers\FileController'
     ],
     'bootstrap' => [
         'log',
