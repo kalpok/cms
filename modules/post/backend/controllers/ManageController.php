@@ -5,7 +5,7 @@ namespace modules\post\backend\controllers;
 use Yii;
 use yii\filters\AccessControl;
 use modules\post\backend\models\Post;
-use kalpok\controllers\AdminController;
+use core\controllers\AdminController;
 use modules\post\backend\models\PostSearch;
 
 /**
@@ -51,7 +51,7 @@ class ManageController extends AdminController
     {
         return [
             'gallery' => [
-                'class' => 'kalpok\gallery\actions\GalleryAction',
+                'class' => 'extensions\gallery\actions\GalleryAction',
                 'ownerModelClassName' => Post::className()
             ]
         ];

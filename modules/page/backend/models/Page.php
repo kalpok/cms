@@ -1,14 +1,10 @@
 <?php
 namespace modules\page\backend\models;
 
-use Yii;
-use kalpok\behaviors\SluggableBehavior;
-use kalpok\behaviors\TimestampBehavior;
-use kalpok\file\behaviors\FileBehavior;
-use modules\page\common\models\Page as basePage;
-use kalpok\validators\FarsiCharactersValidator;
+use extensions\file\behaviors\FileBehavior;
+use extensions\i18n\validators\FarsiCharactersValidator;
 
-class Page extends basePage
+class Page extends \modules\page\common\models\Page
 {
     private $parent;
     private $parentId;
@@ -18,9 +14,9 @@ class Page extends basePage
         return array_merge(
             parent::behaviors(),
             [
-                TimestampBehavior::className(),
-                [
-                    'class' => SluggableBehavior::className(),
+                'core\behaviors\TimestampBehavior',
+                'sluggable' => [
+                    'class' => 'core\behaviors\SluggableBehavior',
                     'attribute' => 'title',
                 ],
                 [

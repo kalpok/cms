@@ -4,7 +4,6 @@ namespace modules\user\common\models;
 
 use Yii;
 use yii\db\ActiveRecord;
-use kalpok\behaviors\TimestampBehavior;
 
 class User extends ActiveRecord
 {
@@ -26,7 +25,7 @@ class User extends ActiveRecord
     public function behaviors()
     {
         return [
-            TimestampBehavior::className()
+            'core\behaviors\TimestampBehavior'
         ];
     }
 

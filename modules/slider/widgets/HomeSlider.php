@@ -1,8 +1,8 @@
 <?php
 namespace modules\slider\widgets;
 
-use kalpok\i18n\Language;
-use kalpok\gallery\models\Gallery;
+use extensions\i18n\language\Language;
+use extensions\gallery\models\Gallery;
 
 class HomeSlider extends \yii\base\Widget
 {
