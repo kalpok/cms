@@ -2,18 +2,13 @@
 
 namespace modules\post\backend\models;
 
-use Yii;
-use kalpok\behaviors\TimestampBehavior;
-use kalpok\behaviors\SluggableBehavior;
 use extensions\i18n\validators\FarsiCharactersValidator;
 
 class Category extends \yii\db\ActiveRecord
 {
     const STATUS_ACTIVE = 1;
     const STATUS_NOT_ACTIVE = 0;
-    /**
-     * @inheritdoc
-     */
+
     public static function tableName()
     {
         return 'post_category';
@@ -22,17 +17,14 @@ class Category extends \yii\db\ActiveRecord
     public function behaviors()
     {
         return [
-            TimestampBehavior::className(),
-            [
-                'class' => SluggableBehavior::className(),
+            'core\behaviors\TimestampBehavior',
+            'sluggable' => [
+                'class' => 'core\behaviors\SluggableBehavior',
                 'attribute' => 'title',
             ],
         ];
     }
 
-    /**
-     * @inheritdoc
-     */
     public function rules()
     {
         return [
@@ -44,9 +36,6 @@ class Category extends \yii\db\ActiveRecord
         ];
     }
 
-    /**
-     * @inheritdoc
-     */
     public function attributeLabels()
     {
         return [

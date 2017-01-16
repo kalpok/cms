@@ -2,11 +2,7 @@
 
 namespace modules\post\backend\models;
 
-use Yii;
-use kalpok\behaviors\SluggableBehavior;
-use kalpok\behaviors\TimestampBehavior;
 use kalpok\file\behaviors\FileBehavior;
-use kalpok\behaviors\CategoriesBehavior;
 use modules\post\backend\models\PostQuery;
 use extensions\i18n\validators\FarsiCharactersValidator;
 
@@ -21,11 +17,11 @@ class Post extends \yii\db\ActiveRecord
     {
         $module = \modules\post\backend\Module::getInstance();
         return [
+            'core\behaviors\TimestampBehavior',
+            'core\behaviors\CategoriesBehavior',
             'gallery' => '\extensions\gallery\behaviors\GalleryBehavior',
-            TimestampBehavior::className(),
-            CategoriesBehavior::className(),
-            [
-                'class' => SluggableBehavior::className(),
+            'sluggable' => [
+                'class' => 'core\behaviors\SluggableBehavior',
                 'attribute' => ($module && $module->editableSlug) ? 'slug' : 'title',
             ],
             [
@@ -43,9 +39,6 @@ class Post extends \yii\db\ActiveRecord
         ];
     }
 
-    /**
-     * @inheritdoc
-     */
     public function rules()
     {
         return [
@@ -57,9 +50,6 @@ class Post extends \yii\db\ActiveRecord
         ];
     }
 
-    /**
-     * @inheritdoc
-     */
     public function attributeLabels()
     {
         return [
