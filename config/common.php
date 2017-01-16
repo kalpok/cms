@@ -45,7 +45,7 @@ $config = [
             // 'cache' => 'cache'
         ],
         'mailer' => [
-            'class' => 'kalpok\mailer\Mailer',
+            'class' => 'extensions\mailer\Mailer',
             'useFileTransport' => false
         ],
         'log' => [
