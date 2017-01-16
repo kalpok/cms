@@ -8,7 +8,7 @@ use kalpok\behaviors\TimestampBehavior;
 use kalpok\file\behaviors\FileBehavior;
 use kalpok\behaviors\CategoriesBehavior;
 use modules\post\backend\models\PostQuery;
-use kalpok\validators\FarsiCharactersValidator;
+use extensions\i18n\validators\FarsiCharactersValidator;
 
 class Post extends \yii\db\ActiveRecord
 {

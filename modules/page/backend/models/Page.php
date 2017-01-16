@@ -6,7 +6,7 @@ use kalpok\behaviors\SluggableBehavior;
 use kalpok\behaviors\TimestampBehavior;
 use kalpok\file\behaviors\FileBehavior;
 use modules\page\common\models\Page as basePage;
-use kalpok\validators\FarsiCharactersValidator;
+use extensions\i18n\validators\FarsiCharactersValidator;
 
 class Page extends basePage
 {

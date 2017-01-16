@@ -5,7 +5,7 @@ namespace modules\post\backend\models;
 use Yii;
 use kalpok\behaviors\TimestampBehavior;
 use kalpok\behaviors\SluggableBehavior;
-use kalpok\validators\FarsiCharactersValidator;
+use extensions\i18n\validators\FarsiCharactersValidator;
 
 class Category extends \yii\db\ActiveRecord
 {
