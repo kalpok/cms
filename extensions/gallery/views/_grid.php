@@ -18,17 +18,17 @@ use themes\admin360\widgets\Panel;
             'columns' => [
                 ['class' => 'yii\grid\SerialColumn'],
                 [
-                    'class' => 'kalpok\grid\ThumbnailColumn',
+                    'class' => 'core\grid\ThumbnailColumn',
                     'group' => 'gallery_image',
                     'preset' => 'gallery-grid',
                     'label' => false,
                     'options' => ['style' => 'width:25%;']
                 ],
                 'title',
-                ['class' => 'kalpok\grid\LinkColumn'],
+                ['class' => 'core\grid\LinkColumn'],
                 'order:farsiNumber',
                 [
-                    'class' => 'kalpok\grid\ActionColumn',
+                    'class' => 'core\grid\ActionColumn',
                     'controller' => '/gallery',
                     'options' => ['style' => 'width:7%'],
                     'template' => '{edit-image} {remove-image}',
