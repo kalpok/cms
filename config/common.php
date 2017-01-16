@@ -6,13 +6,14 @@ $config = [
     'sourceLanguage' => 'en',
     'basePath' => dirname(__DIR__),
     'aliases' => [
+        '@core' => '@app/core',
         '@config' => '@app/config',
-        '@themes' => '@app/themes',
         '@modules' => '@app/modules',
-        '@kalpok' => '@vendor/ahb360/kalpok'
+        '@extensions' => '@app/extensions'
     ],
     'controllerMap' => [
-        'file' => 'kalpok\file\controllers\FileController'
+        'site' => 'core\controllers\SiteController',
+        'file' => 'extensions\file\controllers\FileController'
     ],
     'bootstrap' => [
         'log',
@@ -20,10 +21,16 @@ $config = [
     ],
     'components' => [
         'i18n' => [
-            'class' => 'kalpok\i18n\I18N'
+            'class' => 'extensions\i18n\I18N',
+            'translations' => [
+                'cms' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@theme/messages',
+                ]
+            ],
         ],
         'formatter' => [
-            'class' => 'kalpok\i18n\Formatter',
+            'class' => 'extensions\i18n\Formatter',
             'dateFormat' => 'php:d F Y',
             'datetimeFormat' => 'php:d F Y | H:i',
         ],
@@ -39,7 +46,7 @@ $config = [
             // 'cache' => 'cache'
         ],
         'mailer' => [
-            'class' => 'kalpok\mailer\Mailer',
+            'class' => 'extensions\mailer\Mailer',
             'useFileTransport' => false
         ],
         'log' => [
@@ -56,8 +63,7 @@ $config = [
             'enableAutoLogin' => true,
             'loginUrl' => ['/user/auth/login'],
             'identityClass' => 'modules\user\common\components\UserIdentity'
-        ],
-        'db' => require(__DIR__ . '/local/db.php')
+        ]
     ],
     'params' => [
         'adminEmail' => 'admin@example.com',

@@ -24,10 +24,10 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'kalpok\grid\IDColumn'],
-            ['class' => 'kalpok\grid\LanguageColumn'],
+            ['class' => 'core\grid\IDColumn'],
+            ['class' => 'core\grid\LanguageColumn'],
             [
-                'class' => 'kalpok\grid\ThumbnailColumn',
+                'class' => 'core\grid\ThumbnailColumn',
                 'group' => 'image',
                 'label' => 'تصویر شاخص'
             ],
@@ -42,7 +42,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'format' =>'date',
                 'filter' =>false
             ],
-            ['class' => 'kalpok\grid\ActiveColumn'],
+            ['class' => 'core\grid\ActiveColumn'],
             [
              'class' => 'yii\grid\ActionColumn',
              'template' => '{view} {update}'

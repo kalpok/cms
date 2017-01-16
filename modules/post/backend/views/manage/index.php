@@ -30,8 +30,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 'filterModel' => $searchModel,
                 'columns' => [
                     ['class' => 'yii\grid\SerialColumn'],
-                    ['class' => 'kalpok\grid\IDColumn'],
-                    ['class' => 'kalpok\grid\LanguageColumn'],
+                    ['class' => 'core\grid\IDColumn'],
+                    ['class' => 'core\grid\LanguageColumn'],
                     'title',
                     [
                         'attribute' => 'categories',
@@ -49,7 +49,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         'format' =>'date',
                         'filter' =>false
                     ],
-                    ['class' => 'kalpok\grid\ActiveColumn'],
+                    ['class' => 'core\grid\ActiveColumn'],
                     ['class' => 'yii\grid\ActionColumn'],
                 ],
             ]); ?>

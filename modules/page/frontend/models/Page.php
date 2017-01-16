@@ -3,7 +3,7 @@ namespace modules\page\frontend\models;
 
 use Yii;
 use yii\db\ActiveQuery;
-use kalpok\file\behaviors\FileBehavior;
+use extensions\file\behaviors\FileBehavior;
 use modules\page\common\models\Page as basePage;
 
 class Page extends basePage

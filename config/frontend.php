@@ -1,14 +1,11 @@
 <?php
 return [
     'on beforeAction' => function ($event) {
-        kalpok\i18n\LanguageAndCalendarSetter::set();
+        extensions\i18n\LanguageAndCalendarSetter::set();
     },
-    'aliases' => [
-        '@webroot' => '@app/web',
-    ],
     'components' => [
         'view' => [
-            'class' => 'kalpok\i18n\View'
+            'class' => 'extensions\i18n\View'
         ],
         'urlManager' => [
             'enablePrettyUrl' => true,

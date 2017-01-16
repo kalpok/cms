@@ -2,7 +2,6 @@
 namespace modules\page\common\models;
 
 use creocoder\nestedsets\NestedSetsBehavior;
-use kalpok\gallery\behaviors\GalleryBehavior;
 
 class Page extends \yii\db\ActiveRecord
 {
@@ -14,7 +13,7 @@ class Page extends \yii\db\ActiveRecord
     public function behaviors()
     {
         return [
-            GalleryBehavior::className(),
+            'gallery' => '\extensions\gallery\behaviors\GalleryBehavior',
             'tree' => [
                 'class' => NestedSetsBehavior::className(),
                 'treeAttribute' => 'root',

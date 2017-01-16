@@ -34,14 +34,14 @@ $this->params['breadcrumbs'][] = $this->title;
                 'filterModel' => $searchModel,
                 'columns' => [
                     ['class' => 'yii\grid\SerialColumn'],
-                    ['class' => 'kalpok\grid\LanguageColumn'],
+                    ['class' => 'core\grid\LanguageColumn'],
                     'title',
                     [
                         'attribute' => 'createdAt',
                         'format' =>'date',
                         'filter' =>false
                     ],
-                    ['class' => 'kalpok\grid\ActiveColumn'],
+                    ['class' => 'core\grid\ActiveColumn'],
                     ['class' => 'yii\grid\ActionColumn'],
                 ],
             ]); ?>

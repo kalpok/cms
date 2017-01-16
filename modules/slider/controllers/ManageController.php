@@ -30,13 +30,13 @@ class ManageController extends Controller
     {
         $actions = [
             'home-fa' => [
-                'class' => 'kalpok\gallery\actions\GalleryAction',
+                'class' => 'extensions\gallery\actions\GalleryAction',
                 'handle' => 'home-fa'
             ]
         ];
         if (\Yii::$app->i18n->isMultiLanguage()) {
             $actions['home-en'] = [
-                'class' => 'kalpok\gallery\actions\GalleryAction',
+                'class' => 'extensions\gallery\actions\GalleryAction',
                 'handle' => 'home-en'
             ];
         }

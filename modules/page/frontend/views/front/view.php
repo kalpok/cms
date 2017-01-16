@@ -1,8 +1,8 @@
 <?php
 
 use yii\helpers\Html;
+use extensions\gallery\widgets\Gallery;
 use modules\page\frontend\widgets\pagefamily\PageFamily;
-use kalpok\gallery\widgets\gallery\Gallery;
 
 $this->params['title'] = $page->title;
 $this->params['breadcrumbs'] = [
@@ -23,21 +23,19 @@ $this->title = $page->title;
             <?= $page->content ?>
             <div style="clear:both;"></div>
             <?= Gallery::widget(
-            [
-                'view' => 'lightboxgallery',
-                'images'=>$page->getGalleryImages(),
-                'id' => 'hasan',
-            ]
+                [
+                    'images'=>$page->getGalleryImages(),
+                    'id' => 'page-gallery'
+                ]
             ) ?>
         </div>
     </article>
 </div>
 <?php $this->beginBlock('sidebar');?>
     <?= PageFamily::widget([
-            'page' => $page,
-            'listClass' => 'list-unstyled',
-            'showTitle' => false,
-            'containerClass' => 'side-menu',
-            // 'listIcon' => ''
-        ]) ?>
+        'page' => $page,
+        'listClass' => 'list-unstyled',
+        'showTitle' => false,
+        'containerClass' => 'side-menu',
+    ]) ?>
 <?php $this->endBlock() ?>

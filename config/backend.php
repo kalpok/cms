@@ -1,15 +1,25 @@
 <?php
 return [
     'bootstrap' => [
-        'kalpok\i18n\LanguageAndCalendarSetter'
+        'extensions\i18n\LanguageAndCalendarSetter'
     ],
     'aliases' => [
-        '@webroot' => '@app/web/admin',
+        '@themes' => '@app/themes',
+        '@theme' => '@themes/admin360',
     ],
     'controllerMap' => [
-        'gallery' => 'kalpok\gallery\controllers\GalleryController'
+        'gallery' => 'extensions\gallery\controllers\GalleryController'
     ],
     'components' => [
+        'view' => [
+            'theme' => [
+                'basePath' => '@theme',
+                'pathMap' => [
+                    '@app/views' => '@theme/views',
+                    '@modules' => '@theme/views/modules',
+                ],
+            ],
+        ],
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
