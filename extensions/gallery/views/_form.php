@@ -1,7 +1,7 @@
 <?php
 use yii\helpers\Html;
+use core\helpers\Utility;
 use yii\bootstrap\ActiveForm;
-use kalpok\helpers\Utility;
 use themes\admin360\widgets\Panel;
 use kalpok\file\widgets\singleupload\SingleImageUpload;
 ?>

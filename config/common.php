@@ -6,6 +6,7 @@ $config = [
     'sourceLanguage' => 'en',
     'basePath' => dirname(__DIR__),
     'aliases' => [
+        '@core' => '@app/core',
         '@config' => '@app/config',
         '@modules' => '@app/modules',
         '@extensions' => '@app/extensions',
