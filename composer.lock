@@ -4,10 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "dfe1c6848cfaab86d3db1f1693ba6e42",
-    "content-hash": "6663da06959e440c4a9922a2431bcec9",
-    "hash": "4a8d408960c330387079bf9ffebea87b",
-    "content-hash": "a5205d47ad834496abb716357a44811f",
+    "content-hash": "21795f6e8d48c43a1f67a429457d3fd2",
     "packages": [
         {
             "name": "2amigos/yii2-ckeditor-widget",
@@ -67,7 +64,7 @@
                 "yii 2",
                 "yii2"
             ],
-            "time": "2016-11-10 11:32:46"
+            "time": "2016-11-10T11:32:46+00:00"
         },
         {
             "name": "2amigos/yii2-selectize-widget",
@@ -133,46 +130,7 @@
                 "yii 2",
                 "yii2"
             ],
-            "time": "2016-09-10 19:27:58"
-        },
-        {
-            "name": "ahb360/kalpok",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ahb360/kalpok.git",
-                "reference": "ed402bc0e2753dcee606d14244c85fd878b0c50c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ahb360/kalpok/zipball/ed402bc0e2753dcee606d14244c85fd878b0c50c",
-                "reference": "ed402bc0e2753dcee606d14244c85fd878b0c50c",
-                "shasum": ""
-            },
-            "require": {
-                "creocoder/yii2-taggable": "~2.0",
-                "yiisoft/yii2": ">=2.0.4"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "kalpok\\": ""
-                }
-            },
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "description": "Kalpok core",
-            "homepage": "http://www.yiiframework.com/",
-            "keywords": [
-                "cms",
-                "yii2"
-            ],
-            "support": {
-                "source": "https://github.com/ahb360/kalpok/tree/develop",
-                "issues": "https://github.com/ahb360/kalpok/issues"
-            },
-            "time": "2015-11-23 10:40:30"
+            "time": "2016-09-10T19:27:58+00:00"
         },
         {
             "name": "bower-asset/bootstrap",
@@ -259,12 +217,12 @@
             "version": "3.2.7",
             "source": {
                 "type": "git",
-                "url": "https://github.com/RobinHerbots/jquery.inputmask.git",
+                "url": "https://github.com/RobinHerbots/Inputmask.git",
                 "reference": "5a72c563b502b8e05958a524cdfffafe9987be38"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RobinHerbots/jquery.inputmask/zipball/5a72c563b502b8e05958a524cdfffafe9987be38",
+                "url": "https://api.github.com/repos/RobinHerbots/Inputmask/zipball/5a72c563b502b8e05958a524cdfffafe9987be38",
                 "reference": "5a72c563b502b8e05958a524cdfffafe9987be38",
                 "shasum": ""
             },
@@ -562,20 +520,20 @@
                 "markdown",
                 "markdown-extra"
             ],
-            "time": "2016-09-14 20:40:20"
+            "time": "2016-09-14T20:40:20+00:00"
         },
         {
             "name": "ckeditor/ckeditor",
-            "version": "4.6.1",
+            "version": "4.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ckeditor/ckeditor-releases.git",
-                "reference": "075b649ec6b160ae9fe78c393dca28024bb7aa14"
+                "reference": "268078ab43195b6004d64bc8764c41f2f829640e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ckeditor/ckeditor-releases/zipball/075b649ec6b160ae9fe78c393dca28024bb7aa14",
-                "reference": "075b649ec6b160ae9fe78c393dca28024bb7aa14",
+                "url": "https://api.github.com/repos/ckeditor/ckeditor-releases/zipball/268078ab43195b6004d64bc8764c41f2f829640e",
+                "reference": "268078ab43195b6004d64bc8764c41f2f829640e",
                 "shasum": ""
             },
             "type": "library",
@@ -603,7 +561,7 @@
                 "text",
                 "wysiwyg"
             ],
-            "time": "2016-12-08 15:32:52"
+            "time": "2017-01-12T17:36:48+00:00"
         },
         {
             "name": "creocoder/yii2-nested-sets",
@@ -643,7 +601,7 @@
                 "nested sets",
                 "yii2"
             ],
-            "time": "2015-01-27 10:53:51"
+            "time": "2015-01-27T10:53:51+00:00"
         },
         {
             "name": "creocoder/yii2-taggable",
@@ -684,7 +642,7 @@
                 "tags",
                 "yii2"
             ],
-            "time": "2015-02-24 21:45:58"
+            "time": "2015-02-24T21:45:58+00:00"
         },
         {
             "name": "ezyang/htmlpurifier",
@@ -728,7 +686,7 @@
             "keywords": [
                 "html"
             ],
-            "time": "2016-07-16 12:58:58"
+            "time": "2016-07-16T12:58:58+00:00"
         },
         {
             "name": "imagine/imagine",
@@ -785,8 +743,7 @@
                 "image manipulation",
                 "image processing"
             ],
-            "time": "2015-09-19 16:54:05"
-            "time": "2013-07-10 17:25:36"
+            "time": "2015-09-19T16:54:05+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -840,7 +797,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2016-12-29 10:02:40"
+            "time": "2016-12-29T10:02:40+00:00"
         },
         {
             "name": "yiisoft/yii2",
@@ -934,7 +891,7 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2016-10-20 12:02:50"
+            "time": "2016-10-20T12:02:50+00:00"
         },
         {
             "name": "yiisoft/yii2-bootstrap",
@@ -984,7 +941,7 @@
                 "bootstrap",
                 "yii2"
             ],
-            "time": "2016-03-17 03:29:28"
+            "time": "2016-03-17T03:29:28+00:00"
         },
         {
             "name": "yiisoft/yii2-composer",
@@ -1034,7 +991,7 @@
                 "extension installer",
                 "yii2"
             ],
-            "time": "2016-12-20 13:26:02"
+            "time": "2016-12-20T13:26:02+00:00"
         },
         {
             "name": "yiisoft/yii2-imagine",
@@ -1082,7 +1039,7 @@
                 "imagine",
                 "yii2"
             ],
-            "time": "2016-11-03 19:28:39"
+            "time": "2016-11-03T19:28:39+00:00"
         },
         {
             "name": "yiisoft/yii2-swiftmailer",
@@ -1132,7 +1089,7 @@
                 "swiftmailer",
                 "yii2"
             ],
-            "time": "2016-09-09 11:48:11"
+            "time": "2016-09-09T11:48:11+00:00"
         }
     ],
     "packages-dev": [
@@ -1209,7 +1166,7 @@
                 "faker",
                 "fixtures"
             ],
-            "time": "2016-04-29 12:21:54"
+            "time": "2016-04-29T12:21:54+00:00"
         },
         {
             "name": "phpspec/php-diff",
@@ -1247,53 +1204,7 @@
                 }
             ],
             "description": "A comprehensive library for generating differences between two hashable objects (strings or arrays).",
-            "time": "2016-04-07 12:29:16"
-        },
-        {
-            "name": "yiisoft/yii2-codeception",
-            "version": "2.0.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/yiisoft/yii2-codeception.git",
-                "reference": "c916a36d09fc128b05a374e7922bc56854334d56"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-codeception/zipball/c916a36d09fc128b05a374e7922bc56854334d56",
-                "reference": "c916a36d09fc128b05a374e7922bc56854334d56",
-                "shasum": ""
-            },
-            "require": {
-                "yiisoft/yii2": ">=2.0.4"
-            },
-            "type": "yii2-extension",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "yii\\codeception\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Mark Jebri",
-                    "email": "mark.github@yandex.ru"
-                }
-            ],
-            "description": "The Codeception integration for the Yii framework",
-            "keywords": [
-                "codeception",
-                "yii2"
-            ],
-            "abandoned": "codeception/codeception",
-            "time": "2016-03-17 03:41:26"
+            "time": "2016-04-07T12:29:16+00:00"
         },
         {
             "name": "yiisoft/yii2-debug",
@@ -1340,7 +1251,7 @@
                 "debugger",
                 "yii2"
             ],
-            "time": "2016-11-24 09:42:29"
+            "time": "2016-11-24T09:42:29+00:00"
         },
         {
             "name": "yiisoft/yii2-faker",
@@ -1387,7 +1298,7 @@
                 "faker",
                 "yii2"
             ],
-            "time": "2015-03-01 06:22:44"
+            "time": "2015-03-01T06:22:44+00:00"
         },
         {
             "name": "yiisoft/yii2-gii",
@@ -1440,14 +1351,12 @@
                 "gii",
                 "yii2"
             ],
-            "time": "2016-03-18 14:09:46"
+            "time": "2016-03-18T14:09:46+00:00"
         }
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "ahb360/kalpok": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
