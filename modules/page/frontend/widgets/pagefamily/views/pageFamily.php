@@ -1,6 +1,5 @@
 <?php
     use yii\helpers\Html;
-
 ?>
 <div class="nestedpage-widget widget <?= $this->context->containerClass ?>">
 
@@ -16,18 +15,18 @@
     <ul class="<?= $this->context->listClass ?>">
         <?php if (!$page->isRoot() && !empty($parent)) : ?>
             <li class="parent">
-                <?php echo Html::a($this->context->listIcon.' '.$parent->title, [
-                    '/page/front/view','id' => $parent->id
-                ]);
-                ?>
+                <?= Html::a(
+                    $this->context->listIcon.' '.$parent->title,
+                    ['/page/front/view', 'slug' => $parent->slug]
+                ); ?>
             </li>
         <?php elseif ($page->isRoot() or empty($parent)) : ?>
             <li class="active parent">
-                <?php echo $this->context->listIcon.' '.$page->title; ?>
+                <?= $this->context->listIcon.' '.$page->title; ?>
             </li>
         <?php endif ?>
         <?php
-        $printArray = ($page->isRoot() or empty($parent)) ? $children : $sibling  ;
+        $printArray = ($page->isRoot() or empty($parent)) ? $children : $sibling;
         ?>
         <?php foreach ($printArray as $node) : ?>
             <?php if ($node->id == $page->id) : ?>
@@ -42,7 +41,7 @@
                                     $this->context->listIcon.' '.$child->title,
                                     [
                                         '/page/front/view',
-                                        'id' => $child->id
+                                        'slug' => $child->slug
                                     ]
                                 ) ?>
                                 </li>
@@ -55,7 +54,7 @@
                     $this->context->listIcon.' '.$node->title,
                     [
                         '/page/front/view',
-                        'id' => $node->id
+                        'slug' => $node->slug
                     ]
                 ); ?>
                 </li>
