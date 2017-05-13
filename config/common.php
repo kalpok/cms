@@ -2,7 +2,7 @@
 $config = [
     'id' => 'kalpok',
     'language' => 'fa',
-    'name' => 'kalpol cms',
+    'name' => 'kalpok cms',
     'sourceLanguage' => 'en',
     'basePath' => dirname(__DIR__),
     'aliases' => [
