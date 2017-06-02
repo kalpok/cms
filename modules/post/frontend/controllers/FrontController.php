@@ -32,7 +32,7 @@ class FrontController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
         return $this->render('view', [
-            'model' => $post,
+            'post' => $post,
         ]);
     }
 
