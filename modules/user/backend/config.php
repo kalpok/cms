@@ -8,9 +8,20 @@ return [
         // list of parameters
     ],
     'menu' =>[
-        'label' => 'مدیریت کاربران',
-        'url' => ['/user/manage/index'],
+        'label' => 'کاربران',
         'icon' => 'user',
-        'visible' => Yii::$app->user->can('superuser')
+        'visible' => Yii::$app->user->can('superuser'),
+        'items' => [
+            [
+                'label' => 'مدیریت کاربران',
+                'url' => ['/user/manage/index'],
+                'visible' =>  Yii::$app->user->canAccessAny(['user.create','user.update','user.delete'])
+            ],
+            [
+                'label' => 'مدیریت پروفایل',
+                'url' => ['/user/profile/index'],
+                'visible' => Yii::$app->user->canAccessAny(['user.profile'])
+            ],
+        ]
     ]
 ];
