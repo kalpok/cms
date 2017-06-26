@@ -18,7 +18,7 @@ return [
                 'visible' =>  Yii::$app->user->canAccessAny(['user.create','user.update','user.delete'])
             ],
             [
-                'label' => 'مدیریت پروفایل',
+                'label' => 'مدیریت فیلدهای پروفایل',
                 'url' => ['/user/profile/index'],
                 'visible' => Yii::$app->user->canAccessAny(['user.profile'])
             ],
