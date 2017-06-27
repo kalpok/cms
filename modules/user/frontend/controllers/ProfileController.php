@@ -5,6 +5,7 @@ namespace modules\user\frontend\controllers;
 use Yii;
 use yii\web\Controller;
 use modules\user\frontend\models\User;
+use modules\user\frontend\models\Profile;
 
 class ProfileController extends Controller
 {
@@ -14,11 +15,15 @@ class ProfileController extends Controller
             return $this->redirect(['/']);
         }
         $user = User::findOne(Yii::$app->user->id);
-        var_dump($user->profile[0]->data);
-        return $this->render('view'); //Yii::$app->user->id;
+        return $this->render('view', ['user' => $user]);
     }
 
     public function actionUpdate()
     {
+        if (Yii::$app->user->isGuest) {
+            return $this->redirect(['/']);
+        }
+        $user = User::findOne(Yii::$app->user->id);
+        return $this->render('update', ['user' => $user]);
     }
 }

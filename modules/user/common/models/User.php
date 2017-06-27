@@ -82,6 +82,7 @@ class User extends ActiveRecord
     public function getProfile()
     {
         return $this->hasMany(ProfileData::className(), ['userId' => 'id'])
+            ->with('field')
             ->leftJoin('user_profile_field', '`user_profile_data`.`profileFieldId` = `user_profile_field`.`id`')
             ->orderBy('`user_profile_field`.`priority` DESC');
     }
