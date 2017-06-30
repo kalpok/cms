@@ -35,4 +35,20 @@ class ProfileField extends \yii\db\ActiveRecord
             'updatedAt' => 'تاریخ بروز رسانی',
         ];
     }
+
+    public static function typeLabels()
+    {
+        return [
+            self::TYPE_STRING => 'متن کوتاه',
+            self::TYPE_INTEGER => 'عدد',
+            self::TYPE_DATE => 'تاریخ',
+            self::TYPE_TEXT => 'متن طولانی',
+        ];
+    }
+
+    public function getTypeLabel()
+    {
+        $labels = static::typeLabels();
+        return $labels[$this->type];
+    }
 }
