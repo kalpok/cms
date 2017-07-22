@@ -23,7 +23,7 @@ $config = [
         'i18n' => [
             'class' => 'extensions\i18n\I18N',
             'translations' => [
-                'cms' => [
+                'theme' => [
                     'class' => 'yii\i18n\PhpMessageSource',
                     'basePath' => '@theme/messages',
                 ]
