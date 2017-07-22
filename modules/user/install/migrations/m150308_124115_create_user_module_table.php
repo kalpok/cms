@@ -2,6 +2,7 @@
 
 use yii\db\Schema;
 use yii\db\Migration;
+use yii\base\Security;
 
 class m150308_124115_create_user_module_table extends Migration
 {
@@ -26,6 +27,22 @@ class m150308_124115_create_user_module_table extends Migration
             'createdAt' => 'integer NOT NULL',
             'updatedAt' => 'integer NOT NULL',
         ], $tableOptions);
+
+        $security = new Security;
+
+        $this->insert(
+            'user',
+            [
+                'email' => 'admin@example.com',
+                'authKey' => $security->generateRandomString(),
+                'passwordHash' => $security->generatePasswordHash('admin123'),
+                'randomToken' => $security->generateRandomString(),
+                'status' => 1,
+                'type' => 4,
+                'createdAt' => time(),
+                'updatedAt' => time(),
+            ]
+        );
     }
 
     public function down()
