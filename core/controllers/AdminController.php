@@ -95,14 +95,17 @@ class AdminController extends Controller
     public function actionDelete($id)
     {
         $this->findModel($id)->delete();
-        Yii::$app->session->addFlash('success', 'داده مورد نظر با موفقیت از سیستم حذف شد.');
+        Yii::$app->session->addFlash(
+            'success',
+            'داده مورد نظر با موفقیت از سیستم حذف شد.'
+        );
         return $this->redirect(['index']);
     }
 
     protected function findModel($id)
     {
         $modelClass = $this->modelClass;
-        if ( ($model = $modelClass::findOne($id)) !== null) {
+        if (($model = $modelClass::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
