@@ -13,7 +13,7 @@ return [
             'rules' => [
                 '' => 'site/index',
                 '<module>' => '<module>/front/index',
-                '<module>/<id:d+>' => '<module>/front/view',
+                '<module>/<id:\d+>' => '<module>/front/view',
                 '<module>/<slug>' => '<module>/front/view',
                 '<module>/category/<slug>' => '<module>/front/category'
             ]

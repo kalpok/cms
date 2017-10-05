@@ -36,7 +36,6 @@ return [
     'modules' => [
         'page' => 'modules\page\backend\Module',
         'post' => 'modules\post\backend\Module',
-        'slider' => 'modules\slider\Module',
         'user' => 'modules\user\backend\Module',
         'setting' => 'modules\setting\Module'
     ],
