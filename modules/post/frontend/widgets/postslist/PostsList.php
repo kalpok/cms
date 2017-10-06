@@ -23,7 +23,8 @@ class PostsList extends \yii\base\Widget
             $this->category =
                 Category::find()->andWhere(['id' => $this->categoryId])->one();
             $query->joinWith('categories')->andWhere(
-                'categoryId = :catId', ['catId' => $this->categoryId]
+                'categoryId = :catId',
+                ['catId' => $this->categoryId]
             );
         }
         return $this->render(
