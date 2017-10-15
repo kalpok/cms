@@ -2,6 +2,7 @@
 namespace extensions\file\models;
 
 use Yii;
+use yii\helpers\Url;
 use core\helpers\Inflector;
 use yii\helpers\FileHelper;
 use yii\helpers\StringHelper;
@@ -161,9 +162,7 @@ class File extends \yii\db\ActiveRecord
                 . '/' . date('Y', $this->createdAt)
                 . '/' . $this->filename;
         } else {
-            return Yii::$app->urlManager->baseUrl
-                . '/file/download'
-                . '/' . $this->filename;
+            return Url::to(['/file/serve-file', 'name' => $this->filename]);
         }
     }
 

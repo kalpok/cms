@@ -12,6 +12,7 @@ return [
             'showScriptName' => false,
             'rules' => [
                 '' => 'site/index',
+                'file/download/<name>' => 'file/serve-file',
                 '<module>' => '<module>/front/index',
                 '<module>/<id:\d+>' => '<module>/front/view',
                 '<module>/<slug>' => '<module>/front/view',
