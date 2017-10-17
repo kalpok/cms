@@ -58,6 +58,7 @@ $backLink = $model->isNewRecord ? ['index'] : ['view', 'id' => $model->id];
                             ['preset' => 'advanced']
                         )
                 ?>
+                <?= $form->field($model, 'summary')->textarea(['rows' => 4]) ?>
             <?php Panel::end() ?>
         </div>
         <div class="col-md-4">

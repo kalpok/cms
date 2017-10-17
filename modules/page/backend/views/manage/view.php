@@ -98,16 +98,25 @@ $this->params['breadcrumbs'][] = $this->title;
             <?php Panel::begin([
                 'title' => 'زیرمجموعه ها',
             ]) ?>
-                <?php if (!empty($children)): ?>
+                <?php if (!empty($children)) : ?>
                     <ul class="children" style="list-style:none; font-size:115%">
-                        <?php foreach ($children as $child): ?>
+                        <?php foreach ($children as $child) : ?>
                             <li><?= $child->prefixedTitle ?></li>
                         <?php endforeach ?>
                     </ul>
-                <?php else: ?>
+                <?php else : ?>
                     این برگه زیر مجموعه ای ندارد.
                 <?php endif ?>
             <?php Panel::end() ?>
+            <?php if ($model->summary) : ?>
+                <?php Panel::begin([
+                    'title' => 'خلاصه محتوا',
+                ]) ?>
+                    <div class="well">
+                        <?= $model->summary ?>
+                    </div>
+                <?php Panel::end() ?>
+            <?php endif ?>
         </div>
     </div>
 </div>

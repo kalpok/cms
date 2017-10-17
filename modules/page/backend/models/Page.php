@@ -40,7 +40,7 @@ class Page extends \modules\page\common\models\Page
         return [
             [['title', 'content', 'parentId'], 'required'],
             ['title', 'trim'],
-            ['content', 'string'],
+            [['content', 'summary'], 'string'],
             ['isActive', 'integer'],
             ['language', 'default', 'value' => null],
             ['title', 'string', 'max' => 255],
@@ -53,6 +53,7 @@ class Page extends \modules\page\common\models\Page
         return [
             'id' => 'شناسه',
             'title' => 'عنوان',
+            'summary' => 'خلاصه',
             'isActive' => 'نمایش در سایت',
             'language' => 'زبان',
             'content' => 'محتوای برگه',
@@ -102,7 +103,9 @@ class Page extends \modules\page\common\models\Page
 
     public function getParent()
     {
-        if ($this->isNewRecord || $this->isRoot()) { return null; }
+        if ($this->isNewRecord || $this->isRoot()) {
+            return null;
+        }
         if (!isset($this->parent)) {
             $this->parent = $this->parents(1)->one();
         }
