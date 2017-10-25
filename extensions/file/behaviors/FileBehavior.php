@@ -32,8 +32,10 @@ class FileBehavior extends Behavior
         $isValid = true;
         $post = Yii::$app->request->post('File', []);
         foreach ($post as $key => $params) {
-            $uploadedFile = UploadedFile::getInstanceByName("File[{$key}][resource]");
-            if (null != $uploadedFile & isset($this->groups[$params['group']])) {
+            $uploadedFile = UploadedFile::getInstanceByName(
+                "File[{$key}][resource]"
+            );
+            if (null != $uploadedFile && isset($this->groups[$params['group']])) {
                 $file = new File;
                 $file->group = $params['group'];
                 $file->resource = $uploadedFile;
@@ -58,8 +60,10 @@ class FileBehavior extends Behavior
     {
         $post = Yii::$app->request->post('File', []);
         foreach ($post as $key => $params) {
-            $uploadedFile = UploadedFile::getInstanceByName("File[{$key}][resource]");
-            if (null != $uploadedFile & isset($this->groups[$params['group']])) {
+            $uploadedFile = UploadedFile::getInstanceByName(
+                "File[{$key}][resource]"
+            );
+            if (null != $uploadedFile && isset($this->groups[$params['group']])) {
                 $file = new File;
                 $file->load(['File' => $params]);
                 $file->resource = $uploadedFile;
@@ -70,6 +74,20 @@ class FileBehavior extends Behavior
                 $file->save();
             }
         }
+    }
+
+    public function isFileUploaded($group)
+    {
+        $post = Yii::$app->request->post('File', []);
+        foreach ($post as $key => $params) {
+            $uploadedFile = UploadedFile::getInstanceByName(
+                "File[{$key}][resource]"
+            );
+            if (null != $uploadedFile && $params['group'] == $group) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public function deleteFiles()
