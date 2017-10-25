@@ -15,6 +15,7 @@ return [
                 'file/download/<name>' => 'file/serve-file',
                 '<module>' => '<module>/front/index',
                 '<module>/<id:\d+>' => '<module>/front/view',
+                '<module>/<id:\d+>/<title>' => '<module>/front/view',
                 '<module>/<slug>' => '<module>/front/view',
                 '<module>/category/<slug>' => '<module>/front/category'
             ]
