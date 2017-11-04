@@ -18,12 +18,14 @@ class Mailer extends \yii\swiftmailer\Mailer
     public function setTransport($transport)
     {
         $protocol = Yii::$app->setting->get('email.protocol');
-        if ($protocol != 'smtp')
+        if ($protocol != 'smtp') {
             return;
+        }
 
         $configs = $this->setSmtpTransportConfigs();
-        if (!empty($this->plugins))
+        if (!empty($this->plugins)) {
             $this->addPluginConfigs($configs);
+        }
 
         parent::setTransport($configs);
     }
@@ -37,7 +39,7 @@ class Mailer extends \yii\swiftmailer\Mailer
             'port' => $settings->get('email.smtpPort'),
             'username' => $settings->get('email.smtpUsername'),
             'password' => $settings->get('email.smtpPassword'),
-            'encryption' => 'tls',
+            // 'encryption' => 'tls',
         ];
     }
 
