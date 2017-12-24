@@ -15,11 +15,11 @@ class DateTime
         $this->jDate = $jDate;
     }
 
-    public function date($format, $stamp = false)
+    public function date($format, $stamp = false, $convert = true)
     {
         switch ($this->calendar->code) {
             case 'jalali':
-                return $this->jDate->date($format, $stamp);
+                return $this->jDate->date($format, $stamp, $convert);
             case 'islamic':
                 throw new \Exception("Islamic calendar is not supported yet");
             default:
