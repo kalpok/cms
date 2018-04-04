@@ -13,7 +13,8 @@
         "creocoder/yii2-taggable": "~2.0",
         "2amigos/yii2-ckeditor-widget": "*",
         "2amigos/yii2-selectize-widget" : "*",
-        "creocoder/yii2-nested-sets": "0.9.*"
+        "creocoder/yii2-nested-sets": "0.9.*",
+        "bower-asset/persian-datepicker": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "*",
@@ -23,10 +24,10 @@
     "config": {
         "process-timeout": 1800
     },
-    "extra": {
-        "asset-installer-paths": {
-            "npm-asset-library": "vendor/npm",
-            "bower-asset-library": "vendor/bower"
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
         }
-    }
+    ]
 }
