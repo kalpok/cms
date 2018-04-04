@@ -9,7 +9,9 @@ $config = [
         '@core' => '@app/core',
         '@config' => '@app/config',
         '@modules' => '@app/modules',
-        '@extensions' => '@app/extensions'
+        '@extensions' => '@app/extensions',
+        '@bower' => '@vendor/bower-asset',
+        '@npm'   => '@vendor/npm-asset'
     ],
     'controllerMap' => [
         'site' => 'core\controllers\SiteController',
