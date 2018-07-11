@@ -23,9 +23,31 @@ $backLink = $model->isNewRecord ? ['index'] : ['view', 'id' => $model->id];
             'title' => 'اطلاعات کاربر',
             'options' => ['class' => 'panel-primary'],
         ]) ?>
-            <?= $form->field($model, 'email')
-                ->textInput(['class' => 'form-control input-medium', 'style' => 'direction:ltr']) ?>
-            <?php if ($model->isNewRecord): ?>
+        <div class="row">
+            <div class="col-md-6">
+                <?= $form->field($model, 'name')->textInput(
+                    ['class' => 'form-control input-large']
+                ) ?>
+            </div>
+            <div class="col-md-6">
+                <?= $form->field($model, 'surname')->textInput(
+                    ['class' => 'form-control input-large']
+                ) ?>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <?= $form->field($model, 'email')->textInput(
+                    ['class' => 'form-control input-large', 'style' => 'direction:ltr']
+                ) ?>
+            </div>
+            <div class="col-md-6">
+                <?= $form->field($model, 'phone')->textInput(
+                    ['class' => 'form-control input-large', 'style' => 'direction:ltr']
+                ) ?>
+            </div>
+        </div>
+            <?php if ($model->isNewRecord) : ?>
                 <?= $form->field($model, 'password')
                     ->widget(
                         ShowPassword::className(),
@@ -33,7 +55,7 @@ $backLink = $model->isNewRecord ? ['index'] : ['view', 'id' => $model->id];
                     )
                 ?>
             <?php endif ?>
-            <?= 
+            <?=
                 $form->field($model, 'type', ['template' => "{input}"])->hiddenInput(['value'=>User::TYPE_SUPERUSER]);
                 /*$form->field($model, 'type')
                 ->dropDownList(

@@ -10,10 +10,18 @@ class User extends BaseUser
     public function rules()
     {
         return [
-            ['email', 'trim'],
+            [['email', 'name', 'surname', 'identityCode'], 'trim'],
             ['email', 'email'],
             [['status', 'type'], 'integer'],
-            ['email', 'string', 'max' => 255],
+            ['phone', 'string', 'max' => 11, 'min' => 4],
+            [
+                'phone',
+                'match',
+                'pattern' => '([0-9]{4,11})',
+                'message' => 'لطفا شماره را به طور صحیح وارد کنید.'
+
+            ],
+            [['email', 'name', 'surname', 'identityCode'], 'string', 'max' => 255],
             [['email', 'password'], 'required'],
             ['password', 'string', 'min' => 6],
             ['password', 'match',
@@ -29,7 +37,7 @@ class User extends BaseUser
     {
         $scenarios = parent::scenarios();
         $scenarios['changePassword'] = ['password'];
-        $scenarios['update'] = ['email', 'status', 'type'];
+        $scenarios['update'] = ['email', 'status', 'type', 'phone', 'name', 'surname'];
         return $scenarios;
     }
 
@@ -38,6 +46,11 @@ class User extends BaseUser
         return [
             'id' => 'شناسه',
             'email' => 'ایمیل',
+            'phone' => 'شماره تماس',
+            'name' => 'نام',
+            'title' => 'نام',
+            'surname' => 'نام خانوادگی',
+            'identityCode' => 'ایمیل',
             'status' => 'وضعیت',
             'type' => 'نوع کاربر',
             'password' => 'کلمه عبور',

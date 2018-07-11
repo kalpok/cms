@@ -31,7 +31,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'model' => $model,
             'attributes' => [
                 'id:farsiNumber',
+                'name',
+                'surname',
                 'email',
+                'phone',
                 [
                     'attribute' => 'status',
                     'value' => $model->getStatusLabel(),

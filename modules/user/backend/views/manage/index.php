@@ -28,7 +28,14 @@ $this->params['breadcrumbs'][] = $this->title;
             'filterModel' => $searchModel,
             'columns' => [
                 ['class' => 'core\grid\IDColumn'],
+                [
+                    'attribute' => 'title',
+                    'value' => function ($model) {
+                        return $model->name . ' ' . $model->surname;
+                    },
+                ],
                 'email',
+                'phone',
                 [
                     'attribute' => 'type',
                     'filter' => User::typeLabels(),
