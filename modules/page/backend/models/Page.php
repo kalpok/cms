@@ -1,6 +1,7 @@
 <?php
 namespace modules\page\backend\models;
 
+use yii\helpers\ArrayHelper;
 use extensions\file\behaviors\FileBehavior;
 use extensions\i18n\validators\FarsiCharactersValidator;
 
@@ -99,6 +100,12 @@ class Page extends \modules\page\common\models\Page
             ->andWhere(['not in', 'id', $family])
             ->orderBy(['root' => SORT_DESC,'lft' => SORT_ASC])
             ->all();
+    }
+
+    public function getParentsForSelect2()
+    {
+        return ['آیتم سطح نخست است'] +
+            ArrayHelper::map($this->possibleParents(), 'id', 'prefixedTitle');
     }
 
     public function getParent()
