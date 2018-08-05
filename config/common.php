@@ -63,6 +63,9 @@ $config = [
             'enableAutoLogin' => true,
             'loginUrl' => ['/user/auth/login'],
             'identityClass' => 'modules\user\common\components\UserIdentity'
+        ],
+        'assetManager' => [
+            'linkAssets' => YII_ENV_DEV ? true : false
         ]
     ],
     'params' => [
