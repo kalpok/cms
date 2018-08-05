@@ -9,12 +9,13 @@ use extensions\file\widgets\singleupload\SingleImageUpload;
     'title' => ($model->isNewRecord) ? 'افزودن عکس جدید' : 'ویرایش عکس',
 ]) ?>
     <div class="gallery-form">
-        <?php
-        $form = ActiveForm::begin([
+        <?php $form = ActiveForm::begin([
             'enableClientValidation' => true,
-            'options' => ['enctype' => 'multipart/form-data', 'class'=>'gallery-image']
-        ]);
-        ?>
+            'options' => [
+                'enctype' => 'multipart/form-data',
+                'class' => 'sliding-form'
+            ]
+        ]) ?>
         <div class="row">
             <div class="col-md-6">
                 <?= Html::activeHiddenInput($model, 'galleryId') ?>
