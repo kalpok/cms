@@ -35,9 +35,9 @@ class AjaxAdminController extends AdminController
     public function actionView($id)
     {
         echo Json::encode(
-            array(
+            [
                 'content' => $this->renderAjax('view', ['model' => $this->findModel($id)])
-            )
+            ]
         );
         exit;
     }
@@ -51,17 +51,17 @@ class AjaxAdminController extends AdminController
         $model->loadDefaultValues();
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             echo Json::encode(
-                array(
+                [
                     'status' => 'success',
                     'message' => 'داده مورد نظر با موفقیت در سیستم درج شد.'
-                )
+                ]
             );
             exit;
         }
         echo Json::encode(
-            array(
+            [
                 'content' => $this->renderAjax('_form', ['model' => $model])
-            )
+            ]
         );
         exit;
     }
@@ -74,17 +74,17 @@ class AjaxAdminController extends AdminController
         }
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             echo Json::encode(
-                array(
+                [
                     'status' => 'success',
                     'message' => 'آیتم ویرایش شده با موفقیت در سیستم به روز رسانی شد.'
-                )
+                ]
             );
             exit;
         }
         echo Json::encode(
-            array(
+            [
                 'content' => $this->renderAjax('_form', ['model' => $model])
-            )
+            ]
         );
         exit;
     }
@@ -93,10 +93,10 @@ class AjaxAdminController extends AdminController
     {
         $this->findModel($id)->delete();
         echo Json::encode(
-            array(
+            [
                 'status' => 'success',
                 'message' => 'داده مورد نظر با موفقیت از سیستم حذف شد.'
-            )
+            ]
         );
         exit;
     }
