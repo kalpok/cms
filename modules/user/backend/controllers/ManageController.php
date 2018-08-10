@@ -1,4 +1,5 @@
 <?php
+
 namespace modules\user\backend\controllers;
 
 use Yii;
@@ -6,7 +7,7 @@ use yii\filters\AccessControl;
 use core\controllers\AdminController;
 use modules\user\backend\models\User;
 use modules\user\backend\models\UserSearch;
-use modules\user\backend\models\AuthAssignment;
+use modules\user\backend\classes\AuthAssignment;
 
 class ManageController extends AdminController
 {
@@ -60,12 +61,11 @@ class ManageController extends AdminController
 
     public function actionAssign($id)
     {
-        // TODO
-        $modules = AuthAssignment::getAvailableModules();
-        $allPermissions = AuthAssignment::getPermissionsSortedByModules();
-        $userPermissions = Yii::$app->authManager->getRolesByUser($id);
-        if (!empty(Yii::$app->request->post('permisions'))) {
-            AuthAssignment::assignToUser($id, Yii::$app->request->post('permisions'));
+        if (Yii::$app->request->post('permissions')) {
+            AuthAssignment::assignToUser(
+                $id,
+                Yii::$app->request->post('permissions')
+            );
             Yii::$app->session->addFlash(
                 'success',
                 'دسترسی درخواست شده با موفقیت به کاربر مورد نظر تخصیص داده شد.'
@@ -73,9 +73,11 @@ class ManageController extends AdminController
             return $this->redirect(['index']);
         } else {
             return $this->render('assign', [
-                'modules' => $modules,
-                'allPermissions' => $allPermissions,
-                'userPermissions' => array_keys($userPermissions),
+                'modules' => AuthAssignment::getAvailableModules(),
+                'allPermissions' => AuthAssignment::getPermissionsSortedByModules(),
+                'userPermissions' => array_keys(
+                    Yii::$app->authManager->getPermissionsByUser($id)
+                )
             ]);
         }
     }
