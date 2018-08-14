@@ -94,11 +94,17 @@ class AdminController extends Controller
 
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
-        Yii::$app->session->addFlash(
-            'success',
-            'داده مورد نظر با موفقیت از سیستم حذف شد.'
-        );
+        $model = $this->findModel($id);
+        if (!$model->delete()) {
+            foreach ($model->getErrors('id') as $error) {
+                Yii::$app->session->addFlash('danger', $error);
+            }
+        } else {
+            Yii::$app->session->addFlash(
+                'success',
+                'داده مورد نظر با موفقیت از سیستم حذف شد.'
+            );
+        }
         return $this->redirect(['index']);
     }
 

@@ -91,11 +91,13 @@ class AjaxAdminController extends AdminController
 
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $model = $this->findModel($id);
+        $deletion = $model->delete();
         echo Json::encode(
             [
-                'status' => 'success',
-                'message' => 'داده مورد نظر با موفقیت از سیستم حذف شد.'
+                'status' => ($deletion) ? 'success' : 'danger',
+                'message' => ($deletion) ? 'داده مورد نظر با موفقیت از سیستم حذف شد.'
+                    : $model->getErrors('id')
             ]
         );
         exit;
