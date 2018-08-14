@@ -11,13 +11,7 @@ use themes\admin360\widgets\ActionButtons;
         <div class="col-md-5">
             <?php Panel::begin([
                 'title' => 'اطلاعات دسته',
-                'tools' => Html::a(
-                    '<span class="glyphicon glyphicon-remove"></span>',
-                    null,
-                    [
-                        'class' => 'close-sliding-form-toggle'
-                    ]
-                )
+                'showCloseButton' => true
             ]) ?>
                 <?= DetailView::widget([
                     'model' => $model,

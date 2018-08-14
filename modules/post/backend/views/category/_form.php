@@ -11,14 +11,7 @@ use extensions\i18n\widgets\LanguageSelect;
 
 <div class="post-category-form">
     <?php Panel::begin([
-        'title' => 'اطلاعات دسته',
-        'tools' => Html::a(
-            '<span class="glyphicon glyphicon-remove"></span>',
-            null,
-            [
-                'class' => 'close-sliding-form-toggle'
-            ]
-        )
+        'title' => 'اطلاعات دسته'
     ]) ?>
         <?php $form = ActiveForm::begin([
             'enableClientValidation' => true,
