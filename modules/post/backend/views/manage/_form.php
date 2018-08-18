@@ -4,11 +4,11 @@ use yii\helpers\Html;
 use core\helpers\Utility;
 use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
+use core\widgets\editor\Editor;
 use core\widgets\select2\Select2;
 use themes\admin360\widgets\Panel;
 use themes\admin360\widgets\Button;
 use modules\post\backend\models\Category;
-use themes\admin360\widgets\editor\Editor;
 use extensions\i18n\widgets\LanguageSelect;
 use extensions\file\widgets\singleupload\SingleImageUpload;
 

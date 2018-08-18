@@ -2,9 +2,9 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use core\widgets\editor\Editor;
 use themes\admin360\widgets\Panel;
 use themes\admin360\widgets\Button;
-use themes\admin360\widgets\editor\Editor;
 use extensions\i18n\widgets\LanguageSelect;
 
 ?>
