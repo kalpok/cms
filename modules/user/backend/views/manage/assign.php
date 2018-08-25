@@ -34,6 +34,7 @@ foreach ($modules as $moduleId => $moduleTitle) {
             'title' => 'اعطای دسترسی'
         ]) ?>
             <?= Html::beginForm() ?>
+                <?= Html::hiddenInput('assignPermissions', true) ?>
                 <?= Collapse::widget(['items' => $accordion]) ?>
                 <?= Html::submitButton('<i class="fa fa-save"></i> ذخیره', [
                     'class' => 'btn btn-lg btn-success'

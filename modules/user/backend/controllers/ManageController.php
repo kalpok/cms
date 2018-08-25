@@ -61,10 +61,10 @@ class ManageController extends AdminController
 
     public function actionAssign($id)
     {
-        if (Yii::$app->request->post('permissions')) {
+        if (Yii::$app->request->post('assignPermissions')) {
             AuthAssignment::assignToUser(
                 $id,
-                Yii::$app->request->post('permissions')
+                Yii::$app->request->post('permissions', [])
             );
             Yii::$app->session->addFlash(
                 'success',
