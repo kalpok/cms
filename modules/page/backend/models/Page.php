@@ -2,6 +2,7 @@
 namespace modules\page\backend\models;
 
 use yii\helpers\ArrayHelper;
+use core\behaviors\PreventDeleteBehavior;
 use extensions\file\behaviors\FileBehavior;
 use extensions\i18n\validators\FarsiCharactersValidator;
 
@@ -30,6 +31,15 @@ class Page extends \modules\page\common\models\Page
                                 'maxSize' => 1024*1024,
                             ]
                         ],
+                    ]
+                ],
+                [
+                    'class' => PreventDeleteBehavior::class,
+                    'relations' => [
+                        [
+                            'relationMethod' => 'children',
+                            'relationName' => 'زیر مجموعه'
+                        ]
                     ]
                 ]
             ]
