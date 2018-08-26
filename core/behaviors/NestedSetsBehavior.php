@@ -69,4 +69,27 @@ class NestedSetsBehavior extends \creocoder\nestedsets\NestedSetsBehavior
 
         return $title . $this->owner->title;
     }
+
+    public function getFamilyTreeArray()
+    {
+        $attributes = $this->owner->getFamilyTreeAttributes();
+        if ($this->children(1)->count() !== 0) {
+            $children = [];
+            foreach ($this->children(1)->all() as $child) {
+                $children[] = $child->getFamilyTreeArray();
+            }
+        }
+        if (!empty($children)) {
+            $attributes['children'] = $children;
+        }
+        return $attributes;
+    }
+
+    public function getFamilyTreeAttributes()
+    {
+        return [
+            'id' => $this->owner->id,
+            'name' => $this->owner->title
+        ];
+    }
 }
