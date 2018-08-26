@@ -55,4 +55,18 @@ class NestedSetsBehavior extends \creocoder\nestedsets\NestedSetsBehavior
     {
         $this->parentId = $id;
     }
+
+    public function getFamilyTreeTitle()
+    {
+        if ($this->isRoot()) {
+            return $this->owner->title;
+        }
+
+        $title = '';
+        foreach ($this->parents()->all() as $parent) {
+            $title .= $parent->title . ' -> ';
+        }
+
+        return $title . $this->owner->title;
+    }
 }

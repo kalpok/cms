@@ -99,6 +99,7 @@ class AdminController extends Controller
             foreach ($model->getErrors('id') as $error) {
                 Yii::$app->session->addFlash('danger', $error);
             }
+            return $this->redirect(['view', 'id' => $id]);
         } else {
             Yii::$app->session->addFlash(
                 'success',

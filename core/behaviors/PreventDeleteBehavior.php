@@ -37,6 +37,7 @@ class PreventDeleteBehavior extends Behavior
                     "آیتم انتخاب شده به دلیل اتصال به $count {$relation['relationName']} غیرقابل حذف می باشد."
                 );
                 $event->isValid = false;
+                $event->handled = true;
             }
         }
         return true;
