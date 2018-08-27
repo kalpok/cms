@@ -5,7 +5,7 @@ namespace modules\user\backend\classes;
 use Yii;
 use yii\helpers\Json;
 
-class AuthAssignment extends \yii\base\Object
+class AuthAssignment
 {
     private static $permissions = [];
     private static $availableModules = [];
