@@ -97,7 +97,6 @@ class User extends BaseUser
     {
         return [
             self::TYPE_OPERATOR => 'اپراتور',
-            self::TYPE_EDITOR => 'سردبیر',
             self::TYPE_SUPERUSER => 'مدیر اصلی'
         ];
     }
