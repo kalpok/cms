@@ -93,6 +93,15 @@ class User extends BaseUser
         ];
     }
 
+    public static function adminTypeLabels()
+    {
+        return [
+            self::TYPE_OPERATOR => 'اپراتور',
+            self::TYPE_EDITOR => 'سردبیر',
+            self::TYPE_SUPERUSER => 'مدیر اصلی'
+        ];
+    }
+
     public function getTypeLabel()
     {
         $labels = static::typeLabels();
