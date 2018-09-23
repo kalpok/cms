@@ -13,7 +13,7 @@ return [
             [
                 'label' => 'لیست نوشته ها',
                 'url' => ['/post/manage/index'],
-                'visible' =>  Yii::$app->user->canAccessAny(['post.create','post.update','post.delete'])
+                'visible' => Yii::$app->user->canAccessAny(['post.create', 'post.update', 'post.delete'])
             ],
             [
                 'label' => 'دسته ها',

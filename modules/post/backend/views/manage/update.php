@@ -1,7 +1,7 @@
 <?php
 
 use yii\helpers\Html;
-use themes\admin360\widgets\ActionButtons;
+use theme\widgets\ActionButtons;
 
 $this->title = 'ویرایش نوشته';
 $this->params['breadcrumbs'][] = ['label' => 'نوشته ها', 'url' => ['index']];

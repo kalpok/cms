@@ -2,8 +2,8 @@
 
 use yii\helpers\Html;
 use yii\bootstrap\Collapse;
-use themes\admin360\widgets\Panel;
-use themes\admin360\widgets\Button;
+use theme\widgets\Panel;
+use theme\widgets\Button;
 
 $this->title = 'اعطای دسترسی به کاربر';
 $this->params['breadcrumbs'][] = ['label' => 'مدیریت کاربران', 'url' => 'index'];

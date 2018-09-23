@@ -1,9 +1,9 @@
 <?php
 use yii\helpers\Html;
-use themes\admin360\widgets\Panel;
+use theme\widgets\Panel;
 use yii\bootstrap\Alert;
 use yii\widgets\DetailView;
-use themes\admin360\widgets\ActionButtons;
+use theme\widgets\ActionButtons;
 
 $this->title = $model->title;
 $this->params['breadcrumbs'][] = ['label' => 'برگه ها', 'url' => ['index']];

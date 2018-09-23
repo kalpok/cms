@@ -4,9 +4,9 @@ use yii\helpers\Html;
 use yii\widgets\Pjax;
 use yii\grid\GridView;
 use yii\helpers\ArrayHelper;
-use themes\admin360\widgets\Panel;
+use theme\widgets\Panel;
 use modules\post\backend\models\Category;
-use themes\admin360\widgets\ActionButtons;
+use theme\widgets\ActionButtons;
 
 $this->title = 'لیست نوشته ها';
 $this->params['breadcrumbs'][] = $this->title;
