@@ -5,7 +5,7 @@ return [
     ],
     'aliases' => [
         '@themes' => '@app/themes',
-        '@theme' => '@themes/gentelella',
+        '@theme' => '@themes/admin360'
     ],
     'controllerMap' => [
         'gallery' => 'extensions\gallery\controllers\GalleryController'
