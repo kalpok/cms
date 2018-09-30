@@ -2,9 +2,9 @@
 use yii\widgets\Pjax;
 use yii\helpers\Html;
 use yii\grid\GridView;
-use themes\admin360\widgets\Panel;
+use theme\widgets\Panel;
 use modules\user\backend\models\User;
-use themes\admin360\widgets\ActionButtons;
+use theme\widgets\ActionButtons;
 
 $this->title = 'مدیریت کاربران';
 $this->params['breadcrumbs'][] = $this->title;

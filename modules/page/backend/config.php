@@ -13,7 +13,7 @@ return [
             [
                 'label' => 'لیست برگه ها',
                 'url' => ['/page/manage/index'],
-                'visible' =>  Yii::$app->user->canAccessAny(['page.create','page.update','page.delete'])
+                'visible' => Yii::$app->user->canAccessAny(['page.create', 'page.update', 'page.delete'])
             ]
         ]
     ]

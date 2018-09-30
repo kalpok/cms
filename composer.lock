@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "194ba3ce289a77f255c93578a5727f06",
+    "content-hash": "1762b5f43e39601a8011736a2c9a4ffd",
     "packages": [
         {
             "name": "2amigos/yii2-ckeditor-widget",
@@ -170,6 +170,49 @@
             ]
         },
         {
+            "name": "bower-asset/bootstrap-rtl",
+            "version": "v3.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/morteza/bootstrap-rtl.git",
+                "reference": "961dc50152095a948ffcd57a5df154856b4e49b7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/morteza/bootstrap-rtl/zipball/961dc50152095a948ffcd57a5df154856b4e49b7",
+                "reference": "961dc50152095a948ffcd57a5df154856b4e49b7",
+                "shasum": null
+            },
+            "require": {
+                "bower-asset/bootstrap": ">=3.3.0"
+            },
+            "type": "bower-asset",
+            "license": [
+                "Unlicensed Public Domain"
+            ]
+        },
+        {
+            "name": "bower-asset/font-awesome",
+            "version": "v4.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FortAwesome/Font-Awesome.git",
+                "reference": "a8386aae19e200ddb0f6845b5feeee5eb7013687"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FortAwesome/Font-Awesome/zipball/a8386aae19e200ddb0f6845b5feeee5eb7013687",
+                "reference": "a8386aae19e200ddb0f6845b5feeee5eb7013687",
+                "shasum": null
+            },
+            "type": "bower-asset",
+            "license": [
+                "OFL-1.1",
+                "MIT",
+                "CC-BY-3.0"
+            ]
+        },
+        {
             "name": "bower-asset/jquery",
             "version": "2.2.4",
             "source": {
@@ -264,7 +307,7 @@
             "version": "v0.0.3",
             "source": {
                 "type": "git",
-                "url": "https://github.com/brianreavis/microplugin.js.git",
+                "url": "git@github.com:brianreavis/microplugin.js.git",
                 "reference": "d8671e6cc769938648f8735610534427cdeeaf67"
             },
             "dist": {
@@ -302,7 +345,7 @@
             "version": "v1.3.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/bestiejs/punycode.js.git",
+                "url": "git@github.com:bestiejs/punycode.js.git",
                 "reference": "38c8d3131a82567bfef18da09f7f4db68c84f8a3"
             },
             "dist": {
@@ -390,7 +433,7 @@
             "version": "v0.5.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/brianreavis/sifter.js.git",
+                "url": "git@github.com:brianreavis/sifter.js.git",
                 "reference": "4ba7422542bf188c1fdb4bbc341fc4fcc1ff0680"
             },
             "dist": {
@@ -434,7 +477,7 @@
             "version": "v2.0.6",
             "source": {
                 "type": "git",
-                "url": "https://github.com/yiisoft/jquery-pjax.git",
+                "url": "git@github.com:yiisoft/jquery-pjax.git",
                 "reference": "60728da6ade5879e807a49ce59ef9a72039b8978"
             },
             "dist": {
@@ -1212,7 +1255,7 @@
             "version": "v0.11.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/twitter/typeahead.js.git",
+                "url": "git@github.com:twitter/typeahead.js.git",
                 "reference": "588440f66559714280628a4f9799f0c4eb880a4a"
             },
             "dist": {
