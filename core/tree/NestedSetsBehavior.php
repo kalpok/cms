@@ -1,6 +1,6 @@
 <?php
 
-namespace core\behaviors;
+namespace core\tree;
 
 class NestedSetsBehavior extends \creocoder\nestedsets\NestedSetsBehavior
 {
