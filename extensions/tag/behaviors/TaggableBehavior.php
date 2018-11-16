@@ -13,7 +13,6 @@ class TaggableBehavior extends Behavior
     private $tags;
 
     public $moduleId;
-    public $modelClassName;
 
     public function init()
     {
