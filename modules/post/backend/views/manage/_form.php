@@ -1,15 +1,16 @@
 <?php
 
 use yii\helpers\Html;
+use theme\widgets\Panel;
 use core\helpers\Utility;
+use theme\widgets\Button;
 use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
 use core\widgets\editor\Editor;
 use core\widgets\select2\Select2;
-use theme\widgets\Panel;
-use theme\widgets\Button;
 use modules\post\backend\models\Category;
 use extensions\i18n\widgets\LanguageSelect;
+use extensions\tag\widgets\selectTag\SelectTag;
 use extensions\file\widgets\singleupload\SingleImageUpload;
 
 $backLink = $model->isNewRecord ? ['index'] : ['view', 'id' => $model->id];
@@ -123,6 +124,11 @@ $backLink = $model->isNewRecord ? ['index'] : ['view', 'id' => $model->id];
                             'value' => $model->getCategoriesAsArray()
                         ]
                     ]
+                )->label('') ?>
+            <?php Panel::end() ?>
+            <?php Panel::begin(['title' => 'برچسب ها']) ?>
+                <?= $form->field($model, 'tags')->widget(
+                    SelectTag::class
                 )->label('') ?>
             <?php Panel::end() ?>
             <?php Panel::begin([

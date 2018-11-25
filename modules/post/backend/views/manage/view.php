@@ -70,6 +70,12 @@ $this->params['breadcrumbs'][] = $this->title;
                     'summary',
                     'slug',
                     'categories',
+                    [
+                        'attribute' => 'tags',
+                        'value' => function ($model) {
+                            return $model->getTagsAsString();
+                        }
+                    ],
                     'createdAt:date',
                     'updatedAt:date',
                     'isActive:boolean',

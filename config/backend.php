@@ -8,7 +8,8 @@ return [
         '@theme' => '@themes/admin360'
     ],
     'controllerMap' => [
-        'gallery' => 'extensions\gallery\controllers\GalleryController'
+        'gallery' => 'extensions\gallery\controllers\GalleryController',
+        'tag' => 'extensions\tag\controllers\TagController'
     ],
     'components' => [
         'view' => [
