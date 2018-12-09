@@ -16,7 +16,7 @@ class User extends \yii\web\User
                 return true;
             }
         }
-        return parent::can($permissionName, $params = [], $allowCaching = true);
+        return parent::can($permissionName, $params, $allowCaching = true);
     }
 
     public function canAccessAny($permissions)
