@@ -22,17 +22,35 @@ class TaggableQueryBehavior extends Behavior
         parent::init();
     }
 
-    public function anyTagTitles($tagTitles)
+    public function hasAnyTags($tagTitles)
     {
         if (!$tagTitles) {
             return $this->owner;
         }
-        
-        $tagIds = [];
-        foreach ($tagTitles as $tagTitle) {
-            $tagIds[] = $this->getTagId($tagTitle);
+
+        return $this->owner->andWhere([
+            'in',
+            'id',
+            $this->getModelIdsHaveAnyTags($tagTitles)
+        ]);
+    }
+
+    public function hasExactTags($tagTitles)
+    {
+        if (!$tagTitles) {
+            return $this->owner;
         }
-        $modelIds = (new Query())
+
+        return $this->owner->andWhere([
+            'in',
+            'id',
+            $this->getModelIdsHaveExactTags($tagTitles)
+        ]);
+    }
+
+    private function getModelIdsHaveAnyTags($tagTitles)
+    {
+        return (new Query())
             ->select(['modelId'])
             ->distinct()
             ->from('tag_module')
@@ -40,19 +58,32 @@ class TaggableQueryBehavior extends Behavior
                 'moduleId' => $this->moduleId,
                 'modelClassName' => $this->modelShortClassName
             ])
-            ->andWhere(['in', 'tagId', $tagIds])
+            ->andWhere(['in', 'tagId', $this->getTagIds($tagTitles)])
             ->column();
-        $this->owner->andWhere(['in', 'id', $modelIds]);
-
-        return $this->owner;
     }
 
-    private function getTagId($tag)
+    private function getModelIdsHaveExactTags($tagTitles)
     {
         return (new Query())
-            ->select(['id'])
+            ->select(['modelId'])
+            ->distinct()
+            ->from('tag_module')
+            ->where([
+                'moduleId' => $this->moduleId,
+                'modelClassName' => $this->modelShortClassName
+            ])
+            ->andWhere(['in', 'tagId', $this->getTagIds($tagTitles)])
+            ->groupBy('modelId')
+            ->having('COUNT(modelId) = ' . count($tagTitles))
+            ->column();
+    }
+
+    private function getTagIds($tagTitles)
+    {
+        return (new \yii\db\Query())
+            ->select('id')
             ->from('tag')
-            ->where(['title' => $tag])
-            ->scalar();
+            ->andWhere(['in', 'title', $tagTitles])
+            ->column();
     }
 }
