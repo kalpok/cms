@@ -33,12 +33,12 @@ class TaggableBehavior extends Behavior
 
     public function setTags($tags)
     {
-        $this->tags = $tags;
+        $this->tags = empty($tags) ? [] : $tags;
     }
 
     public function attachTags()
     {
-        if (empty($this->tags)) {
+        if ($this->tags === null) {
             return;
         }
 
