@@ -1,21 +1,22 @@
 <?php
+
 namespace extensions\i18n\validators;
 
-use Yii;
 use yii\validators\Validator;
 use extensions\i18n\date\DateTime;
-use yii\base\InvalidParamException;
 
 class JalaliDateToTimestamp extends Validator
 {
-    public $format = "Y/m/d|";
+    public $format = 'Y/m/d|';
     public $hourAttr;
     public $minuteAttr;
     public $secondAttr;
 
     protected $dateTime;
 
-    private $hour = 10, $minute = 0, $second = 0;
+    private $hour = 0;
+    private $minute = 0;
+    private $second = 0;
 
     public function __construct(DateTime $dateTime, $config = [])
     {
