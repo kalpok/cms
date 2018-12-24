@@ -19,7 +19,7 @@ class User extends ActiveRecord
 
     public static function tableName()
     {
-        return 'user';
+        return '{{%user}}';
     }
 
     public function behaviors()

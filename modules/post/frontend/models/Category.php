@@ -8,7 +8,7 @@ class Category extends \yii\db\ActiveRecord
 {
     public static function tableName()
     {
-        return 'post_category';
+        return '{{%post_category}}';
     }
 
     public function getPosts()
