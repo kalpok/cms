@@ -68,6 +68,14 @@ class User extends BaseUser
         ];
     }
 
+    public function afterDelete()
+    {
+        Yii::$app->db->createCommand()->delete('auth_assignment', [
+            'user_id' => $this->id
+        ])->execute();
+        parent::afterDelete();
+    }
+
     public static function statusLabels()
     {
         return [
