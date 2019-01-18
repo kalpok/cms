@@ -10,7 +10,7 @@ class SelectTag extends Select2
     public function init()
     {
         if (!isset($this->options['placeholder'])) {
-            $this->options['placeholder'] = 'برچسب را انتخاب کنید ...';
+            $this->options['placeholder'] = 'کلید‌ واژه‌ها را انتخاب کنید ...';
         }
         if (!isset($this->options['multiple'])) {
             $this->options['multiple'] = true;
