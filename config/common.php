@@ -65,6 +65,14 @@ $config = [
             'enableAutoLogin' => true,
             'loginUrl' => ['/user/auth/login'],
             'identityClass' => 'modules\user\common\components\UserIdentity'
+        ],
+        'notifier' => [
+            'class' => 'extensions\notification\Notifier',
+            'channels' => [
+                'screen' => [
+                    'class' => 'extensions\notification\channels\ScreenChannel'
+                ]
+            ]
         ]
     ],
     'params' => [
