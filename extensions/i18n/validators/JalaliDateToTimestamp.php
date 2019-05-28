@@ -39,7 +39,7 @@ class JalaliDateToTimestamp extends Validator
             $stamp = $this->dateTime->strtotime($model->$attribute, $this->format);
             $this->setHourMinuteSecond($model);
             $model->$attribute =
-                $stamp + ($this->hour * 3600) + ($this->minute * 60) + $this->second;
+                (int)$stamp + ((int)$this->hour * 3600) + ((int)$this->minute * 60) + (int)$this->second;
         } else {
             $this->addError($model, $attribute, $this->message);
         }
