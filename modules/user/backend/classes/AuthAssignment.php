@@ -3,7 +3,6 @@
 namespace modules\user\backend\classes;
 
 use Yii;
-use yii\helpers\Json;
 
 class AuthAssignment
 {
@@ -39,11 +38,14 @@ class AuthAssignment
 
     public static function assignToUser($userId, $permissions)
     {
-        $auth = Yii::$app->authManager;
-        $auth->revokeAll($userId);
-        $auth->invalidateCache();
+        $authManager = Yii::$app->authManager;
+        $oldPermissions = $authManager->getPermissionsByUser($userId);
+        foreach ($oldPermissions as $oldPermission) {
+            $authManager->revoke($oldPermission, $userId);
+        }
+        $authManager->invalidateCache();
         foreach ($permissions as $permissionName) {
-            $permission = $auth->getPermission($permissionName);
+            $permission = $authManager->getPermission($permissionName);
             if (isset($permission)) {
                 Yii::$app->authManager->assign($permission, $userId);
             }
