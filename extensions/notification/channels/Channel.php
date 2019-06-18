@@ -1,6 +1,8 @@
 <?php
 
-namespace extensions\notification;
+namespace extensions\notification\channels;
+
+use extensions\notification\Notification;
 
 abstract class Channel extends \yii\base\BaseObject
 {

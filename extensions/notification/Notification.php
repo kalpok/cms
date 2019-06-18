@@ -3,55 +3,51 @@
 namespace extensions\notification;
 
 use Yii;
+use yii\base\InvalidConfigException;
 use modules\user\common\models\User;
+use extensions\notification\channels\Channel;
 
 abstract class Notification extends \yii\base\BaseObject
 {
-    protected $description;
-    protected $route;
-    protected $module;
-    protected $recipients = [];
+    public $description;
+    public $category;
+    public $data = [];
+    public $moduleId;
+
+    protected $recipients;
     protected $permissions;
 
     abstract public function getTitle();
 
     abstract public function getChannels();
 
-    abstract public function getCategory();
-
-    public function setDescription($description)
+    public function init()
     {
-        $this->description = $description;
+        if (!isset($this->moduleId)) {
+            throw new InvalidConfigException('moduleId property must be set.');
+        }
+        if (!empty($this->permissions)) {
+            $this->setRecipientsByPermissions();
+        }
+        parent::init();
     }
 
-    public function getDescription()
+    public function shouldSend(Channel $channel)
     {
-        return $this->description;
-    }
-
-    public function setRoute($route)
-    {
-        $this->route = $route;
+        return true;
     }
 
     public function getRoute()
     {
-        return $this->route;
+        return null;
     }
 
-    public function setModule($module)
+    public function setRecipients($users)
     {
-        $this->module = $module;
-    }
-
-    public function getModule()
-    {
-        return $this->module;
-    }
-
-    public function setRecipients(array $users)
-    {
-        $this->recipients = array_merge($users, $this->recipients);
+        if (!is_array($users)) {
+            $users = [$users];
+        }
+        $this->recipients = $users;
     }
 
     public function getRecipients()
@@ -61,8 +57,10 @@ abstract class Notification extends \yii\base\BaseObject
 
     public function setPermissions(array $permissions)
     {
+        if (!is_array($permissions)) {
+            $permissions = [$permissions];
+        }
         $this->permissions = $permissions;
-        $this->setRecipientsByPermissions();
     }
 
     public function getPermissions()
@@ -73,16 +71,6 @@ abstract class Notification extends \yii\base\BaseObject
     public function send()
     {
         Yii::$app->notifier->send($this, $this->channels);
-    }
-
-    public function shouldSend(Channel $channel)
-    {
-        return true;
-    }
-
-    public static function create($params = [])
-    {
-        return new static($params);
     }
 
     protected function setRecipientsByPermissions()
@@ -110,5 +98,10 @@ abstract class Notification extends \yii\base\BaseObject
             $recipients[] = User::findOne($userId);
         }
         $this->setRecipients($recipients);
+    }
+
+    public static function create($params = [])
+    {
+        return new static($params);
     }
 }

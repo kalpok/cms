@@ -19,7 +19,11 @@ class Notification extends \yii\db\ActiveRecord
 
     public static function find()
     {
-        return parent::find()->andWhere(['userId' => Yii::$app->user->id]);
+        return parent::find()->andWhere([
+            'or',
+            ['userId' => Yii::$app->user->id],
+            ['userId' => null]
+        ]);
     }
 
     public static function getUnreadNotificationsCountForUser()

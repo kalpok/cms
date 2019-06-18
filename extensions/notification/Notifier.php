@@ -14,8 +14,12 @@ class Notifier extends \yii\base\Component
         if ($channels === null) {
             $channels = $notification->channels;
         }
-        foreach ((array)$channels as $id) {
-            $channel = $this->getChannel($id);
+        foreach ((array)$channels as $id => $config) {
+            if (is_string($config)) {
+                $channel = $this->getChannel($config);
+            } else {
+                $channel = $this->getChannel($id, $config);
+            }
             if (!$notification->shouldSend($channel)) {
                 continue;
             }
@@ -35,15 +39,15 @@ class Notifier extends \yii\base\Component
         }
     }
 
-    public function getChannel($id)
+    public function getChannel($id, $config = [])
     {
         if (!isset($this->channels[$id])) {
             throw new InvalidParamException("Unknown channel '{$id}'.");
         }
-        if (!is_object($this->channels[$id])) {
-            return $this->createChannel($id, $this->channels[$id]);
-        }
-        return $this->channels[$id];
+        return $this->createChannel(
+            $id,
+            array_merge($this->channels[$id], $config)
+        );
     }
 
     protected function createChannel($id, $config)

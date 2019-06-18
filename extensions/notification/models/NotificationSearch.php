@@ -32,11 +32,9 @@ class NotificationSearch extends Notification
             return $dataProvider;
         }
 
-        $query->andFilterWhere(['like', 'title', $this->title]);
-
-        $query->andFilterWhere(['like', 'category', $this->category]);
-
-        $query->andFilterWhere(['like', 'description', $this->description]);
+        $query->andFilterWhere(['like', 'title', $this->title])
+            ->andFilterWhere(['like', 'category', $this->category])
+            ->andFilterWhere(['like', 'description', $this->description]);
 
         return $dataProvider;
     }
