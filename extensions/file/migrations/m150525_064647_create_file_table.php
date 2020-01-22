@@ -8,7 +8,7 @@ class m150525_064647_create_file_table extends Migration
     public function up()
     {
         $this->createTable(
-            'file',
+            '{{%file}}',
             [
                 'id' => 'pk',
                 'filename' => 'string',
@@ -31,6 +31,6 @@ class m150525_064647_create_file_table extends Migration
 
     public function down()
     {
-        $this->dropTable('file');
+        $this->dropTable('{{%file}}');
     }
 }

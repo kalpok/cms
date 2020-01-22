@@ -10,7 +10,7 @@ class Gallery extends \yii\db\ActiveRecord
 {
     public static function tableName()
     {
-        return 'gallery';
+        return '{{%gallery}}';
     }
 
     public function rules()

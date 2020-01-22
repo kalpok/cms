@@ -7,7 +7,7 @@ class m179831_123357_add_layout_column_to_page extends Migration
 {
     public function up()
     {
-        $this->addColumn('page', 'layout', 'string');
+        $this->addColumn('{{%page}}', 'layout', 'string');
     }
 
     public function down()

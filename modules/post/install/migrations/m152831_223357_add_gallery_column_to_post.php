@@ -7,8 +7,8 @@ class m152831_223357_add_gallery_column_to_post extends Migration
 {
     public function up()
     {
-        $this->addColumn('post', 'galleryId', 'integer');
-        $this->addForeignKey('post_gallery', 'post', 'galleryId', 'gallery', 'id');
+        $this->addColumn('{{%post}}', 'galleryId', 'integer');
+        $this->addForeignKey('post_gallery', '{{%post}}', 'galleryId', 'gallery', 'id');
     }
 
     public function down()

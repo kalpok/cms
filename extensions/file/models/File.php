@@ -15,7 +15,7 @@ class File extends \yii\db\ActiveRecord
 
     public static function tableName()
     {
-        return 'file';
+        return '{{%file}}';
     }
 
     public function behaviors()
