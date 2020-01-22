@@ -25,6 +25,7 @@ return [
     'modules' => [
         'page' => 'modules\page\frontend\Module',
         'post' => 'modules\post\frontend\Module',
+        'user' => 'modules\user\frontend\Module',
     ],
     'params' => [
         'app' => 'frontend',
