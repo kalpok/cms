@@ -10,7 +10,8 @@ return [
     'controllerMap' => [
         'gallery' => 'extensions\gallery\controllers\GalleryController',
         'tag' => 'extensions\tag\controllers\TagController',
-        'notif' => 'extensions\notification\controllers\NotifController'
+        'notif' => 'extensions\notification\controllers\NotifController',
+        'comment' => 'extensions\comment\controllers\CommentController'
     ],
     'components' => [
         'view' => [

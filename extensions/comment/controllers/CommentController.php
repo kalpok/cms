@@ -31,7 +31,13 @@ class CommentController extends AjaxAdminController
                     'rules' => [
                         [
                             'allow' => true,
-                            'actions' => ['accept', 'reply', 'reject', 'delete'],
+                            'actions' => [
+                                'view',
+                                'accept',
+                                'reply',
+                                'reject',
+                                'delete'
+                            ],
                             'roles' => ['@']
                         ],
                         [
@@ -48,13 +54,29 @@ class CommentController extends AjaxAdminController
                 ],
                 [
                     'class' => ContentNegotiator::class,
-                    'only' => ['accept', 'reply', 'reject', 'delete'],
+                    'only' => [
+                        'view',
+                        'accept',
+                        'reply',
+                        'reject',
+                        'delete'
+                    ],
                     'formats' => [
                         'application/json' => Response::FORMAT_JSON
                     ]
                 ]
             ]
         );
+    }
+
+    public function actionView($id)
+    {
+        echo Json::encode([
+            'content' => $this->renderAjax('@extensions/comment/views/view.php', [
+                'model' => $this->findModel($id)
+            ])
+        ]);
+        exit;
     }
 
     public function actionAccept($id)
