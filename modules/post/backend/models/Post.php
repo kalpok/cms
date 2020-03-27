@@ -5,6 +5,7 @@ namespace modules\post\backend\models;
 use modules\post\backend\models\PostQuery;
 use extensions\file\behaviors\FileBehavior;
 use extensions\tag\behaviors\TaggableBehavior;
+use extensions\comment\behaviors\CommentBehavior;
 use extensions\i18n\validators\FarsiCharactersValidator;
 
 class Post extends \yii\db\ActiveRecord
@@ -39,6 +40,10 @@ class Post extends \yii\db\ActiveRecord
             ],
             [
                 'class' => TaggableBehavior::class,
+                'moduleId' => 'post'
+            ],
+            'comment' => [
+                'class' => CommentBehavior::class,
                 'moduleId' => 'post'
             ]
         ];
