@@ -18,7 +18,7 @@ class m180704_073705_create_comment_table extends Migration
             'insertedBy' => $this->integer(),
             'inserterName' => $this->string(),
             'inserterEmail' => $this->string(),
-            'inserterIp' => $this->integer(),
+            'inserterIp' => $this->string(),
             'insertedAt' => $this->integer()->notNull(),
             'reply' => $this->text(),
             'repliedBy' => $this->integer(),
