@@ -25,13 +25,14 @@ class CommentAction extends \yii\base\Action
 
     public function run($ownerId)
     {
+        \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
         $comment = new Comment([
             'moduleId' => $this->moduleId,
             'ownerId' => $ownerId,
             'ownerClassName' => (new \ReflectionClass($this->ownerClassName))
                 ->getShortName()
         ]);
-        $comment->load(Yii::$app->getRequest()->getBodyParams(), '');
+        $comment->load(Yii::$app->getRequest()->getBodyParams());
         if ($comment->save()) {
             Yii::$app->getResponse()
                 ->setStatusCode(201)
