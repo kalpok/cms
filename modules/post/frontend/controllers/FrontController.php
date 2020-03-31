@@ -12,6 +12,20 @@ class FrontController extends Controller
 {
     public $layout = '//two-column';
 
+    public function actions()
+    {
+        return [
+            'create-comment' => [
+                'class' => 'extensions\comment\actions\CommentAction',
+                'moduleId' => 'post',
+                'ownerClassName' => Post::class
+            ],
+            'captcha' => [
+                'class' => 'yii\captcha\CaptchaAction',                
+            ],
+        ];
+    }
+
     public function actionIndex()
     {
         $dataProvider = new ActiveDataProvider([
