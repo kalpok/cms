@@ -4,6 +4,7 @@ namespace modules\post\frontend\models;
 
 use Yii;
 use extensions\file\behaviors\FileBehavior;
+use extensions\comment\behaviors\CommentBehavior;
 
 class Post extends \yii\db\ActiveRecord
 {
@@ -23,6 +24,10 @@ class Post extends \yii\db\ActiveRecord
                         'type' => FileBehavior::TYPE_IMAGE
                     ],
                 ]
+            ],
+            'comment' => [
+                'class' => CommentBehavior::class,
+                'moduleId' => 'post'
             ]
         ];
     }
