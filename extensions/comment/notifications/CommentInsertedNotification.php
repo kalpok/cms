@@ -28,7 +28,7 @@ class CommentInsertedNotification extends Notification
 
     private function getOwnerTitle()
     {
-        $ownerClassName = "modules\\{$this->comment->moduleId}\\common\\models\\{$this->comment->ownerClassName}";
+        $ownerClassName = "modules\\{$this->comment->moduleId}\\frontend\\models\\{$this->comment->ownerClassName}";
         return $ownerClassName::findOne($this->comment->ownerId)->title;
     }
 }
