@@ -2,7 +2,7 @@
 use yii\helpers\Html;
 use core\helpers\Utility;
 use yii\bootstrap\ActiveForm;
-use themes\admin360\widgets\Panel;
+use themes\widgets\Panel;
 use extensions\file\widgets\singleupload\SingleImageUpload;
 ?>
 <?php Panel::begin([
