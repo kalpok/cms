@@ -1,7 +1,7 @@
 <?php
 
 use yii\helpers\Url;
-use themes\admin360\widgets\Button;
+use theme\widgets\Button;
 
 ?>
 <div class="gallery-index">
