@@ -19,17 +19,7 @@ use extensions\comment\models\Comment;
                     'attributes' => [
                         'content:html',
                         'inserterName',
-                        'inserterEmail',
-                        [
-                            'label' => 'موبایل درج کننده',
-                            'attribute' => 'inserterMobile',
-                            'format' => 'farsiNumber',
-                            'value' => function ($model) {
-                                if ($model->insertedBy) {
-                                    return User::findOne($model->insertedBy)->mobile;
-                                }
-                            }
-                        ],
+                        'inserterEmail',                        
                         'inserterIp',
                         'insertedAt:datetime',
                         'reply:html',
