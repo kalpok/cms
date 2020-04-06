@@ -49,17 +49,7 @@ use extensions\comment\models\Comment;
                 'format' => 'raw',
             ],
             'inserterName',
-            'inserterEmail',
-            [
-                'label' => 'موبایل درج کننده',
-                'attribute' => 'inserterMobile',
-                'format' => 'farsiNumber',
-                'value' => function ($model) {
-                    if ($model->insertedBy) {
-                        return User::findOne($model->insertedBy)->mobile;
-                    }
-                }
-            ],
+            'inserterEmail',            
             'insertedAt:datetime',
             'reply:html',
             [

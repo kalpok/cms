@@ -3,7 +3,7 @@ use yii\widgets\Pjax;
 use yii\helpers\Html;
 use yii\grid\GridView;
 use extensions\gallery\models\Image;
-use themes\admin360\widgets\Panel;
+use theme\widgets\Panel;
 ?>
 
 <?php Panel::begin([
