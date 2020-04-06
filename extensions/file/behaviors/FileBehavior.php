@@ -1,4 +1,5 @@
 <?php
+
 namespace extensions\file\behaviors;
 
 use yii;
@@ -23,7 +24,7 @@ class FileBehavior extends Behavior
             ActiveRecord::EVENT_BEFORE_UPDATE => 'validateFiles',
             ActiveRecord::EVENT_AFTER_INSERT => 'uploadFiles',
             ActiveRecord::EVENT_AFTER_UPDATE => 'uploadFiles',
-            ActiveRecord::EVENT_BEFORE_DELETE => 'deleteFiles',
+            ActiveRecord::EVENT_BEFORE_DELETE => 'deleteFiles'
         ];
     }
 
@@ -32,8 +33,10 @@ class FileBehavior extends Behavior
         $isValid = true;
         $post = Yii::$app->request->post('File', []);
         foreach ($post as $key => $params) {
-            $uploadedFile = UploadedFile::getInstanceByName("File[{$key}][resource]");
-            if (null != $uploadedFile & isset($this->groups[$params['group']])) {
+            $uploadedFile = UploadedFile::getInstanceByName(
+                "File[{$key}][resource]"
+            );
+            if (null != $uploadedFile && isset($this->groups[$params['group']])) {
                 $file = new File;
                 $file->group = $params['group'];
                 $file->resource = $uploadedFile;
@@ -44,6 +47,14 @@ class FileBehavior extends Behavior
                     $this->fileErrors[$file->group] = $file->getErrors();
                     $isValid = false;
                 }
+            } elseif (
+                $this->fileIsRequired($this->getGroup($params['group']))
+                && !$this->hasFile($params['group'])
+            ) {
+                $this->fileErrors[$params['group']] = [
+                    'resource' => 'آپلود فایل اجباری است.'
+                ];
+                $isValid = false;
             }
         }
         $event->isValid = $isValid;
@@ -58,8 +69,10 @@ class FileBehavior extends Behavior
     {
         $post = Yii::$app->request->post('File', []);
         foreach ($post as $key => $params) {
-            $uploadedFile = UploadedFile::getInstanceByName("File[{$key}][resource]");
-            if (null != $uploadedFile & isset($this->groups[$params['group']])) {
+            $uploadedFile = UploadedFile::getInstanceByName(
+                "File[{$key}][resource]"
+            );
+            if (null != $uploadedFile && isset($this->groups[$params['group']])) {
                 $file = new File;
                 $file->load(['File' => $params]);
                 $file->resource = $uploadedFile;
@@ -70,6 +83,20 @@ class FileBehavior extends Behavior
                 $file->save();
             }
         }
+    }
+
+    public function isFileUploaded($group)
+    {
+        $post = Yii::$app->request->post('File', []);
+        foreach ($post as $key => $params) {
+            $uploadedFile = UploadedFile::getInstanceByName(
+                "File[{$key}][resource]"
+            );
+            if (null != $uploadedFile && $params['group'] == $group) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public function deleteFiles()
@@ -88,7 +115,7 @@ class FileBehavior extends Behavior
     public function getFiles($group = null)
     {
         if (null == $group) {
-            throw new InvalidParamException("missing one parameter for FileBehavior method `getFile(\$group)`");
+            throw new InvalidParamException('missing one parameter for FileBehavior method `getFile($group)`');
         }
         return File::getByModelAndGroup($this->owner, $group);
     }
@@ -103,5 +130,20 @@ class FileBehavior extends Behavior
     {
         $file = $this->getFile($group);
         return isset($file);
+    }
+
+    public function fileIsRequired($group)
+    {
+        return isset($group['rules'], $group['rules']['required']);
+    }
+
+    private function hasGroup($name)
+    {
+        return isset($this->groups[$name]);
+    }
+
+    private function getGroup($name)
+    {
+        return $this->hasGroup($name) ? $this->groups[$name] : [];
     }
 }

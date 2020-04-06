@@ -8,7 +8,7 @@ class Category extends \yii\db\ActiveRecord
 {
     public static function tableName()
     {
-        return 'post_category';
+        return '{{%post_category}}';
     }
 
     public function getPosts()
@@ -21,11 +21,11 @@ class Category extends \yii\db\ActiveRecord
     {
         $query = new \yii\db\ActiveQuery(get_called_class());
         $query->andWhere(
-            'isActive = 1'
+            'post_category.isActive = 1'
         );
         if (Yii::$app->i18n->isMultiLanguage()) {
             $query->andWhere(
-                ['like', 'language', Yii::$app->language]
+                ['like', 'post_category.language', Yii::$app->language]
             );
         }
         return $query;

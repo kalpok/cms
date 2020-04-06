@@ -3,7 +3,6 @@
 namespace modules\user\common\components;
 
 use Yii;
-use yii\base\InvalidConfigException;
 
 class User extends \yii\web\User
 {
@@ -16,7 +15,7 @@ class User extends \yii\web\User
                 return true;
             }
         }
-        return parent::can($permissionName, $params = [], $allowCaching = true);
+        return parent::can($permissionName, $params, $allowCaching);
     }
 
     public function canAccessAny($permissions)

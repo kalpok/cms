@@ -1,9 +1,8 @@
 <?php
-use yii\helpers\Url;
-use themes\admin360\widgets\Button;
-use extensions\gallery\assetbundles\GalleryCrudAsset;
 
-GalleryCrudAsset::register($this);
+use yii\helpers\Url;
+use theme\widgets\Button;
+
 ?>
 <div class="gallery-index">
     <?= Button::widget([
@@ -15,7 +14,7 @@ GalleryCrudAsset::register($this);
             'class' => 'btn btn-app ajaxcreate',
             'data-gridpjaxid' => 'gallery-grid'
         ]
-    ]); ?>
+    ]) ?>
 
     <?php if (isset($ownerId)) {
         echo Button::widget([
@@ -50,8 +49,7 @@ GalleryCrudAsset::register($this);
     } ?>
     <div style="clear:both"></div>
 
-    <div class="image-form">
-    </div>
+    <div class="sliding-form-wrapper"></div>
 
     <div class="grid">
         <?= $this->render('_grid', ['gallery' => $gallery]) ?>

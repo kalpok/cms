@@ -2,6 +2,7 @@
 
 namespace modules\post\backend\models;
 
+use core\behaviors\PreventDeleteBehavior;
 use extensions\i18n\validators\FarsiCharactersValidator;
 
 class Category extends \yii\db\ActiveRecord
@@ -11,7 +12,7 @@ class Category extends \yii\db\ActiveRecord
 
     public static function tableName()
     {
-        return 'post_category';
+        return '{{%post_category}}';
     }
 
     public function behaviors()
@@ -22,6 +23,15 @@ class Category extends \yii\db\ActiveRecord
                 'class' => 'core\behaviors\SluggableBehavior',
                 'attribute' => 'title',
             ],
+            [
+                'class' => PreventDeleteBehavior::class,
+                'relations' => [
+                    [
+                        'relationMethod' => 'getPosts',
+                        'relationName' => 'نوشته'
+                    ]
+                ]
+            ]
         ];
     }
 
@@ -55,6 +65,7 @@ class Category extends \yii\db\ActiveRecord
      */
     public function getPosts()
     {
-        return $this->hasMany(Post::className(), ['id' => 'postId'])->viaTable('post_category_relation', ['categoryId' => 'id']);
+        return $this->hasMany(Post::class, ['id' => 'postId'])
+            ->viaTable('post_category_relation', ['categoryId' => 'id']);
     }
 }

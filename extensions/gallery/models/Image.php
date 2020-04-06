@@ -8,7 +8,7 @@ class Image extends \yii\db\ActiveRecord
 {
     public static function tableName()
     {
-        return 'gallery_image';
+        return '{{%gallery_image}}';
     }
 
     public function behaviors()

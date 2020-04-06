@@ -65,5 +65,4 @@ class GalleryBehavior extends \yii\base\Behavior
     {
         !$this->hasGallery() ? : $this->getGallery()->delete();
     }
-
 }

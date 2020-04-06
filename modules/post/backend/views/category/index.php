@@ -3,8 +3,8 @@
 use yii\helpers\Html;
 use yii\widgets\Pjax;
 use yii\grid\GridView;
-use themes\admin360\widgets\Panel;
-use themes\admin360\widgets\ActionButtons;
+use theme\widgets\Panel;
+use theme\widgets\ActionButtons;
 
 $this->title = 'دسته های نوشته';
 $this->params['breadcrumbs'][] = ['label' => 'نوشته ها', 'url' => ['/post/manage/index']];
@@ -13,22 +13,31 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="post-category-index">
     <?= ActionButtons::widget([
         'buttons' => [
-            'create' => ['label' => 'دسته جدید'],
+            'create' => [
+                'label' => 'دسته جدید',
+                'options' => [
+                    'class' => 'ajaxcreate',
+                    'data-gridpjaxid' => 'post-category-gridviewpjax'
+                ]
+            ],
             'pages' => [
                 'label' => 'نوشته ها',
                 'url' => ['manage/index'],
                 'type' => 'warning',
                 'icon' => 'list'
-            ],
-        ],
-    ]); ?>
+            ]
+        ]
+    ]) ?>
+
+    <div class="sliding-form-wrapper"></div>
+
     <?php Panel::begin([
         'title' => Html::encode($this->title)
     ]) ?>
         <?php Pjax::begin([
             'id' => 'post-category-gridviewpjax',
-            'enablePushState' => false,
-        ]); ?>
+            'enablePushState' => false
+        ]) ?>
             <?= GridView::widget([
                 'dataProvider' => $dataProvider,
                 'filterModel' => $searchModel,
@@ -42,10 +51,10 @@ $this->params['breadcrumbs'][] = $this->title;
                         'filter' =>false
                     ],
                     ['class' => 'core\grid\ActiveColumn'],
-                    ['class' => 'yii\grid\ActionColumn'],
-                ],
-            ]); ?>
-        <?php Pjax::end(); ?>
+                    ['class' => 'core\grid\AjaxActionColumn']
+                ]
+            ]) ?>
+        <?php Pjax::end() ?>
     <?php Panel::end() ?>
 
 </div>

@@ -4,13 +4,15 @@ namespace modules\post\backend\models;
 
 use modules\post\backend\models\PostQuery;
 use extensions\file\behaviors\FileBehavior;
+use extensions\tag\behaviors\TaggableBehavior;
+use extensions\comment\behaviors\CommentBehavior;
 use extensions\i18n\validators\FarsiCharactersValidator;
 
 class Post extends \yii\db\ActiveRecord
 {
     public static function tableName()
     {
-        return 'post';
+        return '{{%post}}';
     }
 
     public function behaviors()
@@ -35,6 +37,14 @@ class Post extends \yii\db\ActiveRecord
                         ]
                     ],
                 ]
+            ],
+            [
+                'class' => TaggableBehavior::class,
+                'moduleId' => 'post'
+            ],
+            'comment' => [
+                'class' => CommentBehavior::class,
+                'moduleId' => 'post'
             ]
         ];
     }
@@ -46,7 +56,8 @@ class Post extends \yii\db\ActiveRecord
             [['summary', 'content'], 'string'],
             [['isActive', 'priority'], 'integer'],
             [['title', 'language'], 'string', 'max' => 255],
-            [['title', 'content', 'summary'], FarsiCharactersValidator::className()]
+            [['title', 'content', 'summary'], FarsiCharactersValidator::className()],
+            ['tags', 'safe']
         ];
     }
 
@@ -64,6 +75,7 @@ class Post extends \yii\db\ActiveRecord
             'updatedAt' => 'آخرین بروزرسانی',
             'isActive' => 'نمایش در سایت',
             'priority' => 'اولویت',
+            'tags' => 'برچسب ها'
         ];
     }
 

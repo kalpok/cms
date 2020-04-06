@@ -9,7 +9,9 @@ $config = [
         '@core' => '@app/core',
         '@config' => '@app/config',
         '@modules' => '@app/modules',
-        '@extensions' => '@app/extensions'
+        '@extensions' => '@app/extensions',
+        '@bower' => '@vendor/bower-asset',
+        '@npm'   => '@vendor/npm-asset',
     ],
     'controllerMap' => [
         'site' => 'core\controllers\SiteController',
@@ -23,7 +25,7 @@ $config = [
         'i18n' => [
             'class' => 'extensions\i18n\I18N',
             'translations' => [
-                'cms' => [
+                'theme' => [
                     'class' => 'yii\i18n\PhpMessageSource',
                     'basePath' => '@theme/messages',
                 ]
@@ -63,6 +65,14 @@ $config = [
             'enableAutoLogin' => true,
             'loginUrl' => ['/user/auth/login'],
             'identityClass' => 'modules\user\common\components\UserIdentity'
+        ],
+        'notifier' => [
+            'class' => 'extensions\notification\Notifier',
+            'channels' => [
+                'screen' => [
+                    'class' => 'extensions\notification\channels\ScreenChannel'
+                ]
+            ]
         ]
     ],
     'params' => [

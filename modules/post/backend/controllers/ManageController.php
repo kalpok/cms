@@ -2,10 +2,10 @@
 
 namespace modules\post\backend\controllers;
 
-use Yii;
 use yii\filters\AccessControl;
-use modules\post\backend\models\Post;
 use core\controllers\AdminController;
+use modules\post\backend\models\Post;
+use extensions\comment\actions\IndexAction;
 use modules\post\backend\models\PostSearch;
 
 /**
@@ -38,7 +38,7 @@ class ManageController extends AdminController
                         ],
                         [
                             'allow' => true,
-                            'actions' => ['index', 'view', 'gallery'],
+                            'actions' => ['index', 'view', 'gallery', 'comment'],
                             'roles' => ['post.create', 'post.update', 'post.delete'],
                         ],
                     ],
@@ -53,6 +53,11 @@ class ManageController extends AdminController
             'gallery' => [
                 'class' => 'extensions\gallery\actions\GalleryAction',
                 'ownerModelClassName' => Post::className()
+            ],
+            'comment' => [
+                'class' => IndexAction::class,
+                'moduleId' => 'post',
+                'ownerClassName' => Post::class
             ]
         ];
     }

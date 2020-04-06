@@ -1,14 +1,16 @@
 <?php
 
 use yii\helpers\Html;
+use theme\widgets\Panel;
 use core\helpers\Utility;
+use theme\widgets\Button;
 use yii\widgets\ActiveForm;
-use themes\admin360\widgets\Panel;
-use themes\admin360\widgets\Button;
+use yii\helpers\ArrayHelper;
+use core\widgets\editor\Editor;
+use core\widgets\select2\Select2;
 use modules\post\backend\models\Category;
-use themes\admin360\widgets\editor\Editor;
 use extensions\i18n\widgets\LanguageSelect;
-use dosamigos\selectize\SelectizeTextInput;
+use extensions\tag\widgets\selectTag\SelectTag;
 use extensions\file\widgets\singleupload\SingleImageUpload;
 
 $backLink = $model->isNewRecord ? ['index'] : ['view', 'id' => $model->id];
@@ -110,25 +112,24 @@ $backLink = $model->isNewRecord ? ['index'] : ['view', 'id' => $model->id];
                 'title' => 'دسته‌ها'
             ]) ?>
                 <?= $form->field($model, 'categories')->widget(
-                        SelectizeTextInput::className(),
-                        [
-                            'options' => ['class' => 'form-control'],
-                            'clientOptions' => [
-                                'create' => false,
-                                'options' => Utility::makeReadyForSelectize(
-                                    Category::find()->all(),
-                                    'title',
-                                    'title'
-                                ),
-                                'items' => $model->getCategoriesAsArray(),
-                                'valueField' => 'title',
-                                'labelField' => 'title',
-                                'searchField' => ['title'],
-                                'plugins' => ['remove_button'],
-                            ],
+                    Select2::class,
+                    [
+                        'data' => ArrayHelper::map(
+                            Category::find()->all(),
+                            'title',
+                            'title'
+                        ),
+                        'options' => [
+                            'multiple' => true,
+                            'value' => $model->getCategoriesAsArray()
                         ]
-                    )->label('');
-                ?>
+                    ]
+                )->label('') ?>
+            <?php Panel::end() ?>
+            <?php Panel::begin(['title' => 'برچسب ها']) ?>
+                <?= $form->field($model, 'tags')->widget(
+                    SelectTag::class
+                )->label('') ?>
             <?php Panel::end() ?>
             <?php Panel::begin([
                 'title' => 'ویژگی های نوشته'

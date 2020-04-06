@@ -14,11 +14,11 @@ class Utility
         $list = [];
         $reverse = ($from > $to);
         if ($reverse) {
-            for ($i=$from; $i >= $to ; $i--) {
+            for ($i = $from; $i >= $to; $i--) {
                 $list[$i] = Yii::$app->i18n->translateNumber($i);
             }
-        }else{
-            for ($i=$from; $i <= $to ; $i++) {
+        } else {
+            for ($i = $from; $i <= $to; $i++) {
                 $list[$i] = Yii::$app->i18n->translateNumber($i);
             }
         }
@@ -46,15 +46,27 @@ class Utility
 
     public static function makeExcerpt($string, $length = 200, $endingChars = '...')
     {
-        if(strlen($string) > $length) {
-            $excerpt   = substr($string, 0, $length - 3);
+        if (strlen($string) > $length) {
+            $excerpt = substr($string, 0, $length - 3);
             $lastSpace = strrpos($excerpt, ' ');
-            $excerpt   = substr($excerpt, 0, $lastSpace);
-            $excerpt  .= ' '.$endingChars;
+            $excerpt = substr($excerpt, 0, $lastSpace);
+            $excerpt .= ' ' . $endingChars;
         } else {
             $excerpt = $string;
         }
 
         return $excerpt;
+    }
+
+    public static function makeStringShorten($string, $wordsNumber = 20)
+    {
+        $stringAsArray = explode(' ', $string);
+        if (count($stringAsArray) > $wordsNumber) {
+            return implode(
+                ' ',
+                array_splice($stringAsArray, 0, $wordsNumber)
+            ) . ' ... ';
+        }
+        return $string;
     }
 }

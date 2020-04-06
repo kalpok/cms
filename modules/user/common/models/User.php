@@ -19,7 +19,7 @@ class User extends ActiveRecord
 
     public static function tableName()
     {
-        return 'user';
+        return '{{%user}}';
     }
 
     public function behaviors()
@@ -27,21 +27,6 @@ class User extends ActiveRecord
         return [
             'core\behaviors\TimestampBehavior'
         ];
-    }
-
-    public function setPassword()
-    {
-        $this->passwordHash = Yii::$app->security->generatePasswordHash($this->password);
-    }
-
-    public function setRandomToken()
-    {
-        $this->randomToken = Yii::$app->security->generateRandomString();
-    }
-
-    public static function findByEmail($email)
-    {
-        return static::findOne(['email' => $email]);
     }
 
     public function beforeSave($insert)
@@ -55,6 +40,21 @@ class User extends ActiveRecord
             return true;
         }
         return false;
+    }
+
+    public function getFullName()
+    {
+        return "$this->name $this->surname";
+    }
+
+    public function setPassword()
+    {
+        $this->passwordHash = Yii::$app->security->generatePasswordHash($this->password);
+    }
+
+    public function setRandomToken()
+    {
+        $this->randomToken = Yii::$app->security->generateRandomString();
     }
 
     public function updateFailedAttempts()
@@ -77,5 +77,10 @@ class User extends ActiveRecord
                 );
             }
         }
+    }
+
+    public static function findByEmail($email)
+    {
+        return static::findOne(['email' => $email]);
     }
 }

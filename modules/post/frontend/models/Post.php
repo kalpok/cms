@@ -4,12 +4,13 @@ namespace modules\post\frontend\models;
 
 use Yii;
 use extensions\file\behaviors\FileBehavior;
+use extensions\comment\behaviors\CommentBehavior;
 
 class Post extends \yii\db\ActiveRecord
 {
     public static function tableName()
     {
-        return 'post';
+        return '{{%post}}';
     }
 
     public function behaviors()
@@ -23,6 +24,10 @@ class Post extends \yii\db\ActiveRecord
                         'type' => FileBehavior::TYPE_IMAGE
                     ],
                 ]
+            ],
+            'comment' => [
+                'class' => CommentBehavior::class,
+                'moduleId' => 'post'
             ]
         ];
     }

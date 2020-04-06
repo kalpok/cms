@@ -2,11 +2,11 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-use themes\admin360\widgets\Panel;
-use themes\admin360\widgets\Button;
-use themes\admin360\widgets\editor\Editor;
+use core\widgets\editor\Editor;
+use core\widgets\select2\Select2;
+use theme\widgets\Panel;
+use theme\widgets\Button;
 use extensions\i18n\widgets\LanguageSelect;
-use themes\admin360\widgets\SelectizeDropDownList;
 use extensions\file\widgets\singleupload\SingleImageUpload;
 
 $backLink = $model->isNewRecord ? ['index'] : ['view', 'id' => $model->id];
@@ -32,19 +32,9 @@ $backLink = $model->isNewRecord ? ['index'] : ['view', 'id' => $model->id];
                 <?=
                     $form->field($model, 'parentId')
                         ->widget(
-                            SelectizeDropDownList::className(),
+                            Select2::class,
                             [
-                                'allItems' => $model->possibleParents(),
-                                'selectedItems' => $model->parentId,
-                                'valueField' => 'id',
-                                'labelField' => 'prefixedTitle',
-                                'searchField' => ['prefixedTitle'],
-                                'additionalItems' => [
-                                    [
-                                        'id' => 0,
-                                        'prefixedTitle' => 'برگه سطح نخست است'
-                                    ]
-                                ],
+                                'data' => $model->getParentsForSelect2(),
                                 'options' => [
                                     'class' => 'form-control input-large'
                                 ]
@@ -58,6 +48,7 @@ $backLink = $model->isNewRecord ? ['index'] : ['view', 'id' => $model->id];
                             ['preset' => 'advanced']
                         )
                 ?>
+                <?= $form->field($model, 'summary')->textarea(['rows' => 4]) ?>
             <?php Panel::end() ?>
         </div>
         <div class="col-md-4">

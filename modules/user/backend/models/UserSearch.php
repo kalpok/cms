@@ -7,11 +7,13 @@ use yii\data\ActiveDataProvider;
 
 class UserSearch extends User
 {
+    public $title;
+
     public function rules()
     {
         return [
             [['id', 'status', 'type', 'createdAt', 'updatedAt'], 'integer'],
-            [['email'], 'safe'],
+            [['email', 'title', 'phone'], 'safe'],
         ];
     }
 
@@ -46,6 +48,12 @@ class UserSearch extends User
             ]
         );
         $query->andFilterWhere(['like', 'email', $this->email]);
+        $query->andFilterWhere(['like', 'phone', $this->phone]);
+        $query->andFilterWhere([
+            'or',
+            ['like', 'name', $this->title],
+            ['like', 'surname', $this->title]
+        ]);
         return $dataProvider;
     }
 }

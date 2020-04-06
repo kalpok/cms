@@ -2,9 +2,9 @@
 use yii\widgets\Pjax;
 use yii\helpers\Html;
 use yii\grid\GridView;
-use themes\admin360\widgets\Panel;
+use theme\widgets\Panel;
 use modules\user\backend\models\User;
-use themes\admin360\widgets\ActionButtons;
+use theme\widgets\ActionButtons;
 
 $this->title = 'مدیریت کاربران';
 $this->params['breadcrumbs'][] = $this->title;
@@ -28,7 +28,14 @@ $this->params['breadcrumbs'][] = $this->title;
             'filterModel' => $searchModel,
             'columns' => [
                 ['class' => 'core\grid\IDColumn'],
+                [
+                    'attribute' => 'title',
+                    'value' => function ($model) {
+                        return $model->name . ' ' . $model->surname;
+                    },
+                ],
                 'email',
+                'phone',
                 [
                     'attribute' => 'type',
                     'filter' => User::typeLabels(),
@@ -49,7 +56,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     'template' => '{view} {update} {delete} {assign}
                         {change-password}',
                     'buttons' => [
-                        /*'assign' => function ($url, $model, $key) {
+                        'assign' => function ($url, $model, $key) {
                             if ($model->type != User::TYPE_SUPERUSER) {
                                 return Html::a(
                                     '<span class="fa fa-lock"></span>',
@@ -57,7 +64,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                     ['title' => 'اعطای دسترسی', 'data-pjax' => 0]
                                 );
                             }
-                        },*/
+                        },
                         'change-password' => function ($url, $model, $key) {
                                 return Html::a(
                                     '<span class="fa fa-key"></span>',

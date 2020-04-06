@@ -126,11 +126,17 @@ class ManageController extends AdminController
 
     public function actionDelete($id)
     {
-        $this->findModel($id)->deleteWithChildren();
-        Yii::$app->session->addFlash(
-            'success',
-            'برگه مورد نظر با موفقیت از سیستم حذف شد.'
-        );
+        $page = $this->findModel($id);
+        if (!$page->deleteWithChildren()) {
+            foreach ($page->getErrors('id') as $error) {
+                Yii::$app->session->addFlash('danger', $error);
+            }
+        } else {
+            Yii::$app->session->addFlash(
+                'success',
+                'برگه مورد نظر با موفقیت از سیستم حذف شد.'
+            );
+        }
         return $this->redirect(['index']);
     }
 }

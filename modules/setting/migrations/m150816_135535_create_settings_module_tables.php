@@ -7,13 +7,13 @@ class m150816_135535_create_settings_module_tables extends Migration
 {
     public function up()
     {
-        $this->createTable('setting', array(
+        $this->createTable('{{%setting}}', array(
              'id' => $this->primaryKey(),
              'key' => $this->string(255)->notNull(),
              'value' => $this->string(1023)
         ));
 
-        $this->batchInsert('setting',
+        $this->batchInsert('{{%setting}}',
             $columns = ['key'],
             $rows = [
                 ['email.senderEmail'],
@@ -25,7 +25,7 @@ class m150816_135535_create_settings_module_tables extends Migration
             ]
         );
 
-        $this->batchInsert('setting',
+        $this->batchInsert('{{%setting}}',
             $columns = ['key','value'],
             $rows = [
                 ['website.cache', 1],
@@ -41,7 +41,7 @@ class m150816_135535_create_settings_module_tables extends Migration
 
     public function down()
     {
-        $this->dropTable('setting');
+        $this->dropTable('{{%setting}}');
     }
 
     /*

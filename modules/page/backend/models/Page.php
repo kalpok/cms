@@ -1,6 +1,8 @@
 <?php
 namespace modules\page\backend\models;
 
+use yii\helpers\ArrayHelper;
+use core\behaviors\PreventDeleteBehavior;
 use extensions\file\behaviors\FileBehavior;
 use extensions\i18n\validators\FarsiCharactersValidator;
 
@@ -30,6 +32,15 @@ class Page extends \modules\page\common\models\Page
                             ]
                         ],
                     ]
+                ],
+                [
+                    'class' => PreventDeleteBehavior::class,
+                    'relations' => [
+                        [
+                            'relationMethod' => 'children',
+                            'relationName' => 'زیر مجموعه'
+                        ]
+                    ]
                 ]
             ]
         );
@@ -40,7 +51,7 @@ class Page extends \modules\page\common\models\Page
         return [
             [['title', 'content', 'parentId'], 'required'],
             ['title', 'trim'],
-            ['content', 'string'],
+            [['content', 'summary'], 'string'],
             ['isActive', 'integer'],
             ['language', 'default', 'value' => null],
             ['title', 'string', 'max' => 255],
@@ -53,6 +64,7 @@ class Page extends \modules\page\common\models\Page
         return [
             'id' => 'شناسه',
             'title' => 'عنوان',
+            'summary' => 'خلاصه',
             'isActive' => 'نمایش در سایت',
             'language' => 'زبان',
             'content' => 'محتوای برگه',
@@ -100,9 +112,17 @@ class Page extends \modules\page\common\models\Page
             ->all();
     }
 
+    public function getParentsForSelect2()
+    {
+        return ['آیتم سطح نخست است'] +
+            ArrayHelper::map($this->possibleParents(), 'id', 'prefixedTitle');
+    }
+
     public function getParent()
     {
-        if ($this->isNewRecord || $this->isRoot()) { return null; }
+        if ($this->isNewRecord || $this->isRoot()) {
+            return null;
+        }
         if (!isset($this->parent)) {
             $this->parent = $this->parents(1)->one();
         }

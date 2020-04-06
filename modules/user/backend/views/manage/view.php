@@ -1,7 +1,7 @@
 <?php
-use themes\admin360\widgets\Panel;
+use theme\widgets\Panel;
 use yii\widgets\DetailView;
-use themes\admin360\widgets\ActionButtons;
+use theme\widgets\ActionButtons;
 use modules\user\backend\models\User;
 
 $this->title = $model->email;
@@ -31,7 +31,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'model' => $model,
             'attributes' => [
                 'id:farsiNumber',
+                'name',
+                'surname',
                 'email',
+                'phone',
                 [
                     'attribute' => 'status',
                     'value' => $model->getStatusLabel(),
