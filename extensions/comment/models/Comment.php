@@ -3,6 +3,7 @@
 namespace extensions\comment\models;
 
 use Yii;
+use yii\helpers\Url;
 use core\behaviors\TimestampBehavior;
 use extensions\comment\behaviors\NotificationBehavior;
 use extensions\i18n\validators\FarsiCharactersValidator;
@@ -50,7 +51,7 @@ class Comment extends \yii\db\ActiveRecord
             [
                 'verifyCode',
                 'captcha',
-                'captchaAction' => 'captcha/captcha',
+                'captchaAction' => Url::to(['captcha']),
                 'when' => function ($model) {
                     return $model->isNewRecord && !isset(Yii::$app->user->id);
                 }
