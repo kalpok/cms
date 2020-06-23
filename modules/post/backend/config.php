@@ -20,7 +20,7 @@ return [
                 'url' => ['/post/category/index'],
                 'visible' => Yii::$app->user->canAccessAny(['post.categories'])
             ],
-            [
+            'comments-link' => [
                 'label' => 'نظرات',
                 'url' => ['/post/manage/comment'],
                 'visible' => Yii::$app->user->canAccessAny(['post.comment'])
