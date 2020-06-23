@@ -74,7 +74,8 @@ $this->params['breadcrumbs'][] = $this->title;
                         'attribute' => 'tags',
                         'value' => function ($model) {
                             return $model->getTagsAsString();
-                        }
+                        },
+                        'visible' => Yii::$app->getModule('post')->isTagsEnabled
                     ],
                     'createdAt:date',
                     'updatedAt:date',

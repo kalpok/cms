@@ -126,11 +126,13 @@ $backLink = $model->isNewRecord ? ['index'] : ['view', 'id' => $model->id];
                     ]
                 )->label('') ?>
             <?php Panel::end() ?>
-            <?php Panel::begin(['title' => 'برچسب ها']) ?>
-                <?= $form->field($model, 'tags')->widget(
-                    SelectTag::class
-                )->label('') ?>
-            <?php Panel::end() ?>
+            <?php if (Yii::$app->getModule('post')->isTagsEnabled): ?>
+                <?php Panel::begin(['title' => 'برچسب ها']) ?>
+                    <?= $form->field($model, 'tags')->widget(
+                        SelectTag::class
+                    )->label('') ?>
+                <?php Panel::end() ?>
+            <?php endif ?>
             <?php Panel::begin([
                 'title' => 'ویژگی های نوشته'
             ]) ?>
