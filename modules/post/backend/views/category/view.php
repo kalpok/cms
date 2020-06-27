@@ -1,18 +1,14 @@
 <?php
 
-use yii\helpers\Html;
-use yii\widgets\DetailView;
 use theme\widgets\Panel;
-use theme\widgets\ActionButtons;
+use yii\widgets\DetailView;
 
 ?>
+
 <div class="post-category-view">
     <div class="row">
-        <div class="col-md-5">
-            <?php Panel::begin([
-                'title' => 'اطلاعات دسته',
-                'showCloseButton' => true
-            ]) ?>
+        <div class="col-md-12">
+            <?php Panel::begin() ?>
                 <?= DetailView::widget([
                     'model' => $model,
                     'attributes' => [
@@ -34,3 +30,9 @@ use theme\widgets\ActionButtons;
         </div>
     </div>
 </div>
+
+<?php $this->registerJs('
+    $(document).ready(function () {
+        $(".modal-inner").trigger("pageReady");
+    });
+');
