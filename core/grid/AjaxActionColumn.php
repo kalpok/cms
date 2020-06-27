@@ -7,8 +7,18 @@ use yii\helpers\Html;
 
 class AjaxActionColumn extends ActionColumn
 {
+    public $viewModalHeader;
+    public $updateModalHeader;
+
     protected function initDefaultButtons()
     {
+        if (!isset($this->viewModalHeader)) {
+            $this->viewModalHeader = 'مشاهده';
+        }
+        if (!isset($this->updateModalHeader)) {
+            $this->updateModalHeader = 'ویرایش';
+        }
+
         if (!isset($this->buttons['view'])) {
             $this->buttons['view'] = function ($url, $model, $key) {
                 return Html::a(
@@ -17,7 +27,8 @@ class AjaxActionColumn extends ActionColumn
                     [
                         'title' => Yii::t('yii', 'View'),
                         'data-pjax' => '0',
-                        'class' => 'ajaxview'
+                        'class' => 'ajaxview',
+                        'data-modalheader' => $this->viewModalHeader,
                     ]
                 );
             };
@@ -30,7 +41,8 @@ class AjaxActionColumn extends ActionColumn
                     [
                         'title' => Yii::t('yii', 'Update'),
                         'data-pjax' => '0',
-                        'class' => 'ajaxupdate'
+                        'class' => 'ajaxupdate',
+                        'data-modalheader' => $this->updateModalHeader,
                     ]
                 );
             };
