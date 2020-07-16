@@ -109,6 +109,18 @@ $backLink = $model->isNewRecord ? ['index'] : ['view', 'id' => $model->id];
                 ?>
             <?php Panel::end() ?>
             <?php Panel::begin([
+                'title' => 'تصویر کاور'
+            ]) ?>
+                <?php
+                    echo SingleImageUpload::widget(
+                        [
+                            'model' => $model,
+                            'group' => 'cover',
+                        ]
+                    );
+                ?>
+            <?php Panel::end() ?>
+            <?php Panel::begin([
                 'title' => 'دسته‌ها'
             ]) ?>
                 <?= $form->field($model, 'categories')->widget(
