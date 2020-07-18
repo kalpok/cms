@@ -4,7 +4,6 @@ use yii\helpers\Html;
 use yii\widgets\Pjax;
 use yii\grid\GridView;
 use core\helpers\Utility;
-use modules\user\common\models\User;
 use extensions\comment\models\Comment;
 
 ?>
@@ -49,7 +48,7 @@ use extensions\comment\models\Comment;
                 'format' => 'raw',
             ],
             'inserterName',
-            'inserterEmail',            
+            'inserterEmail',
             'insertedAt:datetime',
             'reply:html',
             [
@@ -108,6 +107,17 @@ use extensions\comment\models\Comment;
                                 ]
                             );
                         }
+                    },
+                    'delete' => function ($url, $model, $key) {
+                        return Html::a(
+                            '<span class="glyphicon glyphicon-trash"></span>',
+                            ['/comment/delete', 'id' => $model->id],
+                            [
+                                'title' => 'حذف نظر',
+                                'class' => 'ajaxdelete',
+                                'data-gridpjaxid' => 'comment-index-gridviewpjax'
+                            ]
+                        );
                     }
                 ]
             ]
