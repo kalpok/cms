@@ -1,23 +1,14 @@
 <?php
+
 namespace modules\setting\models;
-
-use Yii;
-use yii\base\Model;
-
 class Setting extends \yii\db\ActiveRecord
 {
-
     public function rules()
     {
         return [
             ['key', 'string', 'max' => 255],
             ['value', 'string', 'max' => 1023]
         ];
-    }
-
-    public static function tableName()
-    {
-        return '{{%setting}}';
     }
 
     public function getLabel()
@@ -36,7 +27,16 @@ class Setting extends \yii\db\ActiveRecord
             'email.smtpUsername' => 'نام کاربری',
             'email.smtpPassword' => 'کلمه عبور',
             'email.smtpPort' => 'پورت',
+            'website.metaKeywords' => 'کلید واژه‌ها متا',
+            'website.imageUrl' => 'آدرس عکس',
+            'website.metaDescription' => 'توضیحات متا'
         ];
+
         return $items[$this->key];
+    }
+
+    public static function tableName()
+    {
+        return '{{%setting}}';
     }
 }
