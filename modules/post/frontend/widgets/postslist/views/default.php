@@ -8,7 +8,7 @@
 			<ul class="list-unstyled">
 			<?php foreach ($posts as $post) : ?>
 			    <li>
-			        <?= Html::a($post->title, ['post/front/view', 'slug' => $post->slug]) ?>
+			        <?= Html::a($post->title, ['post/front/view', 'id' => $model->id, 'slug' => $post->slug]) ?>
 			    </li>
 			<?php endforeach ?>
 			</ul>
