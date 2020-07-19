@@ -6,11 +6,26 @@ use yii\web\Controller;
 use yii\data\ActiveDataProvider;
 use yii\web\NotFoundHttpException;
 use modules\post\frontend\models\Post;
+use extensions\visit\filters\VisitFilter;
 use modules\post\frontend\models\Category;
 
 class FrontController extends Controller
 {
     public $layout = '//two-column';
+
+    public function behaviors()
+    {
+        return [
+            'visit' => [
+                'class' => VisitFilter::class,
+                'actions' => [
+                    'view' => [
+                        'modelClassName' => Post::class
+                    ]
+                ]
+            ]
+        ];
+    }
 
     public function actions()
     {
@@ -21,8 +36,8 @@ class FrontController extends Controller
                 'ownerClassName' => Post::class
             ],
             'captcha' => [
-                'class' => 'yii\captcha\CaptchaAction',                
-            ],
+                'class' => 'yii\captcha\CaptchaAction',
+            ]
         ];
     }
 
