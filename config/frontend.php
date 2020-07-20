@@ -21,6 +21,7 @@ return [
                 'file/download/<name>' => 'file/serve-file',
                 'file/serve-image' => 'file/serve-image',
                 '' => 'site/index',
+                'post/archive/<year>/<month>' => 'post/front/archive', // each module shoul feed for it
             ]
         ]
     ],

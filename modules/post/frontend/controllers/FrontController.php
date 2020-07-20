@@ -84,4 +84,19 @@ class FrontController extends Controller
             'category' => $category,
         ]);
     }
+
+    public function actionArchive($year, $month)
+    {
+        $newsList = new ActiveDataProvider([
+            'query' => Post::find()
+                ->filterWithinYearAndMonth($year, $month)
+                ->addOrderBy('createdAt DESC')
+        ]);
+
+        return $this->render('index', [
+            'year' => $year,
+            'month' => $month,
+            'dataProvider' => $newsList
+        ]);
+    }
 }
