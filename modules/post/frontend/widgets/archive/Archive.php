@@ -56,13 +56,17 @@ class Archive extends \yii\base\Widget
         $currentMonth = Yii::$app->request->get('month');
         foreach ($archiveStatistic as $year => $yearCount) {
             $item = [];
-            $item['label'] = 'سال ' . $formatter->asFarsiNumber($year . ' (' . $yearCount['count'] . ')');
+            $item['label'] = $formatter->asFarsiNumber($year . ' (' . $yearCount['count'] . ')');
             $list = '<ul>';
+            $isActive = false;
             foreach ($yearCount['month'] as $month => $monthCount) {
-                if (isset($currentYear, $currentMonth) &&
-                    $currentYear == $year && $currentMonth == $month) {
+                if (
+                    isset($currentYear, $currentMonth) &&
+                    $currentYear == $year && $currentMonth == $month
+                ) {
                     $li = '<li class="active">- ';
                     $item['contentOptions'] = ['class' => 'in'];
+                    $isActive = true;
                 } else {
                     $li = '<li>- ';
                 }
@@ -78,6 +82,7 @@ class Archive extends \yii\base\Widget
             }
             $list .= '</ul>';
             $item['content'] = $list;
+            $item['isActive'] = $isActive;
             $items[] = $item;
         }
 
