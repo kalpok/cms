@@ -1,6 +1,5 @@
 <div id="archive-accordion">
     <?php foreach ($list as $index => $item) : ?>
-        <br>
         <a data-toggle="collapse" data-target="#archive<?= $index ?>" aria-expanded="false" aria-controls="collapseOne">
             <?= $item['label'] ?>
         </a>
