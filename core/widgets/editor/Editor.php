@@ -88,7 +88,7 @@ class Editor extends CKEditor
     private function addCustomPlugins()
     {
         if (!isset($this->clientOptions['extraPlugins'])) {
-            $this->clientOptions['extraPlugins'] = 'justify,bidi';
+            $this->clientOptions['extraPlugins'] = 'justify,bidi,colorbutton';
         }
     }
 
