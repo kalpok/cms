@@ -69,7 +69,8 @@ use extensions\comment\models\Comment;
                             [
                                 'title' => 'مشاهده اطلاعات نظر',
                                 'class' => 'ajaxview',
-                                'data-gridpjaxid' => 'comment-index-gridviewpjax'
+                                'data-gridpjaxid' => 'comment-index-gridviewpjax',
+                                'data-modalheader' => 'اطلاعات نظر'
                             ]
                         );
                     },
@@ -80,7 +81,8 @@ use extensions\comment\models\Comment;
                             [
                                 'title' => 'پاسخ به نظر',
                                 'class' => 'ajaxupdate',
-                                'data-gridpjaxid' => 'comment-index-gridviewpjax'
+                                'data-gridpjaxid' => 'comment-index-gridviewpjax',
+                                'data-modalheader' => 'پاسخ به نظر'
                             ]
                         );
                     },

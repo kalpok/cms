@@ -2,24 +2,20 @@
 
 use theme\widgets\Panel;
 use yii\widgets\DetailView;
-use modules\user\backend\models\User;
 use extensions\comment\models\Comment;
 
 ?>
 
 <div class="post-category-view">
     <div class="row">
-        <div class="col-md-5">
-            <?php Panel::begin([
-                'title' => 'اطلاعات نظر',
-                'showCloseButton' => true
-            ]) ?>
+        <div class="col-md-12">
+            <?php Panel::begin() ?>
                 <?= DetailView::widget([
                     'model' => $model,
                     'attributes' => [
                         'content:html',
                         'inserterName',
-                        'inserterEmail',                        
+                        'inserterEmail',
                         'inserterIp',
                         'insertedAt:datetime',
                         'reply:html',
@@ -36,3 +32,9 @@ use extensions\comment\models\Comment;
         </div>
     </div>
 </div>
+
+<?php $this->registerJs('
+    $(document).ready(function () {
+        $(".modal-inner").trigger("pageReady");
+    });
+');
