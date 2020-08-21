@@ -14,8 +14,6 @@ return [
                 'NumberedList', 'BulletedList', '-',
                 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock',
                 '-', 'BidiRtl', 'BidiLtr', '-',
-                'Bold', 'Italic', '-',
-                'TextColor', 'BGColor', '-'
             ],
         ],
         [
@@ -25,6 +23,8 @@ return [
                 'Link', 'Unlink', 'Anchor', '-',
                 'Table', '-',
                 'FontSize', '-',
+                'Bold', 'Italic', '-',
+                'TextColor', 'BGColor', '-',
                 'Blockquote', '-','Format'
             ],
         ],
