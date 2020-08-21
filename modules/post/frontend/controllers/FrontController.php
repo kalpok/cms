@@ -6,11 +6,26 @@ use yii\web\Controller;
 use yii\data\ActiveDataProvider;
 use yii\web\NotFoundHttpException;
 use modules\post\frontend\models\Post;
+use extensions\visit\filters\VisitFilter;
 use modules\post\frontend\models\Category;
 
 class FrontController extends Controller
 {
     public $layout = '//two-column';
+
+    public function behaviors()
+    {
+        return [
+            'visit' => [
+                'class' => VisitFilter::class,
+                'actions' => [
+                    'view' => [
+                        'modelClassName' => Post::class
+                    ]
+                ]
+            ]
+        ];
+    }
 
     public function actions()
     {
@@ -21,8 +36,8 @@ class FrontController extends Controller
                 'ownerClassName' => Post::class
             ],
             'captcha' => [
-                'class' => 'yii\captcha\CaptchaAction',                
-            ],
+                'class' => 'yii\captcha\CaptchaAction',
+            ]
         ];
     }
 
@@ -67,6 +82,21 @@ class FrontController extends Controller
         return $this->render('index', [
             'dataProvider' => $dataProvider,
             'category' => $category,
+        ]);
+    }
+
+    public function actionArchive($year, $month)
+    {
+        $newsList = new ActiveDataProvider([
+            'query' => Post::find()
+                ->filterWithinYearAndMonth($year, $month)
+                ->addOrderBy('createdAt DESC')
+        ]);
+
+        return $this->render('index', [
+            'year' => $year,
+            'month' => $month,
+            'dataProvider' => $newsList
         ]);
     }
 }

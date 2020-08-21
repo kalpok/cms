@@ -222,6 +222,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         </div>
                     </div>
                 <?php Panel::end();?>
+                <?= $this->render('_seo', ['form' => $form, 'settings' => $settings]) ?>
                 <div class="form-group">
                     <?= Html::submitButton(
                         '<i class="fa fa-save"></i> ذخیره',

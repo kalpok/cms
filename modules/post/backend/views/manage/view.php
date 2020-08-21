@@ -54,6 +54,22 @@ $this->params['breadcrumbs'][] = $this->title;
                 </div>
                 <?php Panel::end() ?>
             <?php endif ?>
+            <?php if (!empty($model->getFile('cover'))): ?>
+                <?php Panel::begin([
+                        'title' => 'تصویر کاور'
+                    ]);
+                ?>
+                <div class="row">
+                    <div class="col-md-6">
+                        <?=
+                            Html::img(
+                                $model->getFile('cover')->getUrl('view-thumb')
+                            );
+                        ?>
+                    </div>
+                </div>
+                <?php Panel::end() ?>
+            <?php endif ?>
             <?php Panel::begin([
                 'title' => 'سایر اطلاعات',
             ]) ?>

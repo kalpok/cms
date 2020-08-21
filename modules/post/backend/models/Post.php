@@ -36,6 +36,13 @@ class Post extends \yii\db\ActiveRecord
                             'maxSize' => 1024*1024,
                         ]
                     ],
+                    'cover' => [
+                        'type' => FileBehavior::TYPE_IMAGE,
+                        'rules' => [
+                            'extensions' => ['png', 'jpg', 'jpeg'],
+                            'maxSize' => 1024*1024,
+                        ]
+                    ],
                 ]
             ],
             [

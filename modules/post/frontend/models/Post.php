@@ -40,7 +40,7 @@ class Post extends \yii\db\ActiveRecord
 
     public static function find()
     {
-        $query = new \yii\db\ActiveQuery(get_called_class());
+        $query = new PostQuery(get_called_class());
         $query->andWhere(
             'post.isActive = 1'
         );
