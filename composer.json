@@ -18,7 +18,8 @@
         "kartik-v/yii2-widget-select2": "@dev",
         "bower-asset/font-awesome": "^4.7.0",
         "bower-asset/bootstrap-rtl": "^3.4",
-        "moonlandsoft/yii2-phpexcel": "*"
+        "moonlandsoft/yii2-phpexcel": "*",
+        "kartik-v/yii2-widget-depdrop": "@dev"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "*",

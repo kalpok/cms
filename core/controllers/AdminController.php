@@ -33,6 +33,7 @@ class AdminController extends Controller
                 both \$modelClass and \$searchClass properties must be set.
             ");
         }
+        parent::init();
     }
 
     public function actionIndex()
