@@ -1,58 +1,51 @@
 <?php
 
 use yii\helpers\Url;
-use theme\widgets\Button;
+use theme\widgets\ActionButtons;
 
 ?>
+
 <div class="gallery-index">
-    <?= Button::widget([
-        'label' => 'عکس جدید',
-        'icon' => 'plus',
-        'type' => 'success',
-        'url' => ['/gallery/add-image', 'galleryId' => $gallery->id],
-        'options' => [
-            'class' => 'btn btn-app ajaxcreate',
-            'data-gridpjaxid' => 'gallery-grid'
-        ]
-    ]) ?>
-
-    <?php if (isset($ownerId)) {
-        echo Button::widget([
-            'label' => 'بازگشت',
-            'icon' => 'undo',
-            'type' => 'info',
-            'url' => [
-                'view',
-                'id' => $ownerId,
+    <?= ActionButtons::widget([
+        'buttons' => [
+            'create' => [
+                'label' => 'عکس جدید',
+                'url' => ['/gallery/add-image', 'galleryId' => $gallery->id],
+                'options' => [
+                    'class' => 'ajaxcreate',
+                    'data-gridpjaxid' => 'gallery-grid',
+                    'data-modalheader' => 'عکس جدید',
+                    'data-modalfooterbtns' => 'true'
+                ]
             ],
-            'options' => ['class' => 'btn btn-app']
-        ]);
-
-        echo Button::widget([
-            'label' => 'حذف گالری',
-            'icon' => 'trash',
-            'type' => 'danger',
-            'url' => [
-                '/gallery/delete',
-                'id' => $gallery->id,
-                'ownerId' => $ownerId,
-                'returnUrl' => urlencode(Url::toRoute(['view', 'id' => $ownerId]))
+            'undo' => [
+                'label' => 'بازگشت',
+                'icon' => 'undo',
+                'type' => 'info',
+                'url' => [
+                    'view',
+                    'id' => $ownerId,
+                ],
+                'visible' => isset($ownerId)
             ],
-            'options' => [
-                'class' => 'btn btn-app',
-                'data' => [
-                    'method' => 'post',
-                    'confirm' => "آیا از حذف گالری مطمئن هستید؟ \n با این کار همه عکس ها نیز حذف خواهند شد.",
+            'delete' => [
+                'label' => 'حذف گالری',
+                'url' => [
+                    '/gallery/delete',
+                    'id' => $gallery->id,
+                    'ownerId' => $ownerId,
+                    'returnUrl' => urlencode(Url::toRoute(['view', 'id' => $ownerId]))
+                ],
+                'visible' => isset($ownerId),
+                'options' => [
+                    'data' => [
+                        'method' => 'post',
+                        'confirm' => "آیا از حذف گالری مطمئن هستید؟ \n با این کار همه عکس ها نیز حذف خواهند شد.",
+                    ]
                 ]
             ]
-        ]);
-    } ?>
-    <div style="clear:both"></div>
-
-    <div class="sliding-form-wrapper"></div>
-
-    <div class="grid">
-        <?= $this->render('_grid', ['gallery' => $gallery]) ?>
-    </div>
+        ]
+    ]) ?>
+    <?= $this->render('_grid', ['gallery' => $gallery]) ?>
 </div>
 

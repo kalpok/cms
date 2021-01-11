@@ -1,18 +1,14 @@
 <?php
-use yii\widgets\Pjax;
+
 use yii\helpers\Html;
+use yii\widgets\Pjax;
 use yii\grid\GridView;
-use extensions\gallery\models\Image;
 use theme\widgets\Panel;
+
 ?>
 
-<?php Panel::begin([
-    'title' => 'عکس های گالری',
-]) ?>
-    <?php Pjax::begin([
-        'id' => 'gallery-grid',
-        'enablePushState' => false,
-    ]); ?>
+<?php Panel::begin(['title' => 'عکس های گالری']) ?>
+    <?php Pjax::begin(['id' => 'gallery-grid']) ?>
         <?= GridView::widget([
             'dataProvider' => $gallery->search(),
             'columns' => [
@@ -28,7 +24,7 @@ use theme\widgets\Panel;
                 ['class' => 'core\grid\LinkColumn'],
                 'order:farsiNumber',
                 [
-                    'class' => 'core\grid\ActionColumn',
+                    'class' => 'core\grid\AjaxActionColumn',
                     'controller' => '/gallery',
                     'options' => ['style' => 'width:7%'],
                     'template' => '{edit-image} {remove-image}',
@@ -40,7 +36,9 @@ use theme\widgets\Panel;
                                 [
                                     'title' => 'ویرایش عکس',
                                     'data-pjax' => '0',
-                                    'class' => 'ajaxupdate'
+                                    'class' => 'ajaxupdate',
+                                    'data-gridpjaxid' => 'gallery-grid',
+                                    'data-modalheader' => 'بروزرسانی عکس'
                                 ]
                             );
                         },
@@ -52,13 +50,14 @@ use theme\widgets\Panel;
                                     'title' => 'حذف عکس',
                                     'data-confirmmsg' => 'آیا از حذف عکس مطمئن هستید؟',
                                     'data-pjax' => '0',
-                                    'class' => 'ajaxdelete',
+                                    'data-gridpjaxid' => 'gallery-grid',
+                                    'class' => 'ajaxdelete'
                                 ]
                             );
                         }
                     ]
                 ]
             ]
-        ]); ?>
-    <?php Pjax::end(); ?>
-<?php Panel::end() ?>
+        ]) ?>
+    <?php Pjax::end() ?>
+<?php Panel::end();
